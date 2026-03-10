@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JB Process & Tech Consultoria — Lean, 5S, Kaizen & Tecnologia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --border: #2a2a3d;
+    --accent1: #00e5a0;
+    --accent2: #5b6ef5;
+    --accent3: #f5a623;
+    --text: #f0f0f8;
+    --muted: #8888aa;
+    --card-hover: #1e1e2e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4%;
+    background: rgba(10,10,15,0.88);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-logo .jb  { color: var(--accent1); }
+  .nav-logo .amp { color: var(--accent3); }
+
+  .nav-links {
+    display: flex;
+    gap: 1.8rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.87rem;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--accent1) !important;
+    color: #0a0a0f !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 6px;
+    font-weight: 600 !important;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 5% 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,160,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,160,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 20s linear infinite;
+  }
+
+  @keyframes gridMove {
+    0%   { transform: translate(0,0); }
+    100% { transform: translate(60px,60px); }
+  }
+
+  .hero-orbs { position: absolute; inset: 0; pointer-events: none; }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: floatOrb 8s ease-in-out infinite;
+  }
+
+  .orb1 { width: 500px; height: 500px; background: var(--accent2); top: -100px; right: -100px; }
+  .orb2 { width: 400px; height: 400px; background: var(--accent1); bottom: -100px; left: 20%; animation-delay: 3s; }
+  .orb3 { width: 300px; height: 300px; background: var(--accent3); top: 40%; left: -50px; animation-delay: 6s; }
+
+  @keyframes floatOrb {
+    0%, 100% { transform: translate(0,0); }
+    50%       { transform: translate(30px,-30px); }
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0,229,160,0.1);
+    border: 1px solid rgba(0,229,160,0.3);
+    color: var(--accent1);
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    animation: fadeIn 0.6s ease both;
+  }
+
+  .badge-dot {
+    width: 6px; height: 6px;
+    background: var(--accent1);
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .hero-company {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.6s 0.05s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 5vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    max-width: 880px;
+    animation: fadeIn 0.6s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    -webkit-text-stroke: 1.5px var(--accent1);
+    color: transparent;
+  }
+
+  .hero-subtitle {
+    margin-top: 1.8rem;
+    font-size: clamp(0.92rem, 1.6vw, 1.1rem);
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.75;
+    animation: fadeIn 0.6s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    animation: fadeIn 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--accent1);
+    color: #0a0a0f;
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,229,160,0.3); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.92rem;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover { border-color: var(--muted); background: var(--surface); }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    animation: fadeIn 0.6s 0.4s ease both;
+  }
+
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .stat-number span { color: var(--accent1); }
+  .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SHARED */
+  section { padding: 5rem 5%; }
+
+  .section-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent1);
+    margin-bottom: 0.9rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    max-width: 720px;
+  }
+
+  .section-desc {
+    color: var(--muted);
+    font-size: clamp(0.88rem, 1.4vw, 1rem);
+    line-height: 1.75;
+    max-width: 580px;
+    margin-top: 1rem;
+  }
+
+  /* APPS */
+  .apps-section { background: var(--bg); }
+  .apps-header { margin-bottom: 3.5rem; }
+
+  .apps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .app-card {
+    background: var(--surface);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    position: relative;
+    transition: background 0.3s;
+    overflow: hidden;
+  }
+
+  .app-card:hover { background: var(--card-hover); }
+
+  .app-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .app-card.planner::after { background: var(--accent2); }
+  .app-card.lean::after    { background: var(--accent1); }
+  .app-card:hover::after   { opacity: 1; }
+
+  .app-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .icon-planner { background: rgba(91,110,245,0.15); border: 1px solid rgba(91,110,245,0.3); }
+  .icon-lean    { background: rgba(0,229,160,0.1);   border: 1px solid rgba(0,229,160,0.2); }
+
+  .app-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .label-planner { color: var(--accent2); }
+  .label-lean    { color: var(--accent1); }
+
+  .app-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.9rem;
+  }
+
+  .app-desc {
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 0.9rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .app-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 2rem;
+  }
+
+  .app-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .feature-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.42rem;
+  }
+
+  .dot-planner { background: var(--accent2); }
+  .dot-lean    { background: var(--accent1); }
+
+  .app-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .cta-planner { color: var(--accent2); }
+  .cta-lean    { color: var(--accent1); }
+  .app-cta:hover { gap: 0.9rem; }
+
+  /* CONSULTORIA */
+  .consulting-section {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .consulting-header { margin-bottom: 3rem; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 2rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--card-accent, var(--accent1));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover { border-color: rgba(0,229,160,0.4); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-emoji { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
+
+  .service-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .service-desc {
+    font-size: 0.86rem;
+    color: var(--muted);
+    line-height: 1.72;
+    margin-bottom: 1.4rem;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .service-tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.22rem 0.6rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .consulting-cta-banner {
+    margin-top: 3rem;
+    background: linear-gradient(135deg, rgba(0,229,160,0.07), rgba(91,110,245,0.07));
+    border: 1px solid rgba(0,229,160,0.2);
+    border-radius: 20px;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-banner-text h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .cta-banner-text p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    max-width: 500px;
+  }
+
+  /* FEATURES / POR QUE NÓS */
+  .features-section { background: var(--bg); }
+
+  .features-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.4rem;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+
+  .feature-item:hover { background: var(--surface); border-color: var(--border); }
+
+  .feature-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(0,229,160,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .feature-item h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+
+  .feature-item p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .features-visual {
+    position: relative;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dashboard-mock {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 390px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    animation: floatCard 6s ease-in-out infinite;
+  }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50%       { transform: translateY(-12px) rotate(1deg); }
+  }
+
+  .mock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mock-title { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; }
+  .mock-dots  { display: flex; gap: 5px; }
+  .mock-dot   { width: 9px; height: 9px; border-radius: 50%; }
+
+  .mock-bars { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.2rem; }
+
+  .mock-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  .mock-bar-label { width: 65px; flex-shrink: 0; }
+
+  .mock-bar-track {
+    flex: 1;
+    height: 7px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .mock-bar-fill { height: 100%; border-radius: 4px; animation: barGrow 2s ease both; }
+  @keyframes barGrow { from { width: 0; } }
+
+  .mock-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+
+  .mock-kpi {
+    background: var(--surface);
+    border-radius: 10px;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    min-width: 0;
+  }
+
+  .mock-kpi-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .mock-kpi-label { font-size: 0.67rem; color: var(--muted); margin-top: 0.15rem; }
+
+  .floating-badge {
+    position: absolute;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    white-space: nowrap;
+  }
+
+  .badge-top    { top: 40px; right: -10px; animation: floatCard 5s 1s ease-in-out infinite; }
+  .badge-bottom { bottom: 60px; left: -10px; animation: floatCard 5s 2s ease-in-out infinite; }
+
+  /* BLOG */
+  .content-section { background: var(--surface); border-top: 1px solid var(--border); }
+
+  .content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .post-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .post-card:hover {
+    border-color: var(--accent1);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  .post-thumb {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+  }
+
+  .thumb-1 { background: linear-gradient(135deg, rgba(91,110,245,0.2), rgba(91,110,245,0.04)); }
+  .thumb-2 { background: linear-gradient(135deg, rgba(0,229,160,0.2), rgba(0,229,160,0.04)); }
+  .thumb-3 { background: linear-gradient(135deg, rgba(245,166,35,0.2), rgba(245,166,35,0.04)); }
+  .thumb-4 { background: linear-gradient(135deg, rgba(229,82,100,0.18), rgba(229,82,100,0.04)); }
+
+  .post-body { padding: 1.4rem; }
+
+  .post-tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    display: inline-block;
+  }
+
+  .tag-blue   { color: var(--accent2); }
+  .tag-green  { color: var(--accent1); }
+  .tag-orange { color: var(--accent3); }
+  .tag-red    { color: #e55264; }
+
+  .post-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.97rem;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 0.65rem;
+  }
+
+  .post-excerpt {
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1.1rem;
+  }
+
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--muted);
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  /* NEWSLETTER */
+  .newsletter-section { background: var(--bg); border-top: 1px solid var(--border); }
+
+  .newsletter-inner {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .newsletter-inner .section-title { max-width: 100%; }
+  .newsletter-inner .section-desc { margin: 1rem auto 2.5rem; }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0.8rem;
+    max-width: 480px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    min-width: 190px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.85rem 1.2rem;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .newsletter-input::placeholder { color: var(--muted); }
+  .newsletter-input:focus { border-color: var(--accent1); }
+
+  /* FOOTER */
+  footer { background: var(--surface); border-top: 1px solid var(--border); }
+
+  .footer-main {
+    padding: 3rem 5%;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .footer-logo .jb  { color: var(--accent1); }
+  .footer-logo .amp { color: var(--accent3); }
+
+  .footer-brand p {
+    font-size: 0.83rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    line-height: 1.65;
+  }
+
+  .footer-col h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.1rem;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+
+  .footer-col a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.87rem;
+    transition: color 0.2s;
+    line-height: 1.4;
+  }
+
+  .footer-col a:hover { color: var(--text); }
+
+  .footer-bottom {
+    padding: 1.2rem 5%;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .footer-copy { font-size: 0.78rem; color: var(--muted); }
+
+  /* SOBRE NÓS */
+  .about-section {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+
+  .about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-intro-text p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-intro-text p:last-child { margin-bottom: 0; }
+
+  .about-intro-text p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .about-highlight {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .highlight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .highlight-card:hover { border-color: rgba(0,229,160,0.3); }
+
+  .highlight-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--hl-color, var(--accent1));
+  }
+
+  .highlight-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--hl-color, var(--accent1));
+    letter-spacing: -0.01em;
+  }
+
+  .highlight-card p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* MISSÃO & VISÃO */
+  .mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+  }
+
+  .mv-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .mv-card:hover {
+    border-color: rgba(0,229,160,0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  }
+
+  .mv-card::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 2rem; right: 2rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    opacity: 0.04;
+    line-height: 1;
+    color: var(--accent1);
+    pointer-events: none;
+  }
+
+  .mv-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .mv-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .mv-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* VALORES */
+  .values-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .value-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.8rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .value-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--val-color, var(--accent1));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .value-card:hover { border-color: rgba(0,229,160,0.3); transform: translateY(-3px); }
+  .value-card:hover::before { transform: scaleX(1); }
+
+  .value-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--val-color, var(--accent1));
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .value-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .value-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .features-inner { grid-template-columns: 1fr; }
+    .features-visual { display: none; }
+    .footer-main { grid-template-columns: 1fr 1fr; }
+    .about-intro { grid-template-columns: 1fr; gap: 2.5rem; }
+    .mv-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 4%; }
+    .nav-links { display: none; }
+    section { padding: 4rem 5%; }
+    .hero { padding: 7rem 5% 4rem; }
+    .apps-grid { grid-template-columns: 1fr; }
+    .consulting-cta-banner { flex-direction: column; text-align: center; }
+    .footer-main { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1       { font-size: 2rem; }
+    .section-title { font-size: 1.6rem; }
+    .hero-stats    { gap: 1.5rem; }
+    .stat-number   { font-size: 1.6rem; }
+    .apps-grid     { border-radius: 14px; }
+    .service-card  { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <span class="jb">JB</span> Process <span class="amp">&</span> Tech Consultoria
+  </a>
+  <ul class="nav-links">
+    <li><a href="#apps">Aplicativos</a></li>
+    <li><a href="#consulting">Consultoria</a></li>
+    <li><a href="#sobre">Sobre nós</a></li>
+    <li><a href="#content">Conteúdo</a></li>
+    <li><a href="#newsletter" class="nav-cta">Fale conosco →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <div class="hero-badge">
+    <div class="badge-dot"></div>
+    Consultoria · Treinamento · Tecnologia
+  </div>
+
+  <p class="hero-company">JB Process &amp; Tech Consultoria</p>
+
+  <h1>
+    Transforme processos.<br>
+    Elimine desperdícios.<br>
+    <em>Cresça com método.</em>
+  </h1>
+
+  <p class="hero-subtitle">
+    Consultoria especializada em Lean, 5S, Kaizen e Lean Six Sigma aliada a aplicativos próprios de planejamento e análise — tudo para elevar a eficiência do seu negócio.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#consulting" class="btn-primary">Ver serviços →</a>
+    <a href="#apps" class="btn-secondary">Conhecer os apps</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-number">2<span>+</span></div>
+      <div class="stat-label">Aplicativos especializados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4<span>+</span></div>
+      <div class="stat-label">Metodologias dominadas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">100<span>%</span></div>
+      <div class="stat-label">Foco em resultados reais</div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<section class="apps-section" id="apps">
+  <div class="apps-header">
+    <div class="section-tag">Nossas Ferramentas Digitais</div>
+    <h2 class="section-title">Duas soluções. Um ecossistema completo.</h2>
+    <p class="section-desc">
+      Desenvolvidos pela JB Process &amp; Tech, nossos aplicativos cobrem todo o ciclo — do planejamento à análise e melhoria contínua.
+    </p>
+  </div>
+
+  <div class="apps-grid">
+    <!-- PLANNER -->
+    <div class="app-card planner">
+      <div class="app-icon icon-planner">📋</div>
+      <div class="app-label label-planner">App 01 — Planejamento</div>
+      <h3 class="app-name">Planner</h3>
+      <p class="app-desc">
+        Planejamento inteligente de atividades e projetos. Visualize cronogramas, gerencie equipes e acompanhe o progresso em tempo real com uma interface simples e poderosa.
+      </p>
+      <ul class="app-features">
+        <li><span class="feature-dot dot-planner"></span>Gestão completa de tarefas e projetos</li>
+        <li><span class="feature-dot dot-planner"></span>Cronograma visual — Gantt &amp; Kanban</li>
+        <li><span class="feature-dot dot-planner"></span>Acompanhamento de metas e prazos</li>
+        <li><span class="feature-dot dot-planner"></span>Relatórios e dashboards de progresso</li>
+        <li><span class="feature-dot dot-planner"></span>Colaboração e gestão de equipes</li>
+      </ul>
+      <a href="https://planner.ind.br" target="_blank" class="app-cta cta-planner">Explorar o Planner →</a>
+    </div>
+
+    <!-- LEAN PLATFORM -->
+    <div class="app-card lean">
+      <div class="app-icon icon-lean">📊</div>
+      <div class="app-label label-lean">App 02 — Melhoria Contínua</div>
+      <h3 class="app-name">Lean Analysis Platform</h3>
+      <p class="app-desc">
+        Plataforma completa com ferramentas de melhoria contínua. Aplique Lean, Six Sigma, PDCA, 5S e Kaizen para otimizar processos e eliminar desperdícios com dados reais.
+      </p>
+      <ul class="app-features">
+        <li><span class="feature-dot dot-lean"></span>Ferramentas Lean &amp; Six Sigma integradas</li>
+        <li><span class="feature-dot dot-lean"></span>Análise de causas — Ishikawa e 5 Porquês</li>
+        <li><span class="feature-dot dot-lean"></span>Mapeamento de Fluxo de Valor (VSM)</li>
+        <li><span class="feature-dot dot-lean"></span>Ciclo PDCA interativo e monitorado</li>
+        <li><span class="feature-dot dot-lean"></span>KPIs e indicadores de processo em tempo real</li>
+      </ul>
+      <a href="https://lean.ind.br" target="_blank" class="app-cta cta-lean">Explorar a Lean Platform →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTORIA & TREINAMENTOS -->
+<section class="consulting-section" id="consulting">
+  <div class="consulting-header">
+    <div class="section-tag">Consultoria &amp; Treinamentos</div>
+    <h2 class="section-title">Metodologias que geram resultados reais</h2>
+    <p class="section-desc">
+      A JB Process &amp; Tech oferece consultoria especializada e treinamentos práticos para capacitar equipes e transformar a cultura de melhoria contínua da sua empresa.
+    </p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card" style="--card-accent:#00e5a0;">
+      <span class="service-emoji">🧹</span>
+      <h3 class="service-name">Programa 5S</h3>
+      <p class="service-desc">
+        Implantação e sustentação do 5S — Seiri, Seiton, Seiso, Seiketsu e Shitsuke. Criamos ambientes de trabalho mais seguros, organizados e produtivos com auditorias e planos de ação personalizados para a realidade da sua empresa.
+      </p>
+      <div class="service-tags">
+        <span class="service-tag">Consultoria</span>
+        <span class="service-tag">Treinamento</span>
+        <span class="service-tag">Auditoria 5S</span>
+        <span class="service-tag">Implantação</span>
+      </div>
+    </div>
+
+    <div class="service-card" style="--card-accent:#5b6ef5;">
+      <span class="service-emoji">🔄</span>
+      <h3 class="service-name">Kaizen &amp; Melhoria Contínua</h3>
+      <p class="service-desc">
+        Facilitação de eventos Kaizen para eliminar desperdícios, reduzir tempo de ciclo e aumentar a produtividade. Trabalhamos com equipes multifuncionais para gerar melhorias rápidas e sustentáveis.
+      </p>
+      <div class="service-tags">
+        <span class="service-tag">Eventos Kaizen</span>
+        <span class="service-tag">Workshops</span>
+        <span class="service-tag">PDCA</span>
+        <span class="service-tag">Gemba Walk</span>
+      </div>
+    </div>
+
+    <div class="service-card" style="--card-accent:#f5a623;">
+      <span class="service-emoji">🏭</span>
+      <h3 class="service-name">Lean Manufacturing</h3>
+      <p class="service-desc">
+        Diagnóstico e implementação de princípios Lean na manufatura e nos serviços. VSM, redução de estoques, fluxo contínuo, produção puxada e padronização de processos para resultados duradouros.
+      </p>
+      <div class="service-tags">
+        <span class="service-tag">VSM</span>
+        <span class="service-tag">Just-in-Time</span>
+        <span class="service-tag">Kanban</span>
+        <span class="service-tag">Poka-Yoke</span>
+      </div>
+    </div>
+
+    <div class="service-card" style="--card-accent:#e55264;">
+      <span class="service-emoji">📐</span>
+      <h3 class="service-name">Lean Six Sigma</h3>
+      <p class="service-desc">
+        Treinamentos e projetos de Lean Six Sigma para reduzir variabilidade e defeitos. Do Yellow Belt ao Green Belt — formamos multiplicadores internos para garantir resultados duradouros e cultura de dados.
+      </p>
+      <div class="service-tags">
+        <span class="service-tag">Yellow Belt</span>
+        <span class="service-tag">Green Belt</span>
+        <span class="service-tag">DMAIC</span>
+        <span class="service-tag">Análise de Dados</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="consulting-cta-banner">
+    <div class="cta-banner-text">
+      <h3>Pronto para transformar os processos da sua empresa?</h3>
+      <p>
+        Entre em contato e receba uma avaliação inicial gratuita. Nossa equipe vai entender seus desafios e propor o melhor caminho.
+      </p>
+    </div>
+    <a href="#newsletter" class="btn-primary" style="flex-shrink:0;">Falar com especialista →</a>
+  </div>
+</section>
+
+<!-- SOBRE NÓS -->
+<section class="about-section" id="sobre">
+
+  <!-- INTRO -->
+  <div class="about-intro">
+    <div>
+      <div class="section-tag">Sobre nós</div>
+      <h2 class="section-title">Nascemos da vivência real na indústria</h2>
+    </div>
+    <div class="about-intro-text">
+      <p>
+        Nossa plataforma nasceu da vivência real na indústria, onde <strong>decisões estratégicas muitas vezes são tomadas com base em dados dispersos</strong>, análises superficiais ou ferramentas desconectadas da metodologia.
+      </p>
+      <p>
+        Acreditamos que estatística não deve ser complexa, nem restrita ao meio acadêmico. Ela deve ser <strong>aplicada, estratégica e orientada a resultado</strong>.
+      </p>
+      <p>
+        Desenvolvemos uma solução que integra análise estatística, melhoria contínua e estrutura metodológica em um único ambiente profissional. Nosso objetivo é <strong>transformar dados operacionais em decisões claras, confiáveis e com impacto financeiro mensurável</strong>.
+      </p>
+      <p>
+        Somos movidos pela excelência técnica, pela simplicidade inteligente e pelo compromisso com a performance industrial.
+      </p>
+    </div>
+  </div>
+
+  <!-- MISSÃO & VISÃO -->
+  <div class="mv-grid">
+    <div class="mv-card" data-label="M">
+      <span class="mv-icon">🎯</span>
+      <h3>Missão</h3>
+      <p>
+        Capacitar profissionais e organizações a tomarem decisões estratégicas baseadas em dados, por meio de uma plataforma estruturada que integra estatística aplicada, metodologia de melhoria contínua e visão executiva.
+      </p>
+      <br>
+      <p>
+        Nossa missão é reduzir a distância entre análise técnica e resultado operacional, tornando a melhoria contínua mais acessível, estruturada e orientada à performance real.
+      </p>
+    </div>
+
+    <div class="mv-card" data-label="V">
+      <span class="mv-icon">🔭</span>
+      <h3>Visão</h3>
+      <p>
+        Ser reconhecida como a principal plataforma de análise estatística aplicada à melhoria contínua e à transformação operacional na indústria, contribuindo para um ambiente produtivo mais eficiente, previsível e orientado por dados.
+      </p>
+      <br>
+      <p>
+        Buscamos impulsionar a evolução da engenharia e da gestão industrial por meio de tecnologia, metodologia e inteligência aplicada.
+      </p>
+    </div>
+  </div>
+
+  <!-- VALORES -->
+  <div class="section-tag" style="text-align:center; margin-bottom:1rem;">Nossos Valores</div>
+  <h2 class="values-title">Os princípios que guiam cada decisão</h2>
+
+  <div class="values-grid">
+
+    <div class="value-card" style="--val-color:#00e5a0;">
+      <div class="value-num">01</div>
+      <h4>Precisão Técnica</h4>
+      <p>Tomamos decisões com base em dados confiáveis, análises estruturadas e fundamentos estatísticos sólidos.</p>
+    </div>
+
+    <div class="value-card" style="--val-color:#5b6ef5;">
+      <div class="value-num">02</div>
+      <h4>Simplicidade Inteligente</h4>
+      <p>Transformamos complexidade técnica em soluções claras e aplicáveis ao dia a dia da operação.</p>
+    </div>
+
+    <div class="value-card" style="--val-color:#f5a623;">
+      <div class="value-num">03</div>
+      <h4>Excelência Operacional</h4>
+      <p>Foco constante em eficiência, estabilidade e melhoria sustentável — sem atalhos.</p>
+    </div>
+
+    <div class="value-card" style="--val-color:#00c4ff;">
+      <div class="value-num">04</div>
+      <h4>Inovação Aplicada</h4>
+      <p>Integramos tecnologia e estatística para resolver problemas reais da indústria com soluções práticas.</p>
+    </div>
+
+    <div class="value-card" style="--val-color:#e55264;">
+      <div class="value-num">05</div>
+      <h4>Compromisso com Resultado</h4>
+      <p>Cada análise deve gerar impacto mensurável em custo, qualidade, produtividade ou confiabilidade.</p>
+    </div>
+
+    <div class="value-card" style="--val-color:#a78bfa;">
+      <div class="value-num">06</div>
+      <h4>Ética e Transparência</h4>
+      <p>Atuamos com responsabilidade, clareza e respeito aos dados e às decisões que eles orientam.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- POR QUE NÓS -->
+<section class="features-section" id="features">
+  <div class="features-inner">
+    <div>
+      <div class="section-tag">Por que a JB Process &amp; Tech</div>
+      <h2 class="section-title">Consultoria especializada aliada à tecnologia própria</h2>
+      <p class="section-desc">
+        Unimos experiência prática em melhoria contínua com ferramentas digitais desenvolvidas por nós — uma combinação única no mercado.
+      </p>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <div>
+            <h3>Metodologias comprovadas</h3>
+            <p>5S, Kaizen, Lean Manufacturing e Lean Six Sigma aplicados com rigor técnico e foco no contexto real da sua operação.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div>
+            <h3>Decisões orientadas por dados</h3>
+            <p>Dashboards e KPIs em tempo real para suportar a tomada de decisão rápida e reduzir desperdícios com embasamento técnico.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔄</div>
+          <div>
+            <h3>Consultoria integrada à tecnologia</h3>
+            <p>Nossos aplicativos complementam os projetos de consultoria — do planejamento à análise de resultados em um único ecossistema.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎓</div>
+          <div>
+            <h3>Treinamentos práticos e aplicados</h3>
+            <p>Capacitamos as equipes para que a melhoria contínua se torne parte da cultura — não apenas um projeto pontual.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-visual">
+      <div class="dashboard-mock">
+        <div class="mock-header">
+          <span class="mock-title">Lean KPIs — Dashboard</span>
+          <div class="mock-dots">
+            <div class="mock-dot" style="background:#f5a623;"></div>
+            <div class="mock-dot" style="background:#00e5a0;"></div>
+            <div class="mock-dot" style="background:#5b6ef5;"></div>
+          </div>
+        </div>
+        <div class="mock-bars">
+          <div class="mock-bar-row">
+            <span class="mock-bar-label">Eficiência</span>
+            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:82%;background:var(--accent1);"></div></div>
+            <span>82%</span>
+          </div>
+          <div class="mock-bar-row">
+            <span class="mock-bar-label">PDCA</span>
+            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:67%;background:var(--accent2);"></div></div>
+            <span>67%</span>
+          </div>
+          <div class="mock-bar-row">
+            <span class="mock-bar-label">OEE</span>
+            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:91%;background:var(--accent3);"></div></div>
+            <span>91%</span>
+          </div>
+          <div class="mock-bar-row">
+            <span class="mock-bar-label">5S Score</span>
+            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:88%;background:var(--accent1);"></div></div>
+            <span>88%</span>
+          </div>
+        </div>
+        <div class="mock-kpis">
+          <div class="mock-kpi">
+            <div class="mock-kpi-val" style="color:var(--accent1);">↑ 23%</div>
+            <div class="mock-kpi-label">Produtividade</div>
+          </div>
+          <div class="mock-kpi">
+            <div class="mock-kpi-val" style="color:var(--accent2);">12</div>
+            <div class="mock-kpi-label">Projetos Ativos</div>
+          </div>
+          <div class="mock-kpi">
+            <div class="mock-kpi-val" style="color:var(--accent3);">↓ 18%</div>
+            <div class="mock-kpi-label">Desperdício</div>
+          </div>
+          <div class="mock-kpi">
+            <div class="mock-kpi-val" style="color:var(--accent1);">98%</div>
+            <div class="mock-kpi-label">SLA Atingido</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="floating-badge badge-top">
+        ✅ <span>Kaizen concluído — +15% OEE</span>
+      </div>
+      <div class="floating-badge badge-bottom">
+        📈 <span style="color:var(--accent1);">+23%</span>&nbsp;eficiência este mês
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="content-section" id="content">
+  <div class="content-header">
+    <div>
+      <div class="section-tag">Conteúdo</div>
+      <h2 class="section-title">Conhecimento que transforma</h2>
+      <p class="section-desc">Artigos, guias e tutoriais sobre Lean, 5S, Kaizen e gestão de projetos.</p>
+    </div>
+    <a href="#" class="btn-secondary">Ver todos →</a>
+  </div>
+
+  <div class="posts-grid">
+    <div class="post-card">
+      <div class="post-thumb thumb-2">🧹</div>
+      <div class="post-body">
+        <span class="post-tag tag-green">5S</span>
+        <h3 class="post-title">Como implantar o programa 5S e manter os resultados a longo prazo</h3>
+        <p class="post-excerpt">Aprenda o passo a passo para uma implantação de 5S que vai além da organização visual e cria cultura de disciplina.</p>
+        <div class="post-meta">
+          <span>7 min de leitura</span>
+          <span>Melhoria Contínua</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-thumb thumb-1">🔄</div>
+      <div class="post-body">
+        <span class="post-tag tag-blue">Kaizen</span>
+        <h3 class="post-title">Eventos Kaizen na prática: como facilitar e obter resultados em 5 dias</h3>
+        <p class="post-excerpt">Como planejar e conduzir eventos Kaizen com equipes multifuncionais para gerar impacto real e sustentável.</p>
+        <div class="post-meta">
+          <span>9 min de leitura</span>
+          <span>Lean Manufacturing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-thumb thumb-3">🗺️</div>
+      <div class="post-body">
+        <span class="post-tag tag-orange">Lean Manufacturing</span>
+        <h3 class="post-title">VSM: guia para identificar e eliminar desperdícios no seu processo</h3>
+        <p class="post-excerpt">Domine o Mapeamento de Fluxo de Valor e saiba como usá-lo para priorizar melhorias de alto impacto.</p>
+        <div class="post-meta">
+          <span>8 min de leitura</span>
+          <span>Lean</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-thumb thumb-4">📐</div>
+      <div class="post-body">
+        <span class="post-tag tag-red">Lean Six Sigma</span>
+        <h3 class="post-title">DMAIC explicado: como resolver problemas com dados e rigor estatístico</h3>
+        <p class="post-excerpt">Entenda cada fase do DMAIC e como aplicá-lo para reduzir defeitos e variabilidade em processos industriais.</p>
+        <div class="post-meta">
+          <span>10 min de leitura</span>
+          <span>Six Sigma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="section-tag">Newsletter &amp; Contato</div>
+    <h2 class="section-title">Fique por dentro das novidades</h2>
+    <p class="section-desc">
+      Receba conteúdos exclusivos sobre Lean, 5S, Kaizen, Six Sigma e atualizações dos nossos aplicativos diretamente no seu e-mail.
+    </p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="seu@email.com">
+      <a href="#" class="btn-primary" onclick="this.textContent='Inscrito! ✓'; return false;">Inscrever →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a class="footer-logo" href="#">
+        <span class="jb">JB</span> Process <span class="amp">&</span> Tech Consultoria
+      </a>
+      <p>
+        Consultoria e treinamentos em Lean, 5S, Kaizen e Lean Six Sigma aliados a tecnologia própria para transformar processos e gerar resultados reais e duradouros.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#consulting">Consultoria 5S</a></li>
+        <li><a href="#consulting">Kaizen &amp; Melhoria Contínua</a></li>
+        <li><a href="#consulting">Lean Manufacturing</a></li>
+        <li><a href="#consulting">Lean Six Sigma</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Aplicativos</h4>
+      <ul>
+        <li><a href="#apps">Planner</a></li>
+        <li><a href="#apps">Lean Analysis Platform</a></li>
+        <li><a href="#content">Blog &amp; Conteúdo</a></li>
+        <li><a href="#newsletter">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 JB Process &amp; Tech Consultoria — Todos os direitos reservados</span>
+    <span class="footer-copy">Lean · 5S · Kaizen · Six Sigma</span>
+  </div>
+</footer>
+
+</body>
+</html>
