@@ -542,9 +542,11 @@
   .features-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 4rem;
     align-items: center;
     text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
   .features-list {
@@ -592,7 +594,7 @@
 
   .features-visual {
     position: relative;
-    height: 480px;
+    height: 560px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -604,8 +606,8 @@
     border-radius: 20px;
     padding: 1.5rem;
     width: 100%;
-    max-width: 390px;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    max-width: 480px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.6);
     animation: floatCard 6s ease-in-out infinite;
   }
 
@@ -623,21 +625,21 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .mock-title { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; }
+  .mock-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; }
   .mock-dots  { display: flex; gap: 5px; }
   .mock-dot   { width: 9px; height: 9px; border-radius: 50%; }
 
-  .mock-bars { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.2rem; }
+  .mock-bars { display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 1.5rem; }
 
   .mock-bar-row {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    font-size: 0.7rem;
+    font-size: 0.82rem;
     color: var(--muted);
   }
 
-  .mock-bar-label { width: 65px; flex-shrink: 0; }
+  .mock-bar-label { width: 75px; flex-shrink: 0; }
 
   .mock-bar-track {
     flex: 1;
@@ -651,32 +653,32 @@
   .mock-bar-fill { height: 100%; border-radius: 4px; animation: barGrow 2s ease both; }
   @keyframes barGrow { from { width: 0; } }
 
-  .mock-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .mock-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
 
   .mock-kpi {
     background: var(--surface);
     border-radius: 10px;
-    padding: 0.75rem;
+    padding: 1rem;
     border: 1px solid var(--border);
     min-width: 0;
   }
 
   .mock-kpi-val {
     font-family: 'Syne', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.02em;
   }
 
-  .mock-kpi-label { font-size: 0.67rem; color: var(--muted); margin-top: 0.15rem; }
+  .mock-kpi-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
 
   .floating-badge {
     position: absolute;
     background: var(--surface2);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.65rem 1rem;
-    font-size: 0.78rem;
+    border-radius: 12px;
+    padding: 0.85rem 1.3rem;
+    font-size: 0.9rem;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -1534,7 +1536,7 @@
 
 <!-- POR QUE NÓS -->
 <section class="features-section" id="features">
-  <div style="text-align:center; margin-bottom:3rem;">
+  <div style="text-align:center; margin-bottom:3.5rem; max-width:800px; margin-left:auto; margin-right:auto;">
     <div class="section-tag">Por que a JB Process &amp; Tech</div>
     <h2 class="section-title" style="max-width:100%; margin:0 auto;">Consultoria especializada aliada à tecnologia própria</h2>
     <p class="section-desc" style="margin:1rem auto 0; text-align:center;">
