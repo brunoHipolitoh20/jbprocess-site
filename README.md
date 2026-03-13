@@ -81,16 +81,6 @@ jbprocess-site/
 
 O site é servido diretamente pela branch `main` via GitHub Pages.
 
-**DNS configurado no registro.br:**
-
-| Tipo | Nome | Destino |
-|---|---|---|
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-| CNAME | www | brunohipolitoh20.github.io |
-
 ---
 
 ## 📄 Licença
