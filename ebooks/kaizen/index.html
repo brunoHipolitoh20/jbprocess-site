@@ -11,7 +11,7 @@
 <noscript>Ative o JavaScript para abrir este e-book.</noscript>
 <script>
 (async()=>{
-  const parts=["data/part0.b64","data/part1.b64","data/part2a.b64","data/part2.b64","data/part3.b64","data/part4.b64"];
+  const parts=["data/part0.b64","data/part1.b64","data/part2.b64","data/part2a.b64","data/part3.b64","data/part4.b64"];
   const texts=await Promise.all(parts.map(async p=>{
     const r=await fetch(p);
     if(!r.ok) throw new Error('Falha ao carregar '+p);
