@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KAIZEN — A Disciplina da Melhoria Contínua | JB Process & Tech</title>
+<style>html,body{margin:0;min-height:100%;font-family:Arial,sans-serif;background:#EDF2F5;color:#172330}.loading{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px}.loading strong{color:#0B7974}</style>
+</head>
+<body>
+<div class="loading"><div><strong>JB Process &amp; Tech</strong><br>Carregando e-book…</div></div>
+<noscript>Ative o JavaScript para abrir este e-book.</noscript>
+<script>
+(async()=>{
+  const parts=["data/part0.b64","data/part1.b64","data/part2a.b64","data/part2.b64","data/part3.b64","data/part4.b64"];
+  const texts=await Promise.all(parts.map(async p=>{
+    const r=await fetch(p);
+    if(!r.ok) throw new Error('Falha ao carregar '+p);
+    return (await r.text()).trim();
+  }));
+  const b64=texts.join('');
+  const bytes=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+  if(typeof DecompressionStream==='undefined') throw new Error('Navegador sem suporte à descompressão');
+  const html=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+  document.open();
+  document.write(html);
+  document.close();
+})().catch(err=>{
+  console.error(err);
+  document.body.innerHTML='<div class="loading"><div><strong>Não foi possível carregar o e-book.</strong><br>Atualize a página ou utilize um navegador atualizado.</div></div>';
+});
+</script>
+</body>
+</html>
