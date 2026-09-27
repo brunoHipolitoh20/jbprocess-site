@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="E-book técnico aprofundado sobre Six Sigma: DMAIC, VOC, CTQ, MSA, capacidade, testes, regressão, DOE, FMEA, CEP, aplicação industrial e interpretação de resultados." name="description"/>
+<title>Six Sigma — Variação, Dados e Excelência de Processo | JB Process &amp; Tech</title>
+<style>
+:root{
+--navy:#071A2B;--navy2:#0B2C46;--blue:#174A73;--teal:#0B7974;--cyan:#13A9A2;
+--green:#237A4A;--amber:#B26A0D;--red:#B63E35;--purple:#6B5FA8;--ink:#172330;
+--muted:#627283;--line:#D9E2E9;--soft:#F4F8FA;--white:#FFF;--shadow:0 15px 42px rgba(7,26,43,.10)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#EDF2F5;color:var(--ink);font:16px/1.68 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--purple)}
+.hero{min-height:94vh;display:flex;align-items:center;position:relative;overflow:hidden;color:white;
+background:radial-gradient(circle at 82% 19%,rgba(19,169,162,.30),transparent 28%),radial-gradient(circle at 72% 75%,rgba(35,122,74,.18),transparent 25%),linear-gradient(135deg,#05131F,#092B45 58%,#0B6267)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(black,transparent)}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-180px;bottom:-220px;border:1px solid #ffffff20;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff05}
+.hero-inner{width:100%;max-width:1200px;margin:auto;padding:80px 42px;position:relative;z-index:1;text-align:center}
+.premium-cover:after{content:"2026";position:absolute;right:40px;top:15px;font-size:84px;font-weight:900;color:#ffffff08;letter-spacing:-.06em}
+.brand{font-size:14px;letter-spacing:.17em;text-transform:uppercase;font-weight:800;color:#A7F3D0}
+.cover-meta{margin-top:10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#A9C9D9}
+.cover-grid{display:grid;grid-template-columns:1fr;justify-items:center;margin-top:32px;text-align:center}
+.cover-left{display:flex;flex-direction:column;align-items:center;max-width:940px}
+.eyebrow{display:inline-block;margin-top:34px;padding:7px 12px;border:1px solid #ffffff35;border-radius:999px;color:#D8F5F0;font-size:13px}
+h1{font-size:clamp(62px,10vw,112px);line-height:.88;letter-spacing:-.06em;margin:22px 0 18px}
+.subtitle{font-size:27px;line-height:1.35;max-width:930px;color:#DBE8F0;margin:auto}
+.cover-strap{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#9FDCD6;max-width:880px;margin:21px auto 0}
+.hero-note{margin:34px auto 0;max-width:840px;color:#C7D8E4;font-size:19px}
+.cover-bottom{margin-top:44px;padding-top:17px;border-top:1px solid #ffffff28;color:#C8DAE5;font-size:13px;letter-spacing:.045em;text-align:center;max-width:900px;margin-left:auto;margin-right:auto}
+nav{position:sticky;top:0;z-index:30;background:#fffffff8;border-bottom:1px solid var(--line);backdrop-filter:blur(9px)}
+nav .inner{max-width:1200px;margin:auto;padding:10px 30px;display:flex;gap:6px;overflow:auto}
+nav a{white-space:nowrap;text-decoration:none;font-size:12.5px;color:var(--blue);padding:8px 9px;border-radius:8px}
+nav a:hover{background:#EDF4F7}
+main{max-width:1200px;margin:auto;padding:34px}
+section{background:white;border-radius:24px;padding:42px;margin:28px 0;box-shadow:var(--shadow)}
+.chapter{border-top:6px solid var(--purple)}
+.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:850;color:var(--purple)}
+h2{font-size:37px;line-height:1.1;letter-spacing:-.025em;margin:8px 0 14px;color:var(--navy)}
+h3{font-size:24px;line-height:1.25;color:var(--blue);margin:31px 0 10px}
+h4{font-size:17px;color:var(--navy);margin:20px 0 7px}
+.lead{font-size:19px;color:var(--muted);max-width:970px}.small{font-size:13px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:19px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.card{border:1px solid var(--line);border-radius:18px;padding:20px;background:white}.soft{background:var(--soft)}.card h3,.card h4{margin-top:0}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#E5F7F4;color:#0A635F;font-size:12px;font-weight:800}
+.callout{border-left:5px solid var(--teal);background:#EFFAF8;border-radius:14px;padding:18px 20px;margin:21px 0}
+.warn{border-left-color:var(--amber);background:#FFF8EA}.danger{border-left-color:var(--red);background:#FFF1EF}.ok{border-left-color:var(--green);background:#F0FAF4}
+.quote{font-size:23px;line-height:1.5;color:var(--navy);font-weight:700;border-left:4px solid var(--cyan);padding:10px 0 10px 22px;margin:22px 0}
+.attribution{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:8px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:17px 0}th{background:#EAF1F6;color:var(--navy);text-align:left;padding:11px;border-bottom:2px solid #C7D3DD}td{padding:10px 11px;border-bottom:1px solid #E4EAF0;vertical-align:top}tr:hover td{background:#FAFCFD}
+ul,ol{padding-left:23px}li{margin:6px 0}
+.toc{columns:2;column-gap:34px}.toc a{display:block;break-inside:avoid;padding:9px 0;border-bottom:1px solid #E6EBEF;text-decoration:none;color:var(--blue)}.toc b{color:var(--purple);display:inline-block;min-width:36px}
+.flow{display:flex;gap:9px;align-items:stretch;flex-wrap:wrap;margin:20px 0}.step{flex:1;min-width:135px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;font-weight:800;color:var(--blue)}.arrow{display:flex;align-items:center;font-size:23px;font-weight:900;color:var(--purple)}
+.visual{border:1px solid var(--line);border-radius:20px;padding:19px;background:linear-gradient(#FCFEFF,#F3F8FA);margin:24px 0;overflow:hidden}.visual-title{font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:850;color:var(--muted);margin-bottom:8px}svg{display:block;width:100%;height:auto}
+.pill{display:inline-block;padding:6px 9px;border-radius:999px;background:#EDF4F8;color:var(--blue);font-size:13px;font-weight:700;margin:3px}
+.formula{display:block;background:#091F32;color:#E5F5F3;border-radius:14px;padding:16px 18px;font-family:Consolas,monospace;margin:12px 0}
+.author{border-left:5px solid var(--blue);background:#F4F8FB}.author h3{margin-top:0}.author .name{font-size:21px;color:var(--navy);font-weight:850}.author .contrib{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--purple);font-weight:850}
+.timeline{position:relative;padding-left:30px}.timeline:before{content:"";position:absolute;left:9px;top:6px;bottom:8px;width:3px;background:#C8E3DF}.time{position:relative;margin:19px 0}.time:before{content:"";position:absolute;left:-26px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--teal);border:3px solid #DDF2EF}.time b{color:var(--navy)}
+.case{background:#081E30;color:#E5EEF4}.case h2,.case h3,.case h4,.case .quote{color:white}.case .lead,.case .small{color:#C9D8E3}.case .card{background:#ffffff0d;border-color:#ffffff20}.case table{background:white;color:var(--ink)}.case th{background:#E8F0F5}
+.kpi{font-size:31px;font-weight:900;color:var(--navy)}.kpi-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.case .kpi,.case .kpi-label{color:white}
+.refs li{margin:11px 0}.refs a{word-break:break-word}.reference-note{background:#F8FAFB;border:1px solid var(--line);border-radius:15px;padding:16px;margin-top:22px;font-size:13px;color:#516171}.reference-note b{color:var(--navy)}
+.glossary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.term{border:1px solid var(--line);border-radius:14px;padding:13px}.term b{color:var(--navy)}
+.s-card{position:relative;overflow:hidden}.s-card .num{font-size:54px;line-height:1;font-weight:900;color:#D8EDEB;position:absolute;right:12px;top:9px}.s-card strong{display:block;font-size:20px;color:var(--navy);margin-bottom:4px}.s-card em{font-style:normal;font-size:12px;color:var(--purple);text-transform:uppercase;font-weight:800;letter-spacing:.08em}
+.score{display:grid;grid-template-columns:160px 1fr 60px;gap:10px;align-items:center;margin:8px 0;font-size:13px}.bar{height:13px;border-radius:999px;background:#E7EDF1;overflow:hidden}.bar i{height:100%;display:block;background:linear-gradient(90deg,#0B7974,#13A9A2);border-radius:999px}
+.message-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.message-card{position:relative;border:1px solid var(--line);border-radius:18px;padding:20px 20px 18px 58px;background:linear-gradient(135deg,#FFFFFF,#F6FAFB)}.message-card span{position:absolute;left:17px;top:18px;width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:white;font-size:11px;font-weight:900}.message-card strong{display:block;color:var(--navy);font-size:16px;line-height:1.35}.message-card p{margin:7px 0 0;color:var(--muted);font-size:14px}
+.author-signoff{margin-top:26px;padding:24px;border-radius:18px;background:linear-gradient(135deg,#071A2B,#0B4F59);color:white}.author-signoff span{display:block;font-size:11px;letter-spacing:.14em;color:#A7F3D0;text-transform:uppercase;font-weight:800}.author-signoff strong{display:block;font-size:24px;margin-top:5px}
+.back-toc{float:right;font-size:11px;text-decoration:none;color:var(--purple);background:#EAF7F5;border-radius:999px;padding:5px 9px;margin-top:-2px}
+.footer{text-align:center;padding:44px 30px 65px;color:#657586;font-size:13px}
+@media(max-width:900px){main{padding:18px}section{padding:28px}.grid2,.grid3,.grid4,.grid5,.glossary,.message-grid{grid-template-columns:1fr}.toc{columns:1}h2{font-size:31px}.hero-inner{padding:58px 24px}.subtitle{font-size:21px}.premium-cover:after{right:20px;top:20px;font-size:64px}.score{grid-template-columns:110px 1fr 45px}}
+@page{size:A4;margin:15mm 14mm 17mm 14mm;@bottom-left{content:"JB Process & Tech • SIX SIGMA";font-size:8pt;color:#7A8792}@bottom-right{content:"Página " counter(page);font-size:8pt;color:#7A8792}}
+@page cover{size:A4;margin:0}
+@media print{
+*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+body{background:#fff;font-size:10.2pt;line-height:1.52}
+nav{display:none!important}main{max-width:none;padding:0}
+.hero{page:cover;width:210mm;height:297mm;min-height:297mm;margin:0;break-after:page;overflow:hidden}
+.hero-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:297mm;max-width:none;padding:26mm 18mm 17mm;text-align:center}
+.cover-grid{grid-template-columns:1fr;justify-items:center;margin-top:14mm}.cover-left{max-width:150mm}.cover-left h1{font-size:49pt}.subtitle{font-size:20pt}.hero-note{font-size:10.5pt;max-width:128mm}.cover-strap{font-size:8.5pt}.cover-bottom{position:absolute;left:18mm;right:18mm;bottom:18mm}.premium-cover:after{right:18mm;top:14mm;font-size:52pt}
+section{box-shadow:none;border-radius:0;padding:0;margin:0 0 8mm;background:#fff}
+section.chapter{break-before:page;border-top:0;padding-top:0}#sumario{break-before:page}
+h2{font-size:23pt;margin-top:0}h3{font-size:14.5pt}h4{font-size:11.5pt}h2,h3,h4{break-after:avoid-page}
+p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.message-grid{gap:4mm}.visual,.card,table{break-inside:avoid}.back-toc{display:none}
+}
+
+:root{--purple:#6B5FA8}.phase{border-top:5px solid var(--purple)}.phase-letter{float:right;font-size:70px;font-weight:900;color:#EEEAFE;line-height:.8}.sigma-row{display:grid;grid-template-columns:110px 1fr 130px;gap:10px;align-items:center;margin:9px 0}.sigma-bar{height:15px;background:#E8EAF0;border-radius:999px;overflow:hidden}.sigma-bar i{display:block;height:100%;background:linear-gradient(90deg,#6B5FA8,#13A9A2);border-radius:999px}.message-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.message-card{position:relative;border:1px solid var(--line);border-radius:18px;padding:20px 20px 18px 58px;background:linear-gradient(135deg,#FFFFFF,#F7F6FB)}.message-card span{position:absolute;left:17px;top:18px;width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:#6B5FA8;color:white;font-size:11px;font-weight:900}.message-card strong{display:block;color:var(--navy);font-size:16px;line-height:1.35}.message-card p{margin:7px 0 0;color:var(--muted);font-size:14px}.author-signoff{margin-top:26px;padding:24px;border-radius:18px;background:linear-gradient(135deg,#071A2B,#3F376F);color:white}.author-signoff span{display:block;font-size:11px;letter-spacing:.14em;color:#D9D5FF;text-transform:uppercase;font-weight:800}.author-signoff strong{display:block;font-size:24px;margin-top:5px}.score{display:grid;grid-template-columns:180px 1fr 60px;gap:10px;align-items:center;margin:8px 0;font-size:13px}.bar{height:13px;border-radius:999px;background:#E7EDF1;overflow:hidden}.bar i{height:100%;display:block;background:linear-gradient(90deg,#6B5FA8,#13A9A2);border-radius:999px}
+.learning-box{border:1px solid #D8D3EB;border-radius:18px;padding:20px;margin:18px 0;background:linear-gradient(135deg,#FCFBFF,#F6F4FC)}
+.learning-box h4{margin-top:0;color:#4C437E}.learning-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:14px}
+.learn{border:1px solid #E1DDF0;background:white;border-radius:14px;padding:14px}.learn b{display:block;color:#071A2B;margin-bottom:5px}.learn p{margin:0;font-size:13.5px;color:#566675}
+.decision{border-left:5px solid #174A73;background:#EEF5F9;border-radius:14px;padding:18px 20px;margin:20px 0}.decision strong{color:#071A2B}
+.interpret{border-left:5px solid #6B5FA8;background:#F6F4FC;border-radius:14px;padding:18px 20px;margin:20px 0}.interpret strong{color:#463D76}
+.checklist{columns:2;column-gap:28px}.checklist li{break-inside:avoid}
+.matrix td:first-child{font-weight:700;color:#071A2B}
+.eq{background:#0B2134;color:#EAF4F6;border-radius:14px;padding:14px 16px;font-family:Consolas,monospace;margin:10px 0}
+.ex-card{border:1px solid #D9E2E9;border-radius:18px;padding:20px;margin:18px 0;background:#FBFCFD}.ex-card h4{margin-top:0}.ex-data{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.ex-data span{background:#EEF0FA;border-radius:999px;padding:6px 10px;font-size:13px;font-weight:700;color:#4B437C}
+.gate{display:grid;grid-template-columns:220px 1fr;gap:12px;margin:8px 0;align-items:start}.gate b{color:#6B5FA8;white-space:nowrap}.gate span{color:#556675}
+.tool-table td:nth-child(1){font-weight:700;color:#071A2B}
+.refchip{display:inline-block;background:#F0EEFA;color:#4E4585;border-radius:999px;padding:4px 8px;font-size:11.5px;font-weight:800;margin:2px}
+@media(max-width:900px){.learning-grid{grid-template-columns:1fr}.checklist{columns:1}.gate{grid-template-columns:1fr}.gate b{white-space:normal}}
+
+
+.chapter-intro-box{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin:18px 0 24px}
+.chapter-panel{border:1px solid #D8E1E8;border-radius:18px;padding:18px 20px;background:linear-gradient(135deg,#FFFFFF,#F7FAFC)}
+.chapter-panel h4{margin:0 0 8px;color:#174A73;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.chapter-panel p{margin:0;color:#566675;font-size:15px;line-height:1.66}
+.chapter-panel.objective{background:linear-gradient(135deg,#F7F5FD,#F2F7FB);border-color:#D9D3EC}
+.chapter-panel.objective h4{color:#6B5FA8}
+@media(max-width:900px){.chapter-intro-box{grid-template-columns:1fr}}
+
+.topic-intro{font-size:18px;line-height:1.72;color:#4E6070;margin:14px 0 10px;max-width:1040px}
+.topic-objective{font-size:16px;line-height:1.68;color:#253B4C;margin:0 0 24px;padding:14px 18px;border-left:4px solid #6B5FA8;background:#F7F5FC;border-radius:0 12px 12px 0}
+.topic-objective strong{color:#4C437E}
+</style></head><body>
+<header class="hero"><div class="hero-inner premium-cover">
+<div class="brand">JB Process &amp; Tech • Knowledge Series</div>
+<div class="cover-meta">Edição Técnica Premium • 2026 • Excelência Operacional</div>
+<div class="cover-grid"><div class="cover-left">
+<div class="eyebrow">E-book técnico aprofundado e aplicável</div>
+<h1>SIX SIGMA</h1>
+<div class="subtitle">Variação, Dados e Excelência de Processo</div>
+<p class="cover-strap">VOC • CTQ • DMAIC • MSA • Capacidade • CEP • Testes de Hipótese • Regressão • DOE • Controle</p>
+<p class="hero-note">Da definição do problema à sustentação: conceitos, fundamentos, aplicação passo a passo, critérios de interpretação e exemplos industriais para transformar dados em decisões melhores.</p>
+</div></div>
+<div class="cover-bottom">Compreender → Medir → Comprovar → Otimizar → Controlar</div>
+</div></header>
+<nav><div class="inner">
+<a href="#sumario">Sumário</a><a href="#fundamentos">Fundamentos</a><a href="#autores">Autores</a><a href="#sigma">Sigma</a>
+<a href="#metricas">Métricas</a><a href="#dmaic">DMAIC</a><a href="#define">Define</a><a href="#measure">Measure</a>
+<a href="#msa">MSA</a><a href="#capacidade">Capacidade</a><a href="#analyze">Analyze</a><a href="#testes">Hipóteses</a>
+<a href="#regressao">Regressão</a><a href="#improve">Improve</a><a href="#doe">DOE</a><a href="#control">Control</a>
+<a href="#cep">CEP</a><a href="#industrial">Caso</a><a href="#mapa">Mapa Mental</a><a href="#referencias">Referências</a>
+</div></nav>
+<main>
+<section id="nota">
+<div class="kicker">Nota ao leitor</div><h2>O que é Six Sigma e como este e-book deve ser utilizado</h2>
+<p class="lead"><strong>Six Sigma é uma metodologia estruturada de melhoria de processos</strong>, orientada por dados e focada em reduzir variação, defeitos e perdas, aumentando a capacidade de entregar resultados consistentes para o cliente e para o negócio.</p>
+<p>Na prática, Six Sigma ajuda a responder perguntas críticas como: o problema está realmente no processo ou na medição? a variação observada é normal ou sinaliza causa especial? quais fatores realmente influenciam a saída? a melhoria proposta gerou resultado estatisticamente consistente e operacionalmente relevante? como sustentar esse resultado ao longo do tempo?</p>
+<p>Este volume foi desenvolvido para permitir três níveis de aprendizado: <strong>compreender o conceito, aplicar a ferramenta e interpretar o resultado</strong>. Em cada tema, o leitor encontrará definição, objetivo, momento correto de uso, entradas necessárias, aplicação passo a passo, interpretação, critérios de decisão, erros comuns e exemplos industriais.</p>
+<div class="learning-box"><h4>Estrutura didática utilizada ao longo do livro</h4><div class="learning-grid">
+<div class="learn"><b>1. Conceito</b><p>O que é e qual problema resolve.</p></div>
+<div class="learn"><b>2. Aplicação</b><p>Quando usar e quais dados são necessários.</p></div>
+<div class="learn"><b>3. Método</b><p>Como executar passo a passo.</p></div>
+<div class="learn"><b>4. Interpretação</b><p>Como ler os resultados corretamente.</p></div>
+<div class="learn"><b>5. Decisão</b><p>O que fazer a partir da evidência.</p></div>
+<div class="learn"><b>6. Sustentação</b><p>Como transformar análise em resultado permanente.</p></div>
+</div></div>
+<div class="callout warn"><strong>Sobre 3,4 DPMO:</strong> Six Sigma não se resume à clássica referência de 3,4 defeitos por milhão de oportunidades. Esse valor decorre de uma convenção histórica de deslocamento de 1,5σ e não substitui a análise real de estabilidade, capacidade e risco do processo.</div>
+</section>
+<section id="sumario"><div class="kicker">Sumário navegável</div><h2>Arquitetura do conhecimento</h2><div class="toc">
+<a href="#fundamentos"><b>01</b>Fundamentos — qualidade, variação e pensamento estatístico</a>
+<a href="#historia"><b>02</b>História e evolução do Six Sigma</a>
+<a href="#autores"><b>03</b>Autores e escolas que formaram o método</a>
+<a href="#sigma"><b>04</b>Sigma, distribuição normal e nível sigma</a>
+<a href="#metricas"><b>05</b>DPU, DPO, DPMO, Yield, RTY e COPQ</a>
+<a href="#voc"><b>06</b>VOC, CTQ, árvore CTQ e especificações</a>
+<a href="#dmaic"><b>07</b>DMAIC — lógica, gates e seleção de projetos</a>
+<a href="#define"><b>08</b>DEFINE — Charter, SIPOC, escopo e metas</a>
+<a href="#measure"><b>09</b>MEASURE — plano de dados, amostragem e baseline</a>
+<a href="#msa"><b>10</b>MSA — Gage R&amp;R, atributos, bias, linearidade e estabilidade</a>
+<a href="#capacidade"><b>11</b>Capacidade — Cp, Cpk, Pp, Ppk e não normalidade</a>
+<a href="#analyze"><b>12</b>ANALYZE — da hipótese à causa comprovada</a>
+<a href="#pareto"><b>13</b>Pareto, estratificação e análise gráfica</a>
+<a href="#testes"><b>14</b>Testes de hipótese, IC, erro tipo I/II e poder</a>
+<a href="#anova"><b>15</b>ANOVA e comparações múltiplas</a>
+<a href="#regressao"><b>16</b>Correlação, regressão e diagnóstico de resíduos</a>
+<a href="#improve"><b>17</b>IMPROVE — solução, piloto e otimização</a>
+<a href="#doe"><b>18</b>DOE — fatoriais, interação e superfície de resposta</a>
+<a href="#fmea"><b>19</b>FMEA e avaliação de riscos</a>
+<a href="#control"><b>20</b>CONTROL — plano de controle, SOP e reação</a>
+<a href="#cep"><b>21</b>CEP — cartas de controle e interpretação</a>
+<a href="#financeiro"><b>22</b>Benefício financeiro e validação</a>
+<a href="#governanca"><b>23</b>Belts, Champions, MBB e governança</a>
+<a href="#dfss"><b>24</b>DMAIC, DMADV e DFSS</a>
+<a href="#lss"><b>25</b>Six Sigma e Lean Six Sigma</a>
+<a href="#industrial"><b>26</b>Estudo de caso DMAIC completo</a>
+<a href="#digital"><b>27</b>Analytics, Machine Learning e IA</a>
+<a href="#casos"><b>28</b>Casos documentados</a>
+<a href="#falhas"><b>29</b>Falhas comuns de projetos Six Sigma</a>
+<a href="#maturidade"><b>30</b>Maturidade organizacional</a>
+<a href="#mapa"><b>31</b>Mapa Mental Executivo</a>
+<a href="#mensagens"><b>32</b>Mensagens-chave do autor</a>
+<a href="#glossario"><b>33</b>Glossário técnico</a>
+<a href="#referencias"><b>34</b>Referências</a>
+</div></section>
+<section class="chapter" id="fundamentos"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 1</div><h2>Fundamentos: Qualidade, Variação e Pensamento Estatístico</h2><p class="topic-intro">Na base do Six Sigma está a compreensão de que todo processo apresenta variação. O desafio não é eliminar toda variabilidade, mas entender sua origem, distinguir comportamento normal de anomalias e avaliar se o processo consegue atender de forma consistente às necessidades do cliente.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é desenvolver a capacidade de interpretar variação, diferenciar causas comuns e causas especiais e compreender a relação Y = f(X), criando a base necessária para analisar estabilidade, capacidade e causalidade.</p>
+<p class="lead">Six Sigma parte de uma constatação simples: <strong>todo processo varia</strong>. A pergunta gerencial é se essa variação é previsível, aceitável e capaz de atender ao cliente.</p>
+<h3>1.1 Média não é desempenho completo</h3>
+<p>Uma média dentro da especificação não garante qualidade. Dois processos podem possuir média idêntica e probabilidades de defeito muito diferentes por causa da dispersão e do posicionamento em relação aos limites.</p>
+<div class="visual"><div class="visual-title">Figura 1 — Média, variação e especificação</div>
+<svg viewbox="0 0 1080 460">
+<line stroke="#AAB9C4" stroke-width="3" x1="90" x2="990" y1="340" y2="340"></line>
+<line stroke="#B63E35" stroke-dasharray="8 7" stroke-width="3" x1="270" x2="270" y1="80" y2="350"></line>
+<line stroke="#B63E35" stroke-dasharray="8 7" stroke-width="3" x1="810" x2="810" y1="80" y2="350"></line>
+<!-- Before Six Sigma: broader distribution -->
+<path d="M160 340 
+         C 220 336, 260 300, 315 230
+         C 380 145, 455 115, 540 112
+         C 625 115, 700 145, 765 230
+         C 820 300, 860 336, 920 340" fill="none" stroke="#C69B38" stroke-width="6"></path>
+<!-- After Six Sigma: narrower distribution -->
+<path d="M405 340
+         C 445 335, 470 285, 495 205
+         C 515 140, 530 95, 540 88
+         C 550 95, 565 140, 585 205
+         C 610 285, 635 335, 675 340" fill="none" stroke="#6B5FA8" stroke-width="7"></path>
+<text fill="#B63E35" font-family="Arial" font-size="17" text-anchor="middle" x="270" y="60">LSL</text>
+<text fill="#B63E35" font-family="Arial" font-size="17" text-anchor="middle" x="810" y="60">USL</text>
+<!-- Legend -->
+<line stroke="#C69B38" stroke-width="6" x1="155" x2="205" y1="385" y2="385"></line>
+<text fill="#172330" font-family="Arial" font-size="16" x="218" y="391">Antes do Six Sigma</text>
+<line stroke="#6B5FA8" stroke-width="7" x1="510" x2="560" y1="385" y2="385"></line>
+<text fill="#172330" font-family="Arial" font-size="16" x="573" y="391">Após a implementação do Six Sigma</text>
+<text fill="#627283" font-family="Arial" font-size="17" text-anchor="middle" x="540" y="430">Com o Six Sigma, a dispersão do processo diminui e a probabilidade de ultrapassar a especificação é reduzida.</text>
+</svg></div>
+<h3>1.2 Causas comuns e causas especiais</h3>
+<p>Shewhart distinguiu duas naturezas de variação. <strong>Causas comuns</strong> pertencem ao próprio sistema: pequenas diferenças de matéria-prima, ambiente, método, equipamento e pessoas atuando continuamente. <strong>Causas especiais</strong> são eventos identificáveis que alteram o comportamento normal: sensor defeituoso, lote atípico, falha de regulador, troca de matéria-prima, intervenção incorreta.</p>
+<div class="grid2">
+<div class="card soft"><h4>Causa comum</h4><p>Melhorar exige mudar o sistema. Ajustar pontualmente um setpoint pode apenas deslocar o problema.</p></div>
+<div class="card soft"><h4>Causa especial</h4><p>Exige localizar o evento específico, conter e impedir recorrência.</p></div>
+</div>
+<div class="interpret"><strong>Como analisar:</strong> primeiro determine estabilidade no tempo. Se o processo está instável, médias, desvio-padrão e Cpk podem misturar regimes diferentes. Controle estatístico vem antes de conclusões de capacidade.</div>
+<h3>1.3 O pensamento Y = f(X)</h3>
+<div class="eq">Y = f(X₁, X₂, X₃, ... Xₙ) + ε</div>
+<p>Y representa a saída crítica: rendimento, umidade, tempo, reclamação, concentração ou defeito. Os X's são entradas controláveis ou observáveis. Six Sigma procura descobrir quais X's realmente alteram Y e em que magnitude.</p>
+<div class="decision"><strong>Objetivo gerencial:</strong> migrar de “corrigir Y depois que falha” para controlar os X's críticos antes que Y saia do esperado.</div>
+</section>
+<section class="chapter" id="historia"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 2</div><h2>História e Evolução do Six Sigma</h2><p class="topic-intro">O Six Sigma surgiu da evolução de várias escolas da qualidade, do controle estatístico de Shewhart à gestão de Deming e Juran, até sua consolidação na Motorola como uma metodologia estruturada de redução de defeitos e melhoria de desempenho.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é mostrar como essas diferentes contribuições formaram o Six Sigma moderno e por que ele deve ser entendido como um sistema de melhoria orientado por dados, e não apenas como um conjunto de ferramentas estatísticas.</p>
+<p class="lead">Six Sigma não surgiu do zero. Ele integrou décadas de controle estatístico, qualidade gerencial e experimentação dentro de uma estrutura de projeto e governança empresarial.</p>
+<div class="timeline">
+<div class="time"><b>1920s–1930s — Walter A. Shewhart</b><br/>Desenvolve fundamentos do controle estatístico de processos e cartas de controle, distinguindo comportamento previsível de sinais de causas especiais.</div>
+<div class="time"><b>1950s — Deming e Juran</b><br/>Levam ao Japão conceitos de estatística, gestão, qualidade e melhoria; consolidam a noção de que qualidade é responsabilidade de gestão, não apenas inspeção.</div>
+<div class="time"><b>1980s — Motorola</b><br/>Bill Smith relaciona defeitos de fabricação e falhas de campo; Robert Galvin patrocina metas agressivas. Mikel Harry ajuda a sistematizar e disseminar a abordagem.</div>
+<div class="time"><b>1990s — AlliedSignal e General Electric</b><br/>Six Sigma passa a ser utilizado como sistema de negócios com belts, projetos, metas financeiras e forte patrocínio executivo.</div>
+<div class="time"><b>2000s em diante</b><br/>Integração com Lean, serviços, saúde, supply chain, design, analytics e machine learning.</div>
+</div>
+<h3>O que mudou ao longo da evolução</h3>
+<table class="matrix"><thead><tr><th>Fase histórica</th><th>Foco dominante</th><th>Legado atual</th></tr></thead><tbody>
+<tr><td>Controle estatístico</td><td>Estabilidade e variação</td><td>CEP, causas comuns/especiais.</td></tr>
+<tr><td>Qualidade gerencial</td><td>Cliente, gestão, melhoria</td><td>VOC, liderança, melhoria estruturada.</td></tr>
+<tr><td>Motorola</td><td>Defeitos, confiabilidade, capacidade</td><td>Sigma level, CTQ e melhoria de breakthrough.</td></tr>
+<tr><td>GE/AlliedSignal</td><td>Resultado empresarial</td><td>Belts, Champions, savings, governança.</td></tr>
+<tr><td>Lean Six Sigma</td><td>Fluxo + variação</td><td>DMAIC integrado a desperdício e velocidade.</td></tr>
+</tbody></table>
+</section>
+<section class="chapter" id="autores"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 3</div><h2>Autores e Escolas que Formaram o Six Sigma</h2><p class="topic-intro">O pensamento Six Sigma foi construído a partir de contribuições complementares de especialistas em estatística, qualidade, gestão, experimentação e melhoria de processos. Conhecer essas referências ajuda a entender a lógica por trás das ferramentas e evita o uso mecânico da metodologia.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é apresentar as principais contribuições de Shewhart, Deming, Juran, Bill Smith, Robert Galvin, Mikel Harry, George Box, Douglas Montgomery e Genichi Taguchi, relacionando cada autor às práticas utilizadas no Six Sigma.</p>
+<p class="lead">Compreender os autores evita a falsa impressão de que Six Sigma é um “pacote inventado” por uma única pessoa.</p>
+<div class="card author"><div class="contrib">Controle estatístico e variação</div><div class="name">Walter A. Shewhart</div>
+<p>Shewhart, da Bell Laboratories, criou a base do controle estatístico moderno. Sua contribuição fundamental foi separar <strong>variação inerente ao sistema</strong> de sinais de causas especiais. A carta de controle não é apenas um gráfico: é uma forma de decisão sobre a natureza da variação.</p>
+<p><strong>Aplicação hoje:</strong> antes de calcular capacidade ou “ajustar” o processo, verificar se ele apresenta estabilidade estatística.</p></div>
+<div class="card author"><div class="contrib">Sistema, aprendizagem e gestão</div><div class="name">W. Edwards Deming</div>
+<p>Deming expandiu a estatística para uma filosofia de gestão. Defendeu compreensão de sistemas, teoria da variação, aprendizagem e psicologia. Alertou que agir sobre ruído como se fosse sinal pode aumentar variabilidade — o chamado <em>tampering</em>.</p>
+<p><strong>Aplicação hoje:</strong> interpretar CEP, evitar ajustes desnecessários, tratar problemas sistêmicos pela gestão e usar PDSA para aprendizado.</p></div>
+<div class="card author"><div class="contrib">Planejamento, controle e breakthrough</div><div class="name">Joseph M. Juran</div>
+<p>Juran organizou a gestão da qualidade em planejamento, controle e melhoria. A ideia de <em>breakthrough</em> — elevar desempenho a um novo patamar — é diretamente compatível com projetos DMAIC. Também destacou o custo da má qualidade e o papel da liderança.</p>
+<p><strong>Aplicação hoje:</strong> selecionar projetos economicamente relevantes, separar manutenção da rotina de melhoria estruturada e avaliar COPQ.</p></div>
+<div class="card author"><div class="contrib">Origem do Six Sigma na Motorola</div><div class="name">Bill Smith</div>
+<p>Bill Smith é amplamente reconhecido como uma figura central na criação do Six Sigma na Motorola. Seu trabalho relacionou defeitos observados durante a manufatura à confiabilidade no campo e à necessidade de capacidades muito superiores aos tradicionais três sigma.</p>
+<p><strong>Aplicação hoje:</strong> pensar além da inspeção final e relacionar desempenho interno à experiência real do cliente.</p></div>
+<div class="card author"><div class="contrib">Patrocínio executivo</div><div class="name">Robert W. Galvin</div>
+<p>Como CEO da Motorola, Galvin transformou a qualidade em prioridade estratégica. Sua relevância para Six Sigma não é estatística; é de liderança: metas agressivas, recursos e infraestrutura permitiram que a metodologia deixasse de ser uma iniciativa técnica isolada.</p>
+<p><strong>Aplicação hoje:</strong> sem Champion, prioridade e remoção de barreiras, belts viram analistas sem poder para transformar processos.</p></div>
+<div class="card author"><div class="contrib">Sistematização e difusão</div><div class="name">Mikel Harry</div>
+<p>Harry teve papel relevante na sistematização e popularização de Six Sigma como estratégia de breakthrough, capacidade e resultado. A literatura de 1998 associa Six Sigma à medição de CTQs, análise, melhoria e controle.</p>
+<p><strong>Aplicação hoje:</strong> conectar capacidade estatística a uma estrutura disciplinada de projeto e desempenho financeiro.</p></div>
+<div class="card author"><div class="contrib">Experimentação e modelagem</div><div class="name">George E. P. Box</div>
+<p>Box foi referência em desenho de experimentos, modelagem, análise de resíduos e pensamento estatístico aplicado. Sua contribuição mostra que modelos são aproximações úteis quando ajudam a aprender e decidir.</p>
+<p><strong>Aplicação hoje:</strong> DOE, otimização, análise de interação, transformação de dados e diagnóstico de modelos.</p></div>
+<div class="card author"><div class="contrib">Estatística para engenharia e qualidade</div><div class="name">Douglas C. Montgomery</div>
+<p>Montgomery consolidou aplicações industriais de CEP, capacidade, regressão e DOE em textos de referência amplamente utilizados por engenheiros e profissionais Six Sigma.</p>
+<p><strong>Aplicação hoje:</strong> selecionar cartas, interpretar capacidade, planejar experimentos e evitar o uso mecânico de softwares estatísticos.</p></div>
+<div class="card author"><div class="contrib">Design robusto</div><div class="name">Genichi Taguchi</div>
+<p>Taguchi enfatizou robustez: projetar produtos e processos menos sensíveis a fatores de ruído. Sua função perda desafia a visão binária “dentro da especificação = sem perda”, mostrando que afastamento do alvo pode gerar custo mesmo antes do limite.</p>
+<p><strong>Aplicação hoje:</strong> DOE robusto, escolha de parâmetros menos sensíveis à variação ambiental e de matéria-prima.</p></div>
+<div class="decision"><strong>Síntese:</strong> Six Sigma combina Shewhart (variação), Deming (sistema), Juran (melhoria), Motorola (capacidade e governança) e engenharia estatística (Box/Montgomery/Taguchi).</div>
+</section>
+<section class="chapter" id="sigma"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 4</div><h2>Sigma, Distribuição Normal e Nível Sigma</h2><p class="topic-intro">No Six Sigma, o termo sigma representa a dispersão dos dados em torno da média e serve como uma referência para avaliar o quanto o processo varia em relação aos limites de especificação. Quanto menor a dispersão e melhor o centramento, menor tende a ser a probabilidade de defeitos.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é explicar o significado estatístico de sigma, o conceito de nível sigma e a relação entre média, desvio-padrão, especificação, capacidade e risco de não conformidade.</p>
+<h3>4.1 Desvio-padrão</h3>
+<p>O desvio-padrão σ mede a dispersão de uma variável contínua. Em uma distribuição aproximadamente normal, cerca de 68% dos valores ficam dentro de ±1σ da média, 95% dentro de aproximadamente ±2σ e 99,7% dentro de aproximadamente ±3σ.</p>
+<div class="eq">σ = √[ Σ(xᵢ − μ)² / N ]    (conceito populacional)</div>
+<h3>4.2 Sigma level</h3>
+<p>Na linguagem Six Sigma, “nível sigma” indica o espaço entre a média e o limite de especificação expresso em unidades de desvio-padrão, com diferentes convenções de curto e longo prazo.</p>
+<div class="learning-box"><h4>Como interpretar</h4><div class="learning-grid">
+<div class="learn"><b>Distância pequena</b><p>Pequena mudança de média ou variação gera defeitos.</p></div>
+<div class="learn"><b>Distância grande</b><p>Processo possui maior margem antes do limite.</p></div>
+<div class="learn"><b>Centralização</b><p>Mesmo σ pode resultar em riscos diferentes se a média deslocar.</p></div>
+</div></div>
+<h3>4.3 1,5 sigma</h3>
+<p>A associação de seis sigma a 3,4 DPMO usa uma convenção histórica de deslocamento da média de 1,5σ no longo prazo. Sem esse deslocamento, uma normal centrada com limites em ±6σ teria taxa teórica de defeitos muito inferior.</p>
+<div class="interpret"><strong>Como usar profissionalmente:</strong> para engenharia de processo, prefira analisar diretamente distribuição, estabilidade, Cp/Cpk ou Pp/Ppk e probabilidade de não conformidade. Use “nível sigma” como linguagem complementar, não como substituto da análise.</div>
+</section>
+<section class="chapter" id="metricas"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 5</div><h2>DPU, DPO, DPMO, Yield, RTY e COPQ</h2><p class="topic-intro">Os projetos Six Sigma utilizam diferentes métricas para quantificar defeitos, rendimento, desempenho de primeira passagem e impacto financeiro. Cada indicador responde a uma pergunta diferente sobre a qualidade do processo.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é ensinar como utilizar DPU, DPO, DPMO, Yield, FPY, RTY e COPQ de forma correta, entendendo suas diferenças, limitações e aplicações práticas.</p>
+<table class="tool-table"><thead><tr><th>Métrica</th><th>Fórmula / conceito</th><th>Quando usar</th><th>Cuidado</th></tr></thead><tbody>
+<tr><td>DPU</td><td>Defeitos / unidades</td><td>Quando uma unidade pode ter vários defeitos.</td><td>Não é percentual de unidades defeituosas.</td></tr>
+<tr><td>DPO</td><td>Defeitos / oportunidades</td><td>Normalizar diferentes complexidades.</td><td>Oportunidade precisa ser definida de forma consistente.</td></tr>
+<tr><td>DPMO</td><td>DPO × 1.000.000</td><td>Comparar taxas muito baixas.</td><td>Não manipular quantidade de “oportunidades”.</td></tr>
+<tr><td>Yield</td><td>Unidades boas / total</td><td>Conformidade de uma etapa.</td><td>Pode esconder retrabalho.</td></tr>
+<tr><td>FPY</td><td>Boas de primeira / total</td><td>Qualidade na primeira passagem.</td><td>Melhor para expor retrabalho.</td></tr>
+<tr><td>RTY</td><td>Produto dos FPYs das etapas</td><td>Fluxos com várias etapas.</td><td>Mostra efeito acumulado.</td></tr>
+<tr><td>COPQ</td><td>Custo da má qualidade</td><td>Business case.</td><td>Definir regras financeiras.</td></tr>
+</tbody></table>
+<div class="ex-card"><h4>Exemplo — RTY</h4><div class="ex-data"><span>Etapa A FPY = 98%</span><span>Etapa B = 96%</span><span>Etapa C = 99%</span></div>
+<div class="eq">RTY = 0,98 × 0,96 × 0,99 = 0,9314 = 93,14%</div>
+<p>Mesmo com todas as etapas acima de 96%, apenas 93,14% atravessam o fluxo inteiro sem falha de primeira passagem.</p></div>
+</section>
+<section class="chapter" id="voc"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 6</div><h2>VOC, CTQ e Especificações</h2><p class="topic-intro">No universo do Six Sigma e da gestão da qualidade, alinhar o que o cliente deseja com o que a empresa entrega é essencial para o sucesso de qualquer produto ou serviço. Para isso, VOC, CTQ e Especificações são utilizados de forma sequencial para transformar necessidades em requisitos claros para o processo.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é traduzir desejos e expectativas subjetivas dos clientes em características técnicas, critérios mensuráveis e limites de desempenho que possam ser controlados pela operação.</p>
+<p class="lead">VOC captura necessidade; CTQ traduz necessidade em característica mensurável.</p>
+<h3>Passo a passo da árvore CTQ</h3>
+<ol><li>Capturar declarações do cliente.</li><li>Separar necessidade real da solução sugerida.</li><li>Identificar drivers.</li><li>Converter drivers em requisitos mensuráveis.</li><li>Definir especificação e método de medição.</li></ol>
+<div class="ex-card"><h4>Exemplo industrial</h4><p><strong>VOC:</strong> “o produto precisa dissolver rapidamente e sem grumos.”</p>
+<p><strong>Drivers:</strong> velocidade de dissolução, ausência de partículas.</p>
+<p><strong>CTQs:</strong> tempo de dissolução ≤ 90 s; resíduo em peneira X ≤ 0,5%.</p></div>
+<h3>Especificação</h3>
+<p>USL/LSL não devem ser definidos a partir do que o processo “consegue fazer”. Devem refletir requisito técnico, cliente, projeto, regulatório ou funcional. Ajustar especificação para acomodar processo ruim mascara incapacidade.</p>
+<div class="decision"><strong>Gate de qualidade:</strong> um CTQ só está operacionalmente definido quando unidade, método, condição de teste e limites estão claros.</div>
+</section>
+<section class="chapter" id="dmaic"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 7</div><h2>DMAIC: Lógica, Gates e Seleção de Projetos</h2><p class="topic-intro">O DMAIC é a principal metodologia utilizada no Six Sigma para melhorar processos existentes que apresentam um problema mensurável, mas cuja causa ou solução ainda não é conhecida com segurança. Sua estrutura reduz a incerteza de forma progressiva ao longo do projeto.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é mostrar quando utilizar DMAIC, como suas cinco fases se conectam e quais critérios devem ser atendidos antes de avançar de uma etapa para outra.</p>
+<p class="lead">DMAIC é adequado quando existe um processo atual, há um gap mensurável e a causa/solução ainda não é conhecida com segurança.</p>
+<div class="visual"><div class="visual-title">Figura 2 — DMAIC como redução progressiva de incerteza</div>
+<svg viewbox="0 0 1100 320"><defs><marker id="dm" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3"><path d="M0,0L10,3L0,6Z" fill="#6B5FA8"></path></marker></defs>
+<g font-family="Arial" text-anchor="middle"><g fill="#F4F2FD" stroke="#B8B0DA" stroke-width="2"><rect height="105" rx="18" width="175" x="25" y="90"></rect><rect height="105" rx="18" width="175" x="235" y="90"></rect><rect height="105" rx="18" width="175" x="445" y="90"></rect><rect height="105" rx="18" width="175" x="655" y="90"></rect><rect height="105" rx="18" width="175" x="865" y="90"></rect></g><g fill="#071A2B" font-size="20" font-weight="700"><text x="112" y="130">DEFINE</text><text x="322" y="130">MEASURE</text><text x="532" y="130">ANALYZE</text><text x="742" y="130">IMPROVE</text><text x="952" y="130">CONTROL</text></g><g fill="#627283" font-size="14"><text x="112" y="160">problema certo</text><text x="322" y="160">dados confiáveis</text><text x="532" y="160">causas comprovadas</text><text x="742" y="160">solução validada</text><text x="952" y="160">resultado sustentado</text></g><g marker-end="url(#dm)" stroke="#6B5FA8" stroke-width="4"><line x1="200" x2="230" y1="142" y2="142"></line><line x1="410" x2="440" y1="142" y2="142"></line><line x1="620" x2="650" y1="142" y2="142"></line><line x1="830" x2="860" y1="142" y2="142"></line></g></g></svg></div>
+<h3>Quando NÃO usar DMAIC</h3>
+<ul><li>Solução já definida e apenas precisa ser implantada.</li><li>Problema é simples, pontual e causa evidente — use PDCA/Kaizen.</li><li>Processo não existe — considere DFSS/DMADV.</li><li>Problema é apenas falta de disciplina no padrão conhecido — gestão da rotina.</li></ul>
+<h3>Gate review</h3>
+<div class="gate"><b>Define → Measure</b><span>Problema, meta, escopo, CTQ, sponsor e benefício estão claros?</span></div>
+<div class="gate"><b>Measure → Analyze</b><span>Medição é confiável? Baseline representa o processo? Dados são suficientes?</span></div>
+<div class="gate"><b>Analyze → Improve</b><span>Causas críticas foram comprovadas, e não apenas listadas?</span></div>
+<div class="gate"><b>Improve → Control</b><span>Solução foi testada e benefício demonstrado?</span></div>
+<div class="gate"><b>Control → Close</b><span>Process owner assumiu, controles funcionam e benefício foi validado?</span></div>
+</section>
+<section class="chapter phase" id="define"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="phase-letter">D</div><div class="kicker">Capítulo 8 • DEFINE</div><h2>Definir o Problema Certo</h2><p class="topic-intro">A fase Define transforma uma percepção de problema em um projeto estruturado. Nessa etapa são alinhados o problema, a necessidade do cliente, o escopo, a meta, os responsáveis e a justificativa econômica da melhoria.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é ensinar como definir corretamente um problema Six Sigma, construir um Project Charter consistente, delimitar o processo por meio do SIPOC e estabelecer metas claras e mensuráveis.</p>
+<div class="learning-box"><div class="learning-grid">
+<div class="learn"><b>Objetivo</b><p>Alinhar problema, cliente, escopo, meta e razão financeira.</p></div>
+<div class="learn"><b>Entrada</b><p>Dados preliminares, VOC, estratégia, reclamações e perdas.</p></div>
+<div class="learn"><b>Saída</b><p>Charter aprovado e equipe alinhada.</p></div>
+</div></div>
+<h3>Project Charter</h3>
+<table><thead><tr><th>Campo</th><th>Como preencher</th><th>Erro comum</th></tr></thead><tbody>
+<tr><td>Business Case</td><td>Por que isso importa para cliente/negócio?</td><td>Texto genérico sem valor financeiro.</td></tr>
+<tr><td>Problem Statement</td><td>O quê, onde, quando, magnitude e impacto.</td><td>Incluir causa ou solução.</td></tr>
+<tr><td>Goal Statement</td><td>Indicador + baseline + meta + prazo.</td><td>“Melhorar significativamente”.</td></tr>
+<tr><td>Scope</td><td>Início/fim do processo, produtos e locais.</td><td>Escopo amplo demais.</td></tr>
+<tr><td>Team</td><td>Funções necessárias.</td><td>Só pessoas da qualidade.</td></tr>
+</tbody></table>
+<h3>SIPOC</h3>
+<p>SIPOC é mapa macro para alinhar fronteiras. Não substitui fluxograma detalhado.</p>
+<div class="ex-card"><h4>Exemplo</h4><p><strong>S:</strong> fornecedor de matéria-prima → <strong>I:</strong> solução 35% sólidos → <strong>P:</strong> alimentar, atomizar, secar, resfriar → <strong>O:</strong> pó seco → <strong>C:</strong> envase/cliente.</p></div>
+<h3>Como analisar se Define está bom</h3>
+<ul class="checklist"><li>O problema tem número?</li><li>A meta é mensurável?</li><li>A equipe consegue influenciar o processo?</li><li>A solução ainda está aberta?</li><li>CTQ está conectado à VOC?</li><li>Benefício compensa esforço?</li></ul>
+</section>
+<section class="chapter phase" id="measure"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="phase-letter">M</div><div class="kicker">Capítulo 9 • MEASURE</div><h2>Construir uma Baseline Confiável</h2><p class="topic-intro">A fase Measure estabelece a situação atual do processo com base em dados confiáveis. Antes de procurar causas, é necessário saber exatamente quanto o processo varia, com que frequência o problema ocorre e se os dados utilizados representam a realidade operacional.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é orientar a construção de uma baseline confiável, definir um plano de coleta de dados e estruturar a medição do processo de forma representativa e adequada à análise posterior.</p>
+<div class="learning-box"><div class="learning-grid"><div class="learn"><b>Objetivo</b><p>Conhecer desempenho atual com dados confiáveis.</p></div><div class="learn"><b>Pergunta</b><p>Quanto varia, com que frequência e em quais estratos?</p></div><div class="learn"><b>Gate</b><p>Sistema de medição validado antes da análise causal.</p></div></div></div>
+<h3>Plano de coleta</h3>
+<table><thead><tr><th>Elemento</th><th>Definir</th></tr></thead><tbody>
+<tr><td>Y / X</td><td>Variável, unidade, tipo de dado.</td></tr>
+<tr><td>Onde</td><td>Ponto do processo e instrumento.</td></tr>
+<tr><td>Quando</td><td>Frequência e janela temporal.</td></tr>
+<tr><td>Quem</td><td>Responsável pela coleta.</td></tr>
+<tr><td>Estratificação</td><td>Turno, máquina, SKU, lote, fornecedor, operador.</td></tr>
+<tr><td>Amostragem</td><td>Tamanho, aleatoriedade e representatividade.</td></tr>
+</tbody></table>
+<h3>Amostragem</h3>
+<p>Amostra grande não corrige amostragem enviesada. Se só medimos o turno diurno, não podemos concluir sobre a planta inteira. Se medimos 20 produtos consecutivos, podemos não capturar variação entre lotes.</p>
+<div class="interpret"><strong>Como analisar baseline:</strong> comece por gráfico de série temporal, histograma, boxplots estratificados e Pareto. Estatística descritiva sem tempo pode esconder mudanças de regime.</div>
+</section>
+<section class="chapter" id="msa"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 10</div><h2>MSA — Measurement System Analysis</h2><p class="topic-intro">O MSA avalia se o sistema utilizado para medir o processo é suficientemente confiável para distinguir variação real de ruído de medição. Um sistema de medição inadequado pode levar a decisões erradas mesmo quando a análise estatística parece sofisticada.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é mostrar como avaliar repetibilidade, reprodutibilidade, bias, linearidade, estabilidade e concordância de atributos, permitindo decidir se os dados são adequados para o projeto.</p>
+<p class="lead">MSA responde: <strong>quanto da variação observada pertence ao produto e quanto pertence à medição?</strong></p>
+<h3>10.1 Gage R&amp;R cruzado</h3>
+<p>Utilizado quando os mesmos itens podem ser medidos repetidamente por diferentes avaliadores sem serem destruídos.</p>
+<ol><li>Selecionar peças cobrindo a faixa real do processo.</li><li>Selecionar avaliadores representativos.</li><li>Randomizar ordem de medição.</li><li>Executar repetições cegas.</li><li>Separar variação de repetibilidade, reprodutibilidade e peça-a-peça.</li></ol>
+<h3>10.2 Como interpretar %GRR</h3>
+<table><thead><tr><th>% da variação</th><th>Leitura prática</th></tr></thead><tbody>
+<tr><td>&lt; 10%</td><td>Em muitos contextos, sistema geralmente aceitável.</td></tr>
+<tr><td>10–30%</td><td>Pode ser aceitável dependendo de custo, aplicação e risco; investigar.</td></tr>
+<tr><td>&gt; 30%</td><td>Geralmente inadequado para distinguir peças/processo.</td></tr>
+</tbody></table>
+<p class="small">Esses limites são regras práticas tradicionais; decisão final depende do uso, tolerância, risco e capacidade do sistema.</p>
+<h3>10.3 Número de categorias distintas (ndc)</h3>
+<p>O ndc indica quantas categorias de peças o sistema consegue distinguir. Um GRR pequeno, mas com baixa variação entre peças, pode ainda gerar baixa discriminação.</p>
+<h3>10.4 Bias, linearidade e estabilidade</h3>
+<table><thead><tr><th>Estudo</th><th>Pergunta</th><th>Sinal de problema</th></tr></thead><tbody>
+<tr><td>Bias</td><td>A média medida coincide com referência?</td><td>Erro sistemático.</td></tr>
+<tr><td>Linearidade</td><td>O bias muda ao longo da faixa?</td><td>Instrumento bom em um ponto e ruim em outro.</td></tr>
+<tr><td>Estabilidade</td><td>O sistema muda com o tempo?</td><td>Deriva/calibração/ambiente.</td></tr>
+</tbody></table>
+<h3>10.5 MSA de atributos</h3>
+<p>Quando inspeção é visual ou categórica, avalie repetibilidade do mesmo inspetor, reprodutibilidade entre inspetores e concordância com padrão mestre.</p>
+<div class="decision"><strong>Decisão:</strong> se a medição não distingue processo de ruído, corrija método, treinamento, fixture, resolução, ambiente ou instrumento antes de continuar o DMAIC.</div>
+</section>
+<section class="chapter" id="capacidade"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 11</div><h2>Capacidade de Processo — Cp, Cpk, Pp e Ppk</h2><p class="topic-intro">A análise de capacidade compara a variabilidade natural do processo com os limites de especificação definidos para o produto ou serviço. Ela permite avaliar se um processo está apto a atender consistentemente aos requisitos estabelecidos.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é explicar como interpretar Cp, Cpk, Pp e Ppk, diferenciando capacidade potencial, desempenho real, centramento e variação de curto e longo prazo.</p>
+<h3>Pré-requisitos</h3>
+<ul><li>Especificação válida.</li><li>Sistema de medição adequado.</li><li>Processo razoavelmente estável.</li><li>Modelo de distribuição apropriado.</li></ul>
+<div class="eq">Cp = (USL − LSL) / 6σ<sub>within</sub></div>
+<div class="eq">Cpk = min[(USL − μ)/(3σ<sub>within</sub>), (μ − LSL)/(3σ<sub>within</sub>)]</div>
+<div class="eq">Ppk = min[(USL − μ)/(3s<sub>overall</sub>), (μ − LSL)/(3s<sub>overall</sub>)]</div>
+<h3>Como interpretar</h3>
+<table><thead><tr><th>Situação</th><th>Interpretação</th><th>Ação</th></tr></thead><tbody>
+<tr><td>Cp alto, Cpk baixo</td><td>Baixa variação potencial, porém processo descentralizado.</td><td>Recentralizar e investigar drift.</td></tr>
+<tr><td>Cp ≈ Cpk baixo</td><td>Processo centrado, mas variação excessiva.</td><td>Reduzir σ.</td></tr>
+<tr><td>Cpk muito maior que Ppk</td><td>Curto prazo bom, longo prazo sofre deriva/lotes/turnos.</td><td>Investigar fontes entre subgrupos.</td></tr>
+<tr><td>Cpk alto com carta instável</td><td>Capacidade não confiável.</td><td>Tratar causas especiais primeiro.</td></tr>
+</tbody></table>
+<h3>Não normalidade</h3>
+<p>Se dados não seguem normalidade de forma relevante, não force uma análise normal. Use transformação apropriada, distribuição alternativa ou métodos não paramétricos, sempre verificando o mecanismo físico e o objetivo.</p>
+<div class="interpret"><strong>Leitura executiva:</strong> capacidade responde “este processo, operando assim, consegue atender consistentemente a especificação?”. Não responde “qual é a causa?” — isso pertence ao Analyze.</div>
+</section>
+<section class="chapter phase" id="analyze"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="phase-letter">A</div><div class="kicker">Capítulo 12 • ANALYZE</div><h2>Da Hipótese à Causa Comprovada</h2><p class="topic-intro">A fase Analyze busca transformar suspeitas em evidências. O foco deixa de ser listar possíveis causas e passa a ser comprovar quais fatores realmente influenciam a saída crítica do processo.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é ensinar como avançar de sintomas e causas potenciais para causas críticas comprovadas, combinando conhecimento de processo, análise gráfica e ferramentas estatísticas.</p>
+<p class="lead">Analyze é a fase em que o time precisa abandonar explicações plausíveis e buscar evidência.</p>
+<h3>Hierarquia causal</h3>
+<table><thead><tr><th>Nível</th><th>Exemplo</th><th>Status</th></tr></thead><tbody>
+<tr><td>Sintoma</td><td>“Umidade final alta.”</td><td>Y observado.</td></tr>
+<tr><td>Causa aparente</td><td>“Temperatura estava baixa.”</td><td>Observação pontual.</td></tr>
+<tr><td>Causa potencial</td><td>“Sólidos baixos aumentam carga térmica.”</td><td>Hipótese.</td></tr>
+<tr><td>Causa comprovada</td><td>Dados/teste mostram efeito consistente e mecanismo coerente.</td><td>X crítico.</td></tr>
+</tbody></table>
+<h3>Estratégia de análise</h3>
+<div class="flow"><div class="step">Estratificar</div><div class="arrow">→</div><div class="step">Visualizar</div><div class="arrow">→</div><div class="step">Hipotetizar</div><div class="arrow">→</div><div class="step">Testar</div><div class="arrow">→</div><div class="step">Confirmar</div></div>
+<h3>Matriz X-Y</h3>
+<p>Quando há muitos X's, a matriz causa-e-efeito pode priorizar investigação com base em impacto esperado nos CTQs. Ela prioriza; não prova.</p>
+<div class="decision"><strong>Gate:</strong> antes de Improve, o time deve conseguir explicar quais X's críticos serão alterados e qual evidência sustenta essa escolha.</div>
+</section>
+<section class="chapter" id="pareto"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 13</div><h2>Pareto, Estratificação e Análise Gráfica</h2><p class="topic-intro">Pareto, estratificação e análise gráfica são ferramentas essenciais para organizar os dados e revelar padrões que muitas vezes ficam ocultos quando o processo é analisado apenas por médias gerais.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é mostrar como priorizar problemas, comparar grupos, identificar tendências e levantar hipóteses por meio de Pareto, boxplots, séries temporais e gráficos de dispersão.</p>
+<h3>Pareto</h3>
+<p>Ordena categorias por frequência ou impacto. Serve para direcionar foco, não para afirmar causa.</p>
+<h3>Estratificação</h3>
+<p>Separar por máquina, turno, SKU, matéria-prima, fornecedor, linha ou janela temporal frequentemente revela padrões invisíveis na média global.</p>
+<h3>Boxplot</h3>
+<p>Compara mediana, dispersão e valores extremos entre grupos. É excelente para uma primeira leitura antes de ANOVA/testes.</p>
+<h3>Scatterplot</h3>
+<p>Mostra associação entre X e Y. Procure tendência, curvatura, clusters e outliers.</p>
+<div class="ex-card"><h4>Exemplo</h4><p>Umidade média global = 4,8%. Ao estratificar por faixa de sólidos de alimentação: alta concentração = 4,1%; baixa concentração = 5,6%. A estratificação cria uma hipótese para testar, não uma causa definitiva.</p></div>
+</section>
+<section class="chapter" id="testes"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 14</div><h2>Testes de Hipótese, Intervalos de Confiança e Poder</h2><p class="topic-intro">Os testes de hipótese permitem avaliar se uma diferença observada nos dados provavelmente representa um efeito real ou pode ser explicada pela variabilidade amostral. Eles ajudam a substituir opinião por evidência quantitativa.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é explicar a lógica de H₀ e H₁, p-value, erros tipo I e II, poder estatístico e intervalos de confiança, além de orientar a escolha do teste conforme a pergunta e o tipo de dado.</p>
+<h3>14.1 H₀ e H₁</h3>
+<p>A hipótese nula H₀ representa uma condição de referência; H₁ representa diferença ou efeito. O teste quantifica quão incompatíveis os dados são com H₀ sob premissas definidas.</p>
+<h3>14.2 p-value</h3>
+<p>p-value é a probabilidade de observar um resultado pelo menos tão extremo quanto o observado assumindo H₀ verdadeira. Não é “probabilidade de H₀ estar correta”.</p>
+<h3>14.3 α, β e poder</h3>
+<table><thead><tr><th>Conceito</th><th>Significado</th></tr></thead><tbody>
+<tr><td>α</td><td>Risco de rejeitar H₀ quando ela é verdadeira — erro tipo I.</td></tr>
+<tr><td>β</td><td>Risco de não detectar uma diferença real — erro tipo II.</td></tr>
+<tr><td>Poder = 1−β</td><td>Probabilidade de detectar o efeito de interesse.</td></tr>
+</tbody></table>
+<h3>14.4 Intervalo de confiança</h3>
+<p>O IC mostra faixa plausível para o parâmetro. É mais informativo que apenas declarar “significativo”, pois permite avaliar magnitude e precisão.</p>
+<div class="ex-card"><h4>Exemplo</h4><p>Diferença média entre processo novo e atual = −0,42% de umidade; IC95% = [−0,60; −0,24]; p &lt; 0,001.</p><p><strong>Interpretação:</strong> há evidência de redução e o tamanho estimado é operacionalmente relevante se 0,42 p.p. impactar capacidade/CTQ.</p></div>
+<h3>Escolha do teste</h3>
+<table><thead><tr><th>Pergunta</th><th>Exemplo de teste</th><th>Verificar</th></tr></thead><tbody>
+<tr><td>Duas médias independentes</td><td>t de 2 amostras</td><td>independência, variância/modelo</td></tr>
+<tr><td>Antes/depois pareado</td><td>t pareado</td><td>pares corretos</td></tr>
+<tr><td>Proporções</td><td>teste de proporção</td><td>tamanho amostral</td></tr>
+<tr><td>Categorias</td><td>qui-quadrado</td><td>frequências esperadas</td></tr>
+</tbody></table>
+</section>
+<section class="chapter" id="anova"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 15</div><h2>ANOVA e Comparações Múltiplas</h2><p class="topic-intro">A ANOVA é utilizada quando é necessário comparar três ou mais grupos simultaneamente, evitando o aumento do risco de erro associado à realização de vários testes independentes.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é ensinar quando utilizar ANOVA, como interpretar o resultado global e como identificar quais grupos realmente diferem por meio de comparações múltiplas.</p>
+<p class="lead">ANOVA testa se há evidência de diferença entre médias de três ou mais grupos sem inflar o erro tipo I por múltiplos testes t independentes.</p>
+<h3>O que o resultado significa</h3>
+<p>ANOVA significativa indica que <strong>pelo menos uma média difere</strong>. Ela não informa automaticamente quais grupos diferem.</p>
+<h3>Depois da ANOVA</h3>
+<p>Use comparações múltiplas, como Tukey, quando apropriado, e examine efeitos e intervalos.</p>
+<div class="ex-card"><h4>Exemplo</h4><p>Três fornecedores apresentam resistência média diferente; ANOVA p=0,008. Tukey mostra diferença principalmente entre fornecedores A e C, enquanto B não difere claramente dos demais.</p></div>
+<div class="interpret"><strong>Como analisar:</strong> examine resíduos, igualdade de variâncias, independência e possíveis fatores de confusão. “p&lt;0,05” não salva um desenho de dados ruim.</div>
+</section>
+<section class="chapter" id="regressao"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 16</div><h2>Correlação, Regressão e Diagnóstico de Resíduos</h2><p class="topic-intro">A regressão é uma ferramenta estatística utilizada para quantificar a relação entre uma variável de resposta e uma ou mais variáveis explicativas. Em processos industriais, ela é especialmente útil para entender como mudanças em parâmetros operacionais afetam o desempenho.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é ensinar como interpretar coeficientes, R², resíduos, significância e multicolinearidade, diferenciando claramente correlação, predição e causalidade.</p>
+<div class="eq">Y = β₀ + β₁X₁ + β₂X₂ + ... + ε</div>
+<h3>Objetivo</h3><p>Estimar relação entre resposta e preditores, quantificar efeitos, ajustar fatores de confusão e construir modelos preditivos dentro do domínio estudado.</p>
+<h3>R² não é tudo</h3><p>R² alto não prova causalidade nem modelo correto. Pode haver overfitting, colinearidade, tendência temporal ou variável omitida.</p>
+<h3>Diagnóstico</h3>
+<ul><li>Resíduos versus ajustados: procurar padrões/curvatura.</li><li>Normalidade dos resíduos quando requerida para inferência.</li><li>Independência temporal.</li><li>VIF/colinearidade.</li><li>Influência de outliers.</li></ul>
+<div class="decision"><strong>Regra de uso:</strong> se a pergunta é “o que causa?”, dados observacionais podem sugerir; experimentos planejados fortalecem inferência causal.</div>
+</section>
+<section class="chapter phase" id="improve"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="phase-letter">I</div><div class="kicker">Capítulo 17 • IMPROVE</div><h2>Transformar Causa em Solução Robusta</h2><p class="topic-intro">A fase Improve transforma o conhecimento gerado no Analyze em mudanças concretas no processo. As soluções devem atuar sobre causas comprovadas e ser testadas antes da implantação definitiva.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é mostrar como selecionar, testar e validar contramedidas, conduzir pilotos e garantir que a solução gere melhoria real sem criar novos riscos ou efeitos colaterais.</p>
+<div class="learning-box"><div class="learning-grid"><div class="learn"><b>Objetivo</b><p>Alterar X's críticos para mover Y de forma comprovada.</p></div><div class="learn"><b>Método</b><p>Alternativas → risco → piloto → otimização → validação.</p></div><div class="learn"><b>Gate</b><p>Resultado demonstrado e efeitos colaterais avaliados.</p></div></div></div>
+<h3>Hierarquia de contramedidas</h3>
+<ol><li>Eliminar causa.</li><li>Redesenhar para prevenir.</li><li>Automatizar/intertravar.</li><li>Detectar cedo.</li><li>Padronizar.</li><li>Treinar.</li></ol>
+<h3>Piloto</h3>
+<p>O piloto reduz risco e testa a solução em condições reais. Defina previamente: métrica, tamanho da janela, critério de sucesso, riscos, condição de rollback e método de comparação.</p>
+<h3>Verificação</h3>
+<p>Compare before/after com método adequado. Se mix ou sazonalidade mudaram, ajuste o desenho. Atribuir toda melhora à ação sem controle de confundidores pode superestimar efeito.</p>
+</section>
+<section class="chapter" id="doe"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 18</div><h2>DOE — Design of Experiments</h2><p class="topic-intro">O Design of Experiments permite estudar múltiplos fatores simultaneamente e identificar efeitos, interações e regiões ótimas de operação com muito mais eficiência do que o método de alterar um fator por vez.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é explicar os fundamentos de randomização, replicação, blocos, fatoriais, screening e superfície de resposta, mostrando como interpretar resultados e utilizar DOE na otimização de processos.</p>
+<p class="lead">DOE altera fatores de maneira planejada para aprender relações causais, efeitos principais e interações.</p>
+<h3>Princípios</h3>
+<table><thead><tr><th>Princípio</th><th>Por quê</th></tr></thead><tbody>
+<tr><td>Randomização</td><td>Protege contra vieses de ordem e tendências ocultas.</td></tr>
+<tr><td>Replicação</td><td>Estima erro experimental.</td></tr>
+<tr><td>Blocking</td><td>Controla fontes conhecidas de variação não centrais.</td></tr>
+<tr><td>Fatorialidade</td><td>Permite estudar fatores e interações conjuntamente.</td></tr>
+</tbody></table>
+<h3>Screening</h3><p>Quando há muitos fatores potenciais, fatoriais fracionados ou designs de screening identificam os poucos X's dominantes.</p>
+<h3>Otimização</h3><p>Depois do screening, superfície de resposta pode modelar curvatura e localizar região operacional ótima.</p>
+<h3>Interação</h3>
+<p>Interação significa que o efeito de A depende do nível de B. É uma das maiores vantagens do DOE sobre OFAT.</p>
+<div class="ex-card"><h4>Exemplo</h4><p>Fatores: temperatura, vazão e sólidos. Resposta: umidade final. DOE mostra que temperatura isoladamente tem efeito moderado, mas sua interação com sólidos é forte. A janela ótima depende da concentração.</p></div>
+<div class="decision"><strong>Como analisar:</strong> efeitos, ANOVA do modelo, resíduos, interações, falta de ajuste e confirmação experimental. Nunca implante o “ótimo matemático” sem rodada confirmatória e verificação de risco.</div>
+</section>
+<section class="chapter" id="fmea"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 19</div><h2>FMEA — Analisar Risco antes da Falha</h2><p class="topic-intro">O FMEA é uma ferramenta preventiva utilizada para identificar como um processo, produto ou solução pode falhar antes que a falha ocorra. Ele complementa o Six Sigma ao incorporar uma visão estruturada de risco.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é ensinar como identificar modos de falha, efeitos, causas e controles, priorizando ações preventivas e detectivas que aumentem a robustez do processo.</p>
+<p class="lead">FMEA complementa Six Sigma ao antecipar como processo ou solução pode falhar.</p>
+<table><thead><tr><th>Campo</th><th>Pergunta</th></tr></thead><tbody>
+<tr><td>Função</td><td>O que esta etapa precisa fazer?</td></tr>
+<tr><td>Modo de falha</td><td>Como pode falhar?</td></tr>
+<tr><td>Efeito</td><td>O que acontece se falhar?</td></tr>
+<tr><td>Causa</td><td>Por que a falha poderia ocorrer?</td></tr>
+<tr><td>Controle</td><td>Como prevenimos ou detectamos?</td></tr>
+</tbody></table>
+<p>Abordagens tradicionais usam Severidade × Ocorrência × Detecção para RPN. AIAG-VDA usa Action Priority para orientar ações, evitando confiar somente na multiplicação.</p>
+<div class="interpret"><strong>Uso no DMAIC:</strong> Analyze — entender riscos atuais; Improve — avaliar riscos criados pela solução; Control — definir controles preventivos/detectivos.</div>
+</section>
+<section class="chapter phase" id="control"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="phase-letter">C</div><div class="kicker">Capítulo 20 • CONTROL</div><h2>Transformar Projeto em Rotina</h2><p class="topic-intro">A fase Control garante que os ganhos obtidos durante o projeto não desapareçam após a saída da equipe Six Sigma. O foco passa da melhoria para a sustentação do novo padrão de desempenho.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é mostrar como estruturar plano de controle, plano de reação, padronização, treinamento, indicadores e transferência formal do processo para o responsável operacional.</p>
+<p class="lead">Control fecha o ciclo: o processo deixa de depender do time do projeto e passa a ser administrado pelo process owner.</p>
+<h3>Control Plan</h3>
+<table><thead><tr><th>Item</th><th>Exemplo</th></tr></thead><tbody>
+<tr><td>CTQ</td><td>Umidade final.</td></tr>
+<tr><td>X crítico</td><td>Temperatura de saída.</td></tr>
+<tr><td>Método</td><td>Sensor TT-xxx calibrado.</td></tr>
+<tr><td>Frequência</td><td>Contínua.</td></tr>
+<tr><td>Limite de operação</td><td>Faixa operacional validada.</td></tr>
+<tr><td>Plano de reação</td><td>Reduzir vazão, verificar sólidos, escalar se persistir.</td></tr>
+</tbody></table>
+<h3>Handover</h3>
+<ul><li>Process owner aceita formalmente o novo processo.</li><li>SOP/standard work atualizado.</li><li>Treinamento realizado.</li><li>Dashboard/carta ativa.</li><li>Plano de reação testado.</li><li>Benefício validado.</li></ul>
+<div class="decision"><strong>Critério de fechamento:</strong> não fechar porque “ações foram concluídas”; fechar quando desempenho foi demonstrado por tempo suficiente e o sistema de controle está funcionando.</div>
+</section>
+<section class="chapter" id="cep"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 21</div><h2>CEP — Cartas de Controle e Interpretação</h2><p class="topic-intro">O Controle Estatístico do Processo utiliza cartas de controle para acompanhar a estabilidade ao longo do tempo e identificar sinais de causas especiais antes que elas se transformem em falhas recorrentes.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é ensinar como selecionar a carta adequada, interpretar sinais estatísticos e diferenciar limites de controle de limites de especificação para apoiar decisões corretas sobre o processo.</p>
+<p class="lead">Cartas de controle estudam comportamento no tempo e distinguem variação previsível de sinais estatísticos de mudança.</p>
+<h3>Escolher a carta</h3>
+<table><thead><tr><th>Dado</th><th>Estrutura</th><th>Carta típica</th></tr></thead><tbody>
+<tr><td>Contínuo</td><td>1 observação por período</td><td>I-MR</td></tr>
+<tr><td>Contínuo</td><td>subgrupos pequenos</td><td>X̄-R</td></tr>
+<tr><td>Contínuo</td><td>subgrupos maiores</td><td>X̄-S</td></tr>
+<tr><td>Atributo</td><td>proporção não conforme</td><td>p</td></tr>
+<tr><td>Atributo</td><td>nº não conformes, n constante</td><td>np</td></tr>
+<tr><td>Contagem</td><td>defeitos, oportunidade constante</td><td>c</td></tr>
+<tr><td>Contagem</td><td>defeitos por unidade variável</td><td>u</td></tr>
+</tbody></table>
+<h3>Como analisar</h3>
+<ol><li>Observar pontos fora dos limites.</li><li>Aplicar regras de padrões não aleatórios conforme sistema adotado.</li><li>Investigar causa especial no tempo correspondente.</li><li>Não recalcular limites automaticamente para “acomodar” causa especial.</li><li>Após mudança permanente do processo, revisar baseline e limites com critério.</li></ol>
+<div class="callout warn"><strong>Limite de controle não é tolerância.</strong> Processo pode estar completamente dentro dos limites de controle e ainda produzir fora da especificação.</div>
+<div class="interpret"><strong>Decisão:</strong> processo estável e incapaz → melhoria estrutural; processo instável → identificar causas especiais antes de falar em capacidade.</div>
+</section>
+<section class="chapter" id="financeiro"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 22</div><h2>Benefício Financeiro e Validação</h2><p class="topic-intro">Projetos Six Sigma devem produzir impacto mensurável para o negócio. Por isso, os resultados técnicos precisam ser convertidos em benefícios financeiros de forma consistente e validável.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é diferenciar hard saving, soft saving, cost avoidance, ganho de capacidade, incremento de receita e redução de risco, evitando superestimar os benefícios do projeto.</p>
+<table><thead><tr><th>Benefício</th><th>Exemplo</th><th>Como validar</th></tr></thead><tbody>
+<tr><td>Hard Saving</td><td>Menos matéria-prima perdida.</td><td>Conta contábil/consumo real.</td></tr>
+<tr><td>Soft Saving</td><td>Horas liberadas.</td><td>Capacidade documentada, sem redução de caixa.</td></tr>
+<tr><td>Cost Avoidance</td><td>CAPEX adiado.</td><td>Cenário aprovado e data evitada.</td></tr>
+<tr><td>Revenue Gain</td><td>Capacidade vendida.</td><td>Margem incremental real.</td></tr>
+<tr><td>Risk Reduction</td><td>Recall/multa evitável.</td><td>Probabilidade × impacto, com transparência.</td></tr>
+</tbody></table>
+<div class="eq">Saving anual = (custo/unidade atual − futuro) × volume anual elegível</div>
+<p>Evite somar benefícios sobrepostos: redução de horas e aumento de capacidade podem representar o mesmo ganho operacional visto de duas formas.</p>
+</section>
+<section class="chapter" id="governanca"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 23</div><h2>Belts, Champions, MBB e Governança</h2><p class="topic-intro">O Six Sigma depende de uma estrutura de governança que conecta liderança, especialistas, responsáveis pelos processos e prioridades estratégicas. Os diferentes níveis de belts existem para distribuir competência e responsabilidade.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é explicar os papéis de Champion, Master Black Belt, Black Belt, Green Belt e Process Owner e mostrar como uma boa governança melhora a seleção, execução e sustentação dos projetos.</p>
+<table><thead><tr><th>Papel</th><th>Responsabilidade</th><th>Competência crítica</th></tr></thead><tbody>
+<tr><td>Champion</td><td>Seleciona/prioriza, remove barreiras, valida direção.</td><td>Negócio e liderança.</td></tr>
+<tr><td>MBB</td><td>Governança, coaching, método, estatística avançada.</td><td>Visão sistêmica e formação.</td></tr>
+<tr><td>Black Belt</td><td>Conduz projetos complexos.</td><td>DMAIC + análise + mudança.</td></tr>
+<tr><td>Green Belt</td><td>Conduz projetos locais/moderados.</td><td>Ferramentas essenciais.</td></tr>
+<tr><td>Process Owner</td><td>Sustenta processo depois do projeto.</td><td>Gestão da rotina.</td></tr>
+</tbody></table>
+<h3>Portfólio</h3>
+<p>Um portfólio maduro equilibra impacto, esforço, risco, estratégia e disponibilidade de recursos. Projetos não devem ser escolhidos apenas porque “há dados”.</p>
+</section>
+<section class="chapter" id="dfss"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 24</div><h2>DMAIC, DMADV e Design for Six Sigma</h2><p class="topic-intro">Nem todo problema deve ser tratado com DMAIC. Quando o processo ou produto ainda não existe ou precisa ser redesenhado de forma significativa, abordagens de Design for Six Sigma, como DMADV, podem ser mais adequadas.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é diferenciar DMAIC, DMADV e DFSS e ajudar o leitor a escolher a abordagem mais coerente com a natureza do desafio.</p>
+<p>DMAIC melhora processo existente. DMADV é uma estrutura comum de DFSS para criar ou redesenhar um produto/processo quando a arquitetura atual não consegue atender requisitos.</p>
+<table><thead><tr><th>DMAIC</th><th>DMADV</th><th>Pergunta</th></tr></thead><tbody>
+<tr><td>Define</td><td>Define</td><td>O que precisa ser entregue?</td></tr>
+<tr><td>Measure</td><td>Measure</td><td>Quais requisitos e capacidades importam?</td></tr>
+<tr><td>Analyze</td><td>Analyze</td><td>Quais conceitos atendem?</td></tr>
+<tr><td>Improve</td><td>Design</td><td>Otimizar existente × projetar novo.</td></tr>
+<tr><td>Control</td><td>Verify</td><td>Sustentar × verificar design.</td></tr>
+</tbody></table>
+</section>
+<section class="chapter" id="lss"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 25</div><h2>Six Sigma e Lean Six Sigma</h2><p class="topic-intro">Lean e Six Sigma atacam dimensões diferentes do desempenho. Lean prioriza fluxo, desperdício e velocidade, enquanto Six Sigma concentra-se em variação, defeitos e capacidade. Quando integrados corretamente, eles ampliam o potencial de melhoria.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é mostrar como combinar Lean e Six Sigma sem sobreposição desnecessária, utilizando cada abordagem onde ela gera maior valor para o problema analisado.</p>
+<p class="lead">Lean reduz desperdício e lead time; Six Sigma reduz variação e incerteza. A integração funciona quando o problema exige ambos.</p>
+<table><thead><tr><th>Situação</th><th>Primeira lente</th><th>Ferramentas</th></tr></thead><tbody>
+<tr><td>Filas e WIP elevados</td><td>Lean</td><td>VSM, fluxo, pull.</td></tr>
+<tr><td>Defeito crônico multivariável</td><td>Six Sigma</td><td>MSA, testes, regressão, DOE.</td></tr>
+<tr><td>Setup longo</td><td>Lean</td><td>SMED.</td></tr>
+<tr><td>Setup varia muito entre equipes</td><td>Lean + Six Sigma</td><td>SMED + MSA/ANOVA/padrão.</td></tr>
+</tbody></table>
+<div class="decision"><strong>Pareto metodológico:</strong> use a abordagem mais simples capaz de resolver o problema com confiança. Não transforme toda melhoria em projeto Black Belt.</div>
+</section>
+<section class="chapter case" id="industrial"><a class="back-toc" href="#sumario" style="color:#D9D5FF;background:#10384D">↑ Sumário</a>
+<div class="kicker" style="color:#D9D5FF">Capítulo 26 • Estudo de Caso Completo</div><h2>DMAIC em um Processo Industrial de Secagem</h2><p class="topic-intro">Um projeto Six Sigma ganha sentido quando as ferramentas são conectadas em uma sequência lógica de decisão. Este estudo de caso simula um processo de secagem industrial e percorre todas as fases do DMAIC.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é demonstrar, de forma aplicada, como definir o problema, validar dados, comprovar causas, testar soluções e estruturar controles até chegar a um resultado técnico e financeiro sustentado.</p>
+<p class="lead"><strong>Dados simulados</strong> para demonstrar raciocínio, aplicação e interpretação.</p>
+<h3>Problema</h3>
+<div class="grid4"><div class="card"><div class="kpi">8,2%</div><div class="kpi-label">lotes NC</div></div><div class="card"><div class="kpi">≤2%</div><div class="kpi-label">meta</div></div><div class="card"><div class="kpi">0,87</div><div class="kpi-label">Cpk</div></div><div class="card"><div class="kpi">R$ 510 mil</div><div class="kpi-label">COPQ anual</div></div></div>
+<h3>DEFINE</h3><p>Y = umidade final. Escopo = alimentação do secador até liberação. Meta = NC ≤2% em seis meses. Business case = retrabalho, energia adicional, atraso e risco ao cliente.</p>
+<h3>MEASURE</h3><p>Gage R&amp;R do método de umidade é aceitável para uso. Dados de seis meses são estratificados por SKU, sólidos, temperatura, vazão e turno. Carta temporal mostra estabilidade razoável após excluir evento especial documentado.</p>
+<h4>Baseline</h4><p>Média = 4,72%; s within = 0,36; especificação unilateral USL = 5,5%. Cpk unilateral ≈ 0,72–0,9 dependendo do período.</p>
+<h3>ANALYZE</h3><p>Pareto mostra que 70% das ocorrências estão em dois SKUs. Boxplots sugerem efeito de sólidos. Regressão identifica sólidos e vazão como preditores importantes; resíduos indicam interação. DOE 2³ confirma interação sólidos×vazão e efeito da temperatura de saída.</p>
+<h3>IMPROVE</h3><p>É criada janela operacional por faixa de sólidos. Piloto de 20 lotes reduz média de umidade e dispersão sem impacto adverso em densidade e cor. FMEA da mudança identifica risco de temperatura excessiva e define intertravamento.</p>
+<h3>CONTROL</h3><p>I-MR em variável de saída, carta para X crítico, dashboard semanal, plano de reação, SOP revisado e treinamento. Após período de validação: Cpk = 1,43; NC = 1,6%.</p>
+<h3>Como interpretar o resultado</h3>
+<ul><li>NC abaixo da meta: resultado atingido.</li><li>Cpk &gt; baseline: processo mais capaz.</li><li>Cartas estáveis: ganho previsível.</li><li>COPQ reduzido: benefício financeiro confirmado.</li><li>Sem deterioração de CTQs secundários: solução robusta.</li></ul>
+<div class="grid3"><div class="card"><div class="kpi">1,43</div><div class="kpi-label">Cpk futuro</div></div><div class="card"><div class="kpi">1,6%</div><div class="kpi-label">NC futura</div></div><div class="card"><div class="kpi">R$ 350 mil</div><div class="kpi-label">saving potencial</div></div></div>
+</section>
+<section class="chapter" id="digital"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 27</div><h2>Advanced Analytics, Machine Learning e IA</h2><p class="topic-intro">Advanced Analytics, Machine Learning e Inteligência Artificial ampliam a capacidade de analisar grandes volumes de dados e identificar padrões complexos. Porém, o rigor de medição, validação e causalidade continua indispensável.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é mostrar como integrar tecnologias digitais ao Six Sigma de forma responsável, utilizando-as para ampliar a capacidade analítica sem substituir os fundamentos estatísticos e de engenharia.</p>
+<p class="lead">As ferramentas mudam, mas a pergunta Six Sigma continua: os dados são confiáveis e a conclusão é válida?</p>
+<table><thead><tr><th>Tecnologia</th><th>Valor</th><th>Risco</th></tr></thead><tbody>
+<tr><td>Power BI</td><td>Visualização de baseline, Pareto, CEP.</td><td>Dashboard sem definição operacional.</td></tr>
+<tr><td>IoT/historian</td><td>Dados de alta frequência.</td><td>Mais volume de ruído e autocorrelação.</td></tr>
+<tr><td>ML</td><td>Não linearidade e predição.</td><td>Overfitting, leakage, baixa explicabilidade.</td></tr>
+<tr><td>IA generativa</td><td>Síntese, documentação, hipóteses.</td><td>Alucinação e causalidade inventada.</td></tr>
+</tbody></table>
+<div class="quote">Um modelo preditivo pode prever muito bem e ainda explicar causalidade muito mal.</div>
+</section>
+<section class="chapter" id="casos"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 28</div><h2>Estudos de Caso Documentados</h2><p class="topic-intro">Estudos de caso mostram como o Six Sigma pode produzir resultados reais em diferentes setores, mas seu principal valor está em compreender o mecanismo utilizado para chegar ao resultado.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é apresentar exemplos documentados de aplicação do Six Sigma e Lean Six Sigma, destacando problemas, métodos, ganhos e aprendizados que podem ser transferidos para outros contextos.</p>
+<p>Casos públicos do NIST MEP mostram aplicações contemporâneas de Six Sigma e Lean Six Sigma em manufatura.</p>
+<h3>Aracemd</h3><p>Projeto apoiado pelo Purdue MEP reportou redução de devoluções de 7% para 2%, aumento de capacidade de 30% e lead time de 12 para 8 semanas.</p>
+<h3>Green Belt em processo de envase</h3><p>Projeto documentado em 2025 reportou US$ 70 mil em savings a partir de DMAIC aplicado a gargalos.</p>
+<h3>Amarr</h3><p>Programa amplo com belts e Lean Six Sigma reportou US$ 10,8 milhões em savings e US$ 1,8 milhão em investimentos evitados.</p>
+<h3>Clene Nanomedicine</h3><p>Projetos associados a treinamento Black Belt ampliaram capacidade em 8.600 frascos/ano em configuração existente.</p>
+<div class="interpret"><strong>Como usar cases:</strong> procure mecanismo — problema, dados, método, solução e sustentação. Não copie percentuais como meta para seu processo.</div>
+</section>
+<section class="chapter" id="falhas"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 29</div><h2>Falhas Comuns de Projetos Six Sigma</h2><p class="topic-intro">Projetos Six Sigma podem falhar mesmo quando utilizam ferramentas tecnicamente corretas. Os problemas geralmente estão em escopo, qualidade dos dados, seleção de método, interpretação ou sustentação.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é identificar os erros mais comuns e mostrar como evitá-los, aumentando a robustez metodológica e a credibilidade das iniciativas de melhoria.</p>
+<table><thead><tr><th>Falha</th><th>Por que ocorre</th><th>Correção</th></tr></thead><tbody>
+<tr><td>Projeto sem foco</td><td>Escopo “resolver qualidade da fábrica”.</td><td>Delimitar Y, família, área e tempo.</td></tr>
+<tr><td>MSA ignorado</td><td>Confiança excessiva no instrumento.</td><td>Validar sistema completo.</td></tr>
+<tr><td>Fase Analyze vira brainstorming</td><td>Pressa por solução.</td><td>Exigir prova dos X críticos.</td></tr>
+<tr><td>Software como oráculo</td><td>Baixa compreensão estatística.</td><td>Interpretar premissas e mecanismo.</td></tr>
+<tr><td>DOE sem segurança</td><td>Foco excessivo no ótimo matemático.</td><td>Limites técnicos e MOC.</td></tr>
+<tr><td>Control fraco</td><td>Time encerra após piloto.</td><td>Process owner + CEP + reação.</td></tr>
+</tbody></table>
+</section>
+<section class="chapter" id="maturidade"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 30</div><h2>Maturidade Six Sigma</h2><p class="topic-intro">A maturidade Six Sigma representa o grau em que a organização deixa de usar ferramentas isoladas e passa a integrar projetos, dados, governança e cultura analítica em um sistema de gestão.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é oferecer uma referência para avaliar o estágio atual da organização e identificar quais capacidades precisam ser desenvolvidas para avançar.</p>
+<div class="score"><span>VOC / seleção</span><div class="bar"><i style="width:86%"></i></div><strong>4,3</strong></div>
+<div class="score"><span>MSA / dados</span><div class="bar"><i style="width:74%"></i></div><strong>3,7</strong></div>
+<div class="score"><span>Análise causal</span><div class="bar"><i style="width:64%"></i></div><strong>3,2</strong></div>
+<div class="score"><span>DOE / otimização</span><div class="bar"><i style="width:52%"></i></div><strong>2,6</strong></div>
+<div class="score"><span>Control / CEP</span><div class="bar"><i style="width:58%"></i></div><strong>2,9</strong></div>
+<div class="score"><span>Governança</span><div class="bar"><i style="width:46%"></i></div><strong>2,3</strong></div>
+<p class="small">Exemplo ilustrativo, escala 1–5.</p>
+<table><thead><tr><th>Nível</th><th>Descrição</th></tr></thead><tbody>
+<tr><td>1 — Ferramentas</td><td>Pareto, Cpk e testes usados isoladamente.</td></tr>
+<tr><td>2 — Projetos</td><td>DMAIC conduzido por belts.</td></tr>
+<tr><td>3 — Portfólio</td><td>Projetos ligados a CTQ e finanças.</td></tr>
+<tr><td>4 — Sistema</td><td>Dados, governança, coaching e control integrados.</td></tr>
+<tr><td>5 — Cultura analítica</td><td>Experimentação e evidência fazem parte da gestão.</td></tr>
+</tbody></table>
+</section>
+<section class="chapter" id="mapa"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 31</div><h2>Mapa Mental Executivo do Six Sigma</h2><p class="topic-intro">O mapa mental reúne os principais componentes do Six Sigma em uma visão única, conectando cliente, medição, análise, melhoria, controle e governança.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é facilitar a revisão e a compreensão sistêmica da metodologia, permitindo que o leitor visualize como os elementos apresentados ao longo do e-book se relacionam.</p>
+<div class="visual"><div class="visual-title">Figura 3 — Visão geral</div>
+<svg viewbox="0 0 1200 760">
+<ellipse cx="600" cy="380" fill="#6B5FA8" rx="145" ry="84"></ellipse><text fill="white" font-family="Arial" font-size="34" font-weight="700" text-anchor="middle" x="600" y="370">SIX SIGMA</text><text fill="#EEEAFE" font-family="Arial" font-size="16" text-anchor="middle" x="600" y="408">variação • causalidade • controle</text>
+<g fill="none" stroke="#AAA5C8" stroke-width="3"><path d="M600 295C600 210 600 170 600 125"></path><path d="M730 330C850 265 920 235 1000 200"></path><path d="M735 435C855 500 920 535 1000 575"></path><path d="M600 465C600 550 600 600 600 650"></path><path d="M465 435C345 500 280 535 195 575"></path><path d="M470 325C350 260 285 225 195 190"></path></g>
+<g font-family="Arial" text-anchor="middle">
+<rect fill="#EEEAFE" height="95" rx="20" width="290" x="455" y="40"></rect><text fill="#071A2B" font-size="22" font-weight="700" x="600" y="76">VOC / CTQ</text><text fill="#627283" font-size="16" x="600" y="106">problema certo</text>
+<rect fill="#EEF4F8" height="120" rx="20" width="245" x="920" y="140"></rect><text fill="#071A2B" font-size="22" font-weight="700" x="1042" y="176">MEASURE</text><text fill="#627283" font-size="16" x="1042" y="204">MSA • baseline</text><text fill="#627283" font-size="16" x="1042" y="228">capability</text>
+<rect fill="#FFF4E7" height="120" rx="20" width="235" x="930" y="515"></rect><text fill="#071A2B" font-size="22" font-weight="700" x="1047" y="551">ANALYZE</text><text fill="#627283" font-size="16" x="1047" y="579">testes • regressão</text><text fill="#627283" font-size="16" x="1047" y="603">causas críticas</text>
+<rect fill="#F0FAF4" height="95" rx="20" width="310" x="445" y="640"></rect><text fill="#071A2B" font-size="22" font-weight="700" x="600" y="676">IMPROVE</text><text fill="#627283" font-size="16" x="600" y="706">DOE • piloto • robustez</text>
+<rect fill="#FFF1EF" height="120" rx="20" width="270" x="35" y="515"></rect><text fill="#071A2B" font-size="22" font-weight="700" x="170" y="551">CONTROL</text><text fill="#627283" font-size="16" x="170" y="579">CEP • plano • reação</text>
+<rect fill="#EDF7FD" height="130" rx="20" width="285" x="30" y="130"></rect><text fill="#071A2B" font-size="22" font-weight="700" x="172" y="167">GOVERNANÇA</text><text fill="#627283" font-size="16" x="172" y="195">belts • sponsor</text><text fill="#627283" font-size="16" x="172" y="219">finanças • coaching</text>
+</g></svg></div>
+</section>
+<section class="chapter" id="mensagens"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 32</div><h2>Mensagens-chave do Autor</h2><p class="topic-intro">As mensagens-chave sintetizam os princípios que mais influenciam a qualidade de uma aplicação Six Sigma e ajudam a transformar conceitos técnicos em regras práticas de decisão.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é reforçar os aprendizados essenciais do e-book em frases de rápida consulta, facilitando sua aplicação no dia a dia de projetos e processos.</p>
+<div class="message-grid">
+<div class="message-card"><span>01</span><strong>Dados ruins produzem conclusões sofisticadamente erradas.</strong><p>MSA vem antes da inferência.</p></div>
+<div class="message-card"><span>02</span><strong>Média boa não compensa variação alta.</strong><p>Cliente recebe unidades, não médias.</p></div>
+<div class="message-card"><span>03</span><strong>Hipótese não é causa raiz.</strong><p>Uma causa crítica precisa de evidência.</p></div>
+<div class="message-card"><span>04</span><strong>p-value não é tamanho de efeito.</strong><p>Estatística e relevância operacional devem concordar.</p></div>
+<div class="message-card"><span>05</span><strong>Correlação não prova causalidade.</strong><p>DOE e conhecimento físico fortalecem conclusão.</p></div>
+<div class="message-card"><span>06</span><strong>Cpk exige contexto.</strong><p>Sem estabilidade e MSA, o índice pode enganar.</p></div>
+<div class="message-card"><span>07</span><strong>Especificação e limite de controle respondem perguntas diferentes.</strong><p>Cliente × comportamento do processo.</p></div>
+<div class="message-card"><span>08</span><strong>DOE aprende sobre interação.</strong><p>OFAT frequentemente não enxerga isso.</p></div>
+<div class="message-card"><span>09</span><strong>Improve sem Control é evento, não transformação.</strong><p>O resultado precisa sobreviver ao projeto.</p></div>
+<div class="message-card"><span>10</span><strong>Six Sigma não é software.</strong><p>É uma disciplina para reduzir incerteza em decisões.</p></div>
+<div class="message-card"><span>11</span><strong>Savings sem validação perde credibilidade.</strong><p>Finanças deve participar do sistema.</p></div>
+<div class="message-card"><span>12</span><strong>O melhor modelo é o que melhora a decisão.</strong><p>Complexidade sem valor não é excelência.</p></div>
+</div>
+<div class="author-signoff"><span>JB Process &amp; Tech • Knowledge Series</span><strong>Medir para compreender. Compreender para melhorar. Controlar para sustentar.</strong></div>
+</section>
+<section id="glossario"><div class="kicker">Capítulo 33</div><h2>Glossário Técnico</h2><p class="topic-intro">O Six Sigma utiliza uma terminologia técnica própria, composta por conceitos estatísticos, métricas, métodos e papéis organizacionais que aparecem ao longo de todo o processo de melhoria.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é oferecer uma referência rápida para os principais termos, facilitando a consulta e a compreensão durante a leitura e a aplicação prática.</p><div class="glossary">
+<div class="term"><b>DMAIC</b><br/>Define, Measure, Analyze, Improve, Control.</div><div class="term"><b>CTQ</b><br/>Característica mensurável crítica à qualidade.</div>
+<div class="term"><b>VOC</b><br/>Voice of the Customer.</div><div class="term"><b>DPMO</b><br/>Defeitos por milhão de oportunidades.</div>
+<div class="term"><b>DPU</b><br/>Defeitos por unidade.</div><div class="term"><b>FPY</b><br/>First Pass Yield.</div>
+<div class="term"><b>RTY</b><br/>Rolled Throughput Yield.</div><div class="term"><b>MSA</b><br/>Análise do sistema de medição.</div>
+<div class="term"><b>Gage R&amp;R</b><br/>Repetibilidade e reprodutibilidade.</div><div class="term"><b>Cp/Cpk</b><br/>Capacidade potencial/efetiva de curto prazo.</div>
+<div class="term"><b>Pp/Ppk</b><br/>Desempenho global de longo prazo.</div><div class="term"><b>SPC/CEP</b><br/>Controle Estatístico de Processo.</div>
+<div class="term"><b>DOE</b><br/>Design of Experiments.</div><div class="term"><b>ANOVA</b><br/>Análise de variância.</div>
+<div class="term"><b>Power</b><br/>Probabilidade de detectar um efeito real de interesse.</div><div class="term"><b>FMEA</b><br/>Análise de modos e efeitos de falha.</div>
+<div class="term"><b>COPQ</b><br/>Custo da má qualidade.</div><div class="term"><b>DFSS</b><br/>Design for Six Sigma.</div>
+</div></section>
+<section id="referencias"><div class="kicker">Capítulo 34</div><h2>Referências e Fontes de Aprofundamento</h2><p class="topic-intro">O aprofundamento em Six Sigma exige acesso a fontes confiáveis que sustentem seus fundamentos estatísticos, históricos e metodológicos. As referências organizadas aqui permitem continuar o estudo de forma estruturada.</p><p class="topic-objective"><strong>Objetivo do tema: </strong>O objetivo deste tema é direcionar o leitor para obras clássicas, normas, instituições e estudos de caso que complementem e aprofundem o conteúdo apresentado no e-book.</p>
+<h3>Obras fundamentais</h3><ol class="refs">
+<li><b>SHEWHART, Walter A.</b> <em>Economic Control of Quality of Manufactured Product.</em></li>
+<li><b>DEMING, W. Edwards.</b> <em>Out of the Crisis.</em></li>
+<li><b>JURAN, Joseph M.</b> obras sobre planejamento, controle e melhoria da qualidade.</li>
+<li><b>HARRY, Mikel; SCHROEDER, Richard.</b> <em>Six Sigma: The Breakthrough Management Strategy.</em></li>
+<li><b>PYZDEK, Thomas; KELLER, Paul.</b> <em>The Six Sigma Handbook.</em></li>
+<li><b>MONTGOMERY, Douglas C.</b> <em>Introduction to Statistical Quality Control.</em></li>
+<li><b>MONTGOMERY, Douglas C.</b> <em>Design and Analysis of Experiments.</em></li>
+<li><b>BOX, George E. P.; HUNTER, J. Stuart; HUNTER, William G.</b> <em>Statistics for Experimenters.</em></li>
+</ol>
+<h3>Referências técnicas institucionais</h3><ol class="refs">
+<li><b>ASQ.</b> DMAIC. <a href="https://asq.org/quality-resources/dmaic" target="_blank">DMAIC Process</a>.</li>
+<li><b>ASQ.</b> Control Chart. <a href="https://asq.org/quality-resources/control-chart" target="_blank">Control Chart / SPC</a>.</li>
+<li><b>ASQ.</b> History of Quality. <a href="https://asq.org/quality-resources/history-of-quality" target="_blank">History of Quality</a>.</li>
+<li><b>ASQ.</b> Harry, M. <em>Six Sigma: A Breakthrough Strategy for Profitability.</em> Quality Progress, 1998.</li>
+<li><b>NIST/SEMATECH.</b> <em>e-Handbook of Statistical Methods.</em> <a href="https://www.nist.gov/programs-projects/nistsematech-engineering-statistics-handbook" target="_blank">NIST Engineering Statistics Handbook</a>.</li>
+<li><b>ISO 13053-1.</b> Quantitative methods in process improvement — Six Sigma — DMAIC methodology.</li>
+</ol>
+<h3>Casos documentados</h3><ol class="refs">
+<li><b>NIST MEP.</b> Purdue MEP / Aracemd — devoluções, capacidade e lead time. <a href="https://www.nist.gov/mep/successstories/2025/purdue-mep-helps-refine-processes-and-eliminate-waste-leading-improved" target="_blank">Fonte</a>.</li>
+<li><b>NIST MEP.</b> Lean Six Sigma Green Belt Certification Drives Cost Savings. <a href="https://www.nist.gov/mep/successstories/2025/lean-six-sigma-green-belt-certification-drives-cost-savings-and-new" target="_blank">Fonte</a>.</li>
+<li><b>NIST MEP.</b> Significant Benefits Through Lean Six Sigma Training. <a href="https://www.nist.gov/mep/successstories/2024/significant-benefits-through-lean-six-sigma-training" target="_blank">Fonte</a>.</li>
+<li><b>NIST MEP.</b> Increased Capacity and Production through Lean Six Sigma Training. <a href="https://www.nist.gov/mep/successstories/2022/increased-capacity-and-production-through-lean-six-sigma-training" target="_blank">Fonte</a>.</li>
+</ol>
+<div class="reference-note"><strong>Nota de integridade:</strong> o texto é uma síntese técnica autoral. Critérios estatísticos devem ser usados considerando pressupostos, risco e contexto do processo. Dados do estudo industrial são simulados.</div>
+</section>
+</main>
+<footer class="footer"><strong>JB Process &amp; Tech</strong><br/>Excelência Operacional • Lean Six Sigma • Engenharia • Data Analytics • Transformação Digital<br/><br/>E-book técnico aprofundado • Knowledge Series • Edição 2026</footer></body></html>
