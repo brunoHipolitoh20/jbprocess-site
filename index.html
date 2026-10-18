@@ -223,6 +223,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,15,.8
 .content{background:var(--surface);border-top:1px solid var(--border)}
 .content-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .ebook-grid{grid-template-columns:repeat(3,1fr)}
+.book-feature{display:grid;grid-template-columns:minmax(280px,.82fr) 1.18fr;gap:2.2rem;align-items:center;background:linear-gradient(135deg,rgba(0,229,160,.07),rgba(0,196,255,.035) 48%,rgba(91,110,245,.06));border:1px solid rgba(0,229,160,.22);border-radius:22px;padding:clamp(1.2rem,3vw,2.2rem);margin-bottom:2.4rem;overflow:hidden;position:relative}
+.book-feature::before{content:'';position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,var(--accent1),var(--accent4),var(--accent2))}
+.book-cover{background:#080b12;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 24px 55px rgba(0,0,0,.38);max-width:390px;margin:0 auto}
+.book-cover img{display:block;width:100%;height:auto;aspect-ratio:5/7;object-fit:cover}
+.book-kicker{display:inline-flex;align-items:center;gap:.45rem;color:var(--accent1);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:.7rem}
+.book-kicker::before{content:'';width:18px;height:1px;background:var(--accent1)}
+.book-copy h3{font-family:'Syne',sans-serif;font-size:clamp(1.65rem,3vw,2.5rem);line-height:1.05;letter-spacing:-.035em;margin-bottom:.45rem}
+.book-subtitle{color:var(--accent4);font-weight:600;font-size:1.03rem;margin-bottom:1rem}
+.book-copy>p{color:var(--muted);font-size:.92rem;line-height:1.78;max-width:660px}
+.book-benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1.25rem 0 1.45rem}
+.book-benefit{background:rgba(18,18,26,.72);border:1px solid var(--border);border-radius:11px;padding:.85rem .95rem;font-size:.78rem;color:var(--muted)}
+.book-benefit strong{display:block;color:var(--text);font-family:'Syne',sans-serif;font-size:.8rem;margin-bottom:.15rem}
+.book-actions{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.book-note{font-size:.72rem;color:var(--muted2);margin-top:.8rem}
+.ebook-subhead{text-align:center;margin:2.5rem 0 1.25rem}
+.ebook-subhead h3{font-family:'Syne',sans-serif;font-size:1.15rem;margin-bottom:.35rem}
+.ebook-subhead p{font-size:.8rem;color:var(--muted)}
+
 .content-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:1.35rem;text-decoration:none;transition:.2s}
 .content-card:hover{border-color:var(--accent1);transform:translateY(-3px)}
 .content-card .cat{font-size:.65rem;text-transform:uppercase;letter-spacing:.09em;color:var(--accent1);font-weight:600}
@@ -283,6 +301,9 @@ footer{background:#08080d;border-top:1px solid var(--border)}
   .footer-main{grid-template-columns:1.3fr 1fr 1fr}
 }
 @media(max-width:900px){
+  .book-feature{grid-template-columns:1fr;gap:1.5rem}
+  .book-cover{max-width:360px}
+
   section{padding:4.5rem 0}
   .menu-toggle{display:block}
   .nav-links{position:absolute;top:82px;left:0;right:0;background:rgba(10,10,15,.98);border-bottom:1px solid var(--border);padding:1rem 5% 1.4rem;display:none;flex-direction:column;align-items:stretch;gap:.25rem}
@@ -302,6 +323,9 @@ footer{background:#08080d;border-top:1px solid var(--border)}
   .footer-main{grid-template-columns:1fr 1fr}
 }
 @media(max-width:650px){
+  .book-benefits{grid-template-columns:1fr}
+  .book-actions .btn{width:100%}
+
   .nav-logo{font-size:.8rem} .nav-logo img{width:48px;height:48px}
   .hero h1{font-size:2.35rem}
   .hero-pillars,.solutions-grid,.flow,.detail-list,.training-grid,.why-grid,.mv-grid,.values,.content-strip,.ebook-grid,.form-grid,.impact-grid,.segment-grid{grid-template-columns:1fr}
@@ -327,7 +351,7 @@ footer{background:#08080d;border-top:1px solid var(--border)}
       <li><a href="#tecnologia">Tecnologia &amp; IA</a></li>
       <li><a href="#apps">Aplicativos</a></li>
       <li><a href="#treinamentos">Treinamentos</a></li>
-      <li><a href="#ebooks">E-books</a></li>
+      <li><a href="#ebooks">Livros &amp; E-books</a></li>
       <li><a href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener">Conteúdo</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#contato" class="nav-cta">Solicitar diagnóstico</a></li>
@@ -657,10 +681,41 @@ footer{background:#08080d;border-top:1px solid var(--border)}
 <section id="ebooks">
   <div class="container">
     <div class="section-head center">
-      <div class="eyebrow">E-books</div>
-      <h2 class="section-title">Biblioteca técnica JB Process &amp; Tech.</h2>
-      <p class="section-desc">Estudos aprofundados, práticos e compartilháveis sobre excelência operacional, engenharia, dados e transformação industrial.</p>
+      <div class="eyebrow">Livros &amp; E-books</div>
+      <h2 class="section-title">Conhecimento técnico JB Process &amp; Tech.</h2>
+      <p class="section-desc">Conteúdo desenvolvido para transformar conceitos de engenharia, gestão e melhoria contínua em aplicação prática, decisões melhores e resultados sustentáveis.</p>
     </div>
+
+    <article class="book-feature" aria-label="Livro Gestão de Indicadores">
+      <div class="book-cover">
+        <img src="assets/livro-gestao-indicadores.webp" alt="Livro Gestão de Indicadores — Da teoria à prática: KPIs, metas e desempenho, de Bruno Hipólito" loading="lazy">
+      </div>
+      <div class="book-copy">
+        <div class="book-kicker">Livro impresso • Venda pelo WhatsApp</div>
+        <h3>Gestão de Indicadores</h3>
+        <div class="book-subtitle">Da teoria à prática: KPIs, metas e desempenho</div>
+        <p>Um guia prático para transformar dados em decisões, alinhar estratégia e impulsionar resultados sustentáveis. O conteúdo conecta gestão, indicadores e execução para profissionais que precisam sair da medição isolada e construir uma rotina de performance.</p>
+
+        <div class="book-benefits">
+          <div class="book-benefit"><strong>Metas consistentes</strong>Estruture indicadores conectados aos objetivos do negócio.</div>
+          <div class="book-benefit"><strong>Estratégia alinhada</strong>Conecte KPIs, prioridades e tomada de decisão.</div>
+          <div class="book-benefit"><strong>Processos &amp; desempenho</strong>Use indicadores para direcionar melhoria e gestão.</div>
+          <div class="book-benefit"><strong>Decisões com dados</strong>Transforme informação em ação gerencial.</div>
+        </div>
+
+        <div class="book-actions">
+          <a class="btn btn-primary" href="https://wa.me/5518996328579?text=Olá%21%20Gostaria%20de%20adquirir%20o%20livro%20Gestão%20de%20Indicadores%20—%20Da%20teoria%20à%20prática%3A%20KPIs%2C%20metas%20e%20desempenho%2C%20de%20Bruno%20Hipólito.%20Poderia%20me%20informar%20valor%2C%20disponibilidade%2C%20frete%20e%20forma%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar pelo WhatsApp →</a>
+          <a class="btn btn-secondary" href="#ebooks-gratuitos">Conhecer os e-books</a>
+        </div>
+        <div class="book-note">Venda assistida pelo WhatsApp nesta etapa. Valor, disponibilidade, frete e forma de pagamento são confirmados no atendimento.</div>
+      </div>
+    </article>
+
+    <div class="ebook-subhead" id="ebooks-gratuitos">
+      <h3>E-books Premium</h3>
+      <p>Materiais digitais da JB Process &amp; Tech para estudo, capacitação e aplicação prática.</p>
+    </div>
+
     <div class="content-strip ebook-grid">
       <a class="content-card" href="/ebooks/5s/" target="_blank" rel="noopener">
         <div class="cat">Knowledge Series • E-book Premium</div>
@@ -761,7 +816,7 @@ footer{background:#08080d;border-top:1px solid var(--border)}
       <p style="margin-top:.8rem">Processos melhores. Dados confiáveis. Decisões inteligentes. Resultados mensuráveis.</p>
     </div>
     <div class="footer-col"><h4>Soluções</h4><ul><li><a href="#engenharia">Engenharia de Processos</a></li><li><a href="#excelencia">Excelência Operacional</a></li><li><a href="#dados">Dados &amp; BI</a></li><li><a href="#tecnologia">Tecnologia &amp; IA</a></li></ul></div>
-    <div class="footer-col"><h4>Produtos &amp; Conteúdo</h4><ul><li><a href="https://planner.ind.br" target="_blank" rel="noopener">Planner</a></li><li><a href="https://lean.ind.br" target="_blank" rel="noopener">Lean Analysis Platform</a></li><li><a href="#treinamentos">Treinamentos</a></li><li><a href="#ebooks">E-books</a></li><li><a href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Produtos &amp; Conteúdo</h4><ul><li><a href="https://planner.ind.br" target="_blank" rel="noopener">Planner</a></li><li><a href="https://lean.ind.br" target="_blank" rel="noopener">Lean Analysis Platform</a></li><li><a href="#treinamentos">Treinamentos</a></li><li><a href="#ebooks">Livros &amp; E-books</a></li><li><a href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener">Blog</a></li></ul></div>
     <div class="footer-col"><h4>Contato</h4><ul><li><a id="fe-lnk" href="#"><span id="fe-val">E-mail</span></a></li><li><a href="tel:+5518996328579">(18) 99632-8579</a></li><li><a href="tel:+5518998189206">(18) 99818-9206</a></li><li><a href="https://wa.me/5518996328579" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span>© 2026 JB Process &amp; Tech. Todos os direitos reservados.</span><span>Engenharia · Excelência Operacional · Dados · Tecnologia · IA</span></div>
