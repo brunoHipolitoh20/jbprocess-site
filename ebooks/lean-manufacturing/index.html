@@ -3,31 +3,1098 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lean Manufacturing — Valor, Fluxo e Excelência Operacional | JB Process & Tech</title>
-<style>html,body{margin:0;min-height:100%;font-family:Arial,sans-serif;background:#EDF2F5;color:#172330}.loading{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px}.loading strong{color:#0B7974}</style>
+<title>Lean Manufacturing — Valor, Fluxo e Excelência Operacional | JB Process &amp; Tech</title>
+<meta name="description" content="E-book técnico gratuito sobre Lean Manufacturing: TPS, 5 princípios, 8 desperdícios, VSM com caso industrial numérico, takt, Lei de Little, OEE, fluxo, Kanban, SMED, Heijunka, Jidoka, trabalho padronizado, roadmap, exercícios com gabarito e checklist de autoavaliação.">
+<meta name="author" content="Bruno Hipólito">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jbprocesstech.com.br/ebooks/lean-manufacturing/">
+<meta property="og:type" content="book">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="JB Process &amp; Tech">
+<meta property="og:title" content="Lean Manufacturing — Valor, Fluxo e Excelência Operacional">
+<meta property="og:description" content="Guia aplicado de Lean com caso industrial numérico completo (VSM atual e futuro), cálculos de takt, Kanban, EPEI e OEE, exercícios com gabarito e checklist de maturidade.">
+<meta property="og:url" content="https://jbprocesstech.com.br/ebooks/lean-manufacturing/">
+<meta property="og:image" content="https://jbprocesstech.com.br/ebooks/lean-manufacturing/og-lean-manufacturing.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Capa do e-book Lean Manufacturing — JB Process &amp; Tech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jbprocesstech.com.br/ebooks/lean-manufacturing/og-lean-manufacturing.png">
+<meta property="book:author" content="Bruno Hipólito">
+<meta property="book:release_date" content="2026-11-15">
+<meta name="twitter:title" content="Lean Manufacturing — Valor, Fluxo e Excelência Operacional">
+<meta name="twitter:description" content="TPS, VSM com caso numérico, takt, Kanban, SMED, Heijunka, OEE, exercícios e checklist.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Book","name":"Lean Manufacturing — Valor, Fluxo e Excelência Operacional","bookEdition":"1ª edição","inLanguage":"pt-BR","author":{"@type":"Person","name":"Bruno Hipólito","jobTitle":"Fundador da JB Process & Tech"},"publisher":{"@type":"Organization","name":"JB Process & Tech","url":"https://jbprocesstech.com.br/"},"datePublished":"2026-11-15","image":"https://jbprocesstech.com.br/ebooks/lean-manufacturing/og-lean-manufacturing.png","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"JB Process & Tech"},"url":"https://jbprocesstech.com.br/ebooks/lean-manufacturing/","isAccessibleForFree":true}
+</script>
+<style>
+
+:root{
+--navy:#071A2B;--navy2:#0B2C46;--blue:#174A73;--teal:#0B7974;--cyan:#13A9A2;
+--green:#237A4A;--amber:#B26A0D;--red:#B63E35;--purple:#6B5FA8;--ink:#172330;
+--muted:#55667A;--line:#D9E2E9;--soft:#F4F8FA;--white:#FFF;--shadow:0 15px 42px rgba(7,26,43,.10)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#EDF2F5;color:var(--ink);font:16px/1.68 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--teal)}
+.hero{min-height:94vh;display:flex;align-items:center;position:relative;overflow:hidden;color:white;
+background:radial-gradient(circle at 82% 19%,rgba(19,169,162,.30),transparent 28%),radial-gradient(circle at 72% 75%,rgba(35,122,74,.18),transparent 25%),linear-gradient(135deg,#05131F,#092B45 58%,#0B6267)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(black,transparent)}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-180px;bottom:-220px;border:1px solid #ffffff20;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff05}
+.hero-inner{width:100%;max-width:1200px;margin:auto;padding:80px 42px;position:relative;z-index:1;text-align:center}
+.premium-cover:after{content:"2026";position:absolute;right:40px;top:15px;font-size:84px;font-weight:900;color:#ffffff08;letter-spacing:-.06em}
+.brand{font-size:14px;letter-spacing:.17em;text-transform:uppercase;font-weight:800;color:#A7F3D0}
+.cover-meta{margin-top:10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#A9C9D9}
+.cover-grid{display:grid;grid-template-columns:1fr;justify-items:center;margin-top:32px;text-align:center}
+.cover-left{display:flex;flex-direction:column;align-items:center;max-width:940px}
+.eyebrow{display:inline-block;margin-top:34px;padding:7px 12px;border:1px solid #ffffff35;border-radius:999px;color:#D8F5F0;font-size:13px}
+h1{font-size:clamp(62px,10vw,112px);line-height:.88;letter-spacing:-.06em;margin:22px 0 18px}
+.subtitle{font-size:27px;line-height:1.35;max-width:930px;color:#DBE8F0;margin:auto}
+.cover-strap{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#9FDCD6;max-width:880px;margin:21px auto 0}
+.hero-note{margin:34px auto 0;max-width:840px;color:#C7D8E4;font-size:19px}
+.cover-bottom{margin-top:44px;padding-top:17px;border-top:1px solid #ffffff28;color:#C8DAE5;font-size:13px;letter-spacing:.045em;text-align:center;max-width:900px;margin-left:auto;margin-right:auto}
+nav{position:sticky;top:0;z-index:30;background:#fffffff8;border-bottom:1px solid var(--line);backdrop-filter:blur(9px)}
+nav .inner{max-width:1200px;margin:auto;padding:10px 30px;display:flex;gap:6px;overflow:auto}
+nav a{white-space:nowrap;text-decoration:none;font-size:12.5px;color:var(--blue);padding:8px 9px;border-radius:8px}
+nav a:hover{background:#EDF4F7}
+main{max-width:1200px;margin:auto;padding:34px}
+section{background:white;border-radius:24px;padding:42px;margin:28px 0;box-shadow:var(--shadow)}
+.chapter{border-top:6px solid var(--teal)}
+.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:850;color:var(--teal)}
+h2{font-size:37px;line-height:1.1;letter-spacing:-.025em;margin:8px 0 14px;color:var(--navy)}
+h3{font-size:24px;line-height:1.25;color:var(--blue);margin:31px 0 10px}
+h4{font-size:17px;color:var(--navy);margin:20px 0 7px}
+.lead{font-size:19px;color:var(--muted);max-width:970px}.small{font-size:13px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:19px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.card{border:1px solid var(--line);border-radius:18px;padding:20px;background:white}.soft{background:var(--soft)}.card h3,.card h4{margin-top:0}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#E5F7F4;color:#0A635F;font-size:12px;font-weight:800}
+.callout{border-left:5px solid var(--teal);background:#EFFAF8;border-radius:14px;padding:18px 20px;margin:21px 0}
+.warn{border-left-color:var(--amber);background:#FFF8EA}.danger{border-left-color:var(--red);background:#FFF1EF}.ok{border-left-color:var(--green);background:#F0FAF4}
+.quote{font-size:23px;line-height:1.5;color:var(--navy);font-weight:700;border-left:4px solid var(--cyan);padding:10px 0 10px 22px;margin:22px 0}
+.attribution{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:8px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:17px 0}th{background:#EAF1F6;color:var(--navy);text-align:left;padding:11px;border-bottom:2px solid #C7D3DD}td{padding:10px 11px;border-bottom:1px solid #E4EAF0;vertical-align:top}tr:hover td{background:#FAFCFD}
+ul,ol{padding-left:23px}li{margin:6px 0}
+.toc{columns:2;column-gap:34px}.toc a{display:block;break-inside:avoid;padding:9px 0;border-bottom:1px solid #E6EBEF;text-decoration:none;color:var(--blue)}.toc b{color:var(--teal);display:inline-block;min-width:36px}
+.flow{display:flex;gap:9px;align-items:stretch;flex-wrap:wrap;margin:20px 0}.step{flex:1;min-width:135px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;font-weight:800;color:var(--blue)}.arrow{display:flex;align-items:center;font-size:23px;font-weight:900;color:var(--teal)}
+.visual{border:1px solid var(--line);border-radius:20px;padding:19px;background:linear-gradient(#FCFEFF,#F3F8FA);margin:24px 0;overflow:hidden}.visual-title{font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:850;color:var(--muted);margin-bottom:8px}svg{display:block;width:100%;height:auto}
+.pill{display:inline-block;padding:6px 9px;border-radius:999px;background:#EDF4F8;color:var(--blue);font-size:13px;font-weight:700;margin:3px}
+.formula{display:block;background:#091F32;color:#E5F5F3;border-radius:14px;padding:16px 18px;font-family:Consolas,monospace;margin:12px 0}
+.author{border-left:5px solid var(--blue);background:#F4F8FB}.author h3{margin-top:0}.author .name{font-size:21px;color:var(--navy);font-weight:850}.author .contrib{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);font-weight:850}
+.timeline{position:relative;padding-left:30px}.timeline:before{content:"";position:absolute;left:9px;top:6px;bottom:8px;width:3px;background:#C8E3DF}.time{position:relative;margin:19px 0}.time:before{content:"";position:absolute;left:-26px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--teal);border:3px solid #DDF2EF}.time b{color:var(--navy)}
+.case{background:#081E30;color:#E5EEF4}.case h2,.case h3,.case h4,.case .quote{color:white}.case .lead,.case .small{color:#C9D8E3}.case .card{background:#ffffff0d;border-color:#ffffff20}.case table{background:white;color:var(--ink)}.case th{background:#E8F0F5}
+.kpi{font-size:31px;font-weight:900;color:var(--navy)}.kpi-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.case .kpi,.case .kpi-label{color:white}
+.refs li{margin:11px 0}.refs a{word-break:break-word}.reference-note{background:#F8FAFB;border:1px solid var(--line);border-radius:15px;padding:16px;margin-top:22px;font-size:13px;color:#516171}.reference-note b{color:var(--navy)}
+.glossary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.term{border:1px solid var(--line);border-radius:14px;padding:13px}.term b{color:var(--navy)}
+.s-card{position:relative;overflow:hidden}.s-card .num{font-size:54px;line-height:1;font-weight:900;color:#D8EDEB;position:absolute;right:12px;top:9px}.s-card strong{display:block;font-size:20px;color:var(--navy);margin-bottom:4px}.s-card em{font-style:normal;font-size:12px;color:var(--teal);text-transform:uppercase;font-weight:800;letter-spacing:.08em}
+.score{display:grid;grid-template-columns:160px 1fr 60px;gap:10px;align-items:center;margin:8px 0;font-size:13px}.bar{height:13px;border-radius:999px;background:#E7EDF1;overflow:hidden}.bar i{height:100%;display:block;background:linear-gradient(90deg,#0B7974,#13A9A2);border-radius:999px}
+.message-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.message-card{position:relative;border:1px solid var(--line);border-radius:18px;padding:20px 20px 18px 58px;background:linear-gradient(135deg,#FFFFFF,#F6FAFB)}.message-card span{position:absolute;left:17px;top:18px;width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:white;font-size:11px;font-weight:900}.message-card strong{display:block;color:var(--navy);font-size:16px;line-height:1.35}.message-card p{margin:7px 0 0;color:var(--muted);font-size:14px}
+.author-signoff{margin-top:26px;padding:24px;border-radius:18px;background:linear-gradient(135deg,#071A2B,#0B4F59);color:white}.author-signoff span{display:block;font-size:11px;letter-spacing:.14em;color:#A7F3D0;text-transform:uppercase;font-weight:800}.author-signoff strong{display:block;font-size:24px;margin-top:5px}
+.back-toc{float:right;font-size:11px;text-decoration:none;color:var(--teal);background:#EAF7F5;border-radius:999px;padding:5px 9px;margin-top:-2px}
+.footer{text-align:center;padding:44px 30px 65px;color:#657586;font-size:13px}
+@media(max-width:900px){main{padding:18px}section{padding:28px}.grid2,.grid3,.grid4,.grid5,.glossary,.message-grid{grid-template-columns:1fr}.toc{columns:1}h2{font-size:31px}.hero-inner{padding:58px 24px}.subtitle{font-size:21px}.premium-cover:after{right:20px;top:20px;font-size:64px}.score{grid-template-columns:110px 1fr 45px}}
+@page{size:A4;margin:15mm 14mm 17mm 14mm;@bottom-left{content:"JB Process & Tech • LEAN MANUFACTURING";font-size:8pt;color:#7A8792}@bottom-right{content:"Página " counter(page);font-size:8pt;color:#7A8792}}
+@page cover{size:A4;margin:0}
+@media print{
+*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+body{background:#fff;font-size:10.2pt;line-height:1.52}
+nav{display:none!important}main{max-width:none;padding:0}
+.hero{page:cover;width:210mm;height:297mm;min-height:297mm;margin:0;break-after:page;overflow:hidden}
+.hero-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:297mm;max-width:none;padding:26mm 18mm 17mm;text-align:center}
+.cover-grid{grid-template-columns:1fr;justify-items:center;margin-top:14mm}.cover-left{max-width:150mm}.cover-left h1{font-size:49pt}.subtitle{font-size:20pt}.hero-note{font-size:10.5pt;max-width:128mm}.cover-strap{font-size:8.5pt}.cover-bottom{position:absolute;left:18mm;right:18mm;bottom:18mm}.premium-cover:after{right:18mm;top:14mm;font-size:52pt}
+section{box-shadow:none;border-radius:0;padding:0;margin:0 0 8mm;background:#fff}
+section.chapter{break-before:page;border-top:0;padding-top:0}#sumario{break-before:page}
+h2{font-size:23pt;margin-top:0}h3{font-size:14.5pt}h4{font-size:11.5pt}h2,h3,h4{break-after:avoid-page}
+p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.message-grid{gap:4mm}.visual,.card,table{break-inside:avoid}.back-toc{display:none}
+}
+
+.ph{background:#FFF1B8;color:#5A4300;border:1px dashed #C79A00;border-radius:6px;padding:1px 6px;font-weight:800;font-style:normal}
+.exercise{border:1px solid var(--line);border-left:5px solid var(--purple);border-radius:14px;padding:16px 18px;margin:16px 0;background:#FAF9FE}
+.exercise b.n{color:var(--purple)}
+.answer{border:1px solid var(--line);border-left:5px solid var(--green);border-radius:14px;padding:14px 18px;margin:14px 0;background:#F6FBF8}
+.check td:last-child,.check th:last-child{text-align:center;width:120px}
+.num td:not(:first-child),.num th:not(:first-child){text-align:right}
+.cta{background:linear-gradient(135deg,#071A2B,#0B4F59);color:#fff;border-radius:22px;padding:30px}
+.cta h2,.cta h3{color:#fff}.cta p{color:#D6E6EE}
+.cta .btn{display:inline-block;background:#13A9A2;color:#05131F;font-weight:900;text-decoration:none;padding:12px 18px;border-radius:12px;margin:8px 8px 0 0}
+.lead-form{background:#fff;color:var(--ink);border-radius:16px;padding:20px;margin-top:18px}
+.lead-form label{display:block;font-size:13px;font-weight:800;color:var(--navy);margin:10px 0 4px}
+.lead-form input,.lead-form select{width:100%;padding:10px;border:1px solid #B9C7D2;border-radius:10px;font:inherit}
+.lead-form .consent{display:flex;gap:8px;align-items:flex-start;font-size:13px;margin-top:12px}.lead-form .consent input{width:auto;margin-top:4px}
+.lead-form button{margin-top:14px;background:#9AA8B4;color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900}
+@media print{.lead-form{display:none}.footer{break-before:avoid;page-break-before:avoid;break-inside:avoid;padding:8px 10px;font-size:11px}.cta{padding:22px;break-inside:avoid;page-break-inside:avoid}.cta .btn{border:1px solid #13A9A2}}
+
+</style>
 </head>
 <body>
-<div class="loading"><div><strong>JB Process &amp; Tech</strong><br>Carregando e-book…</div></div>
-<noscript>Ative o JavaScript para abrir este e-book.</noscript>
-<script>
-(async()=>{
-  const parts=["data/part0.b64","data/part1.b64"];
-  const texts=await Promise.all(parts.map(async p=>{
-    const r=await fetch(p);
-    if(!r.ok) throw new Error('Falha ao carregar '+p);
-    return (await r.text()).trim();
-  }));
-  const b64=texts.join('');
-  const bytes=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
-  if(typeof DecompressionStream==='undefined') throw new Error('Navegador sem suporte à descompressão');
-  const html=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
-  document.open();
-  document.write(html);
-  document.close();
-})().catch(err=>{
-  console.error(err);
-  document.body.innerHTML='<div class="loading"><div><strong>Não foi possível carregar o e-book.</strong><br>Atualize a página ou utilize um navegador atualizado.</div></div>';
-});
-</script>
+<header class="hero"><div class="hero-inner premium-cover">
+<div class="brand">JB Process &amp; Tech • Knowledge Series</div>
+<div class="cover-meta">Edição Técnica Premium • 1ª edição • 2026 • Excelência Operacional</div>
+<div class="cover-grid"><div class="cover-left">
+<div class="eyebrow">E-book técnico gratuito • com caso industrial, exercícios e checklist</div>
+<h1>LEAN MANUFACTURING</h1>
+<div class="subtitle">Valor, Fluxo e Excelência Operacional</div>
+<p class="cover-strap">TPS • 5 Princípios • 8 Desperdícios • VSM • Takt • Fluxo • Kanban • SMED • Heijunka • Jidoka • Trabalho Padronizado • OEE • Kaizen</p>
+<p class="hero-note">Um guia aplicado para enxergar o fluxo de valor, calcular o que importa e desenhar um estado futuro coerente, com um caso industrial completo em que todos os números fecham.</p>
+</div></div>
+<div class="cover-bottom">Autor: <strong>Bruno Hipólito</strong> • Master Black Belt em Lean Seis Sigma • Valor → Fluxo de Valor → Fluxo → Pull → Perfeição</div>
+</div></header>
+
+<nav><div class="inner">
+<a href="#sumario">Sumário</a><a href="#intro">Introdução</a><a href="#historia">História</a><a href="#tps">TPS</a><a href="#principios">Princípios</a><a href="#desperdicios">8 Desperdícios</a><a href="#metricas">Métricas</a><a href="#vsm">VSM</a><a href="#caso1">Caso: atual</a><a href="#fluxo">Fluxo</a><a href="#pull">Kanban</a><a href="#smed">SMED</a><a href="#heijunka">Heijunka</a><a href="#jidoka">Jidoka</a><a href="#padrao">Padrão</a><a href="#tpm">OEE</a><a href="#caso2">Caso: futuro</a><a href="#roadmap">Roadmap</a><a href="#exercicios">Exercícios</a><a href="#checklist">Checklist</a><a href="#glossario">Glossário</a><a href="#referencias">Referências</a><a href="#contato">Contato</a>
+</div></nav>
+
+<main>
+<section id="ficha">
+<div class="kicker">Ficha técnica</div><h2>Sobre esta edição</h2>
+<table>
+<tr><th>Título</th><td>Lean Manufacturing — Valor, Fluxo e Excelência Operacional</td></tr>
+<tr><th>Edição</th><td>1ª edição • publicada em 15/11/2026</td></tr>
+<tr><th>Autor</th><td>Bruno Hipólito — fundador da JB Process &amp; Tech; Master Black Belt em Lean Seis Sigma</td></tr>
+<tr><th>Editora</th><td>JB Process &amp; Tech • Knowledge Series</td></tr>
+<tr><th>Licença de uso</th><td>© 2026 JB Process &amp; Tech. Todos os direitos reservados. Uso pessoal; proibida a reprodução, total ou parcial, sem autorização.</td></tr>
+<tr><th>Como citar</th><td>HIPÓLITO, Bruno. <em>Lean Manufacturing: valor, fluxo e excelência operacional</em>. 1. ed. JB Process &amp; Tech, 2026. Disponível em: https://jbprocesstech.com.br/ebooks/lean-manufacturing/.</td></tr>
+</table>
+<div class="callout"><strong>Como usar este e-book.</strong> Os capítulos 1 a 7 constroem a base conceitual. Os capítulos 8 a 21 trazem método e cálculo, e acompanham o mesmo caso industrial do início ao fim: a família de suportes estampados S-100. Os capítulos 22 a 33 tratam de implantação, prática e consulta. Cada capítulo técnico termina com pontos de atenção. Os exercícios do capítulo 27 têm gabarito comentado no capítulo 28.</div>
+<div class="callout warn"><strong>Sobre os dados.</strong> O caso S-100 usa dados <strong>simulados</strong>, construídos para fins didáticos e conferidos matematicamente. Os casos do capítulo 25 são <strong>documentados</strong> e trazem a fonte pública indicada. As frases de síntese são do autor e não são atribuídas aos autores clássicos.</div>
+</section>
+
+<section id="sumario">
+<div class="kicker">Sumário</div><h2>Mapa do e-book</h2>
+<div class="toc">
+<a href="#intro"><b>00</b>Introdução — Lean como sistema de gestão</a>
+<a href="#historia"><b>01</b>Raízes históricas: de Ford ao “lean production”</a>
+<a href="#autores"><b>02</b>Autores e obras de referência</a>
+<a href="#tps"><b>03</b>O Toyota Production System</a>
+<a href="#principios"><b>04</b>Os cinco princípios de Womack &amp; Jones</a>
+<a href="#valor"><b>05</b>Valor, atividade necessária e desperdício</a>
+<a href="#3m"><b>06</b>Muda, Mura e Muri</a>
+<a href="#desperdicios"><b>07</b>Os oito desperdícios</a>
+<a href="#metricas"><b>08</b>Métricas do fluxo: takt, cycle time, lead time e Lei de Little</a>
+<a href="#vsm"><b>09</b>VSM — Mapeamento do Fluxo de Valor</a>
+<a href="#caso1"><b>10</b>Caso S-100 (parte 1): o estado atual em números</a>
+<a href="#fluxo"><b>11</b>Fluxo contínuo, células e balanceamento</a>
+<a href="#pull"><b>12</b>Sistema puxado, supermercado e Kanban</a>
+<a href="#smed"><b>13</b>SMED, lote e EPEI</a>
+<a href="#heijunka"><b>14</b>Heijunka, pitch e caixa de nivelamento</a>
+<a href="#jidoka"><b>15</b>Jidoka, Andon e Poka-Yoke</a>
+<a href="#padrao"><b>16</b>Trabalho padronizado e TWI</a>
+<a href="#visual"><b>17</b>5S e gestão visual</a>
+<a href="#tpm"><b>18</b>TPM, seis grandes perdas e OEE</a>
+<a href="#kaizen"><b>19</b>Kaizen, A3 e Toyota Kata</a>
+<a href="#gestao"><b>20</b>Gestão diária, Hoshin Kanri e liderança</a>
+<a href="#caso2"><b>21</b>Caso S-100 (parte 2): estado futuro e resultados</a>
+<a href="#lss"><b>22</b>Lean × Lean Six Sigma e Lean além da fábrica</a>
+<a href="#digital"><b>23</b>Lean e Indústria 4.0</a>
+<a href="#roadmap"><b>24</b>Roadmap de implantação em 12 meses</a>
+<a href="#casos"><b>25</b>Estudos de caso documentados</a>
+<a href="#falhas"><b>26</b>Por que transformações Lean fracassam</a>
+<a href="#exercicios"><b>27</b>Exercícios</a>
+<a href="#gabarito"><b>28</b>Gabarito comentado</a>
+<a href="#checklist"><b>29</b>Checklist de autoavaliação Lean</a>
+<a href="#mapa"><b>30</b>Mapa mental executivo</a>
+<a href="#mensagens"><b>31</b>Mensagens-chave do autor</a>
+<a href="#glossario"><b>32</b>Glossário</a>
+<a href="#referencias"><b>33</b>Referências</a>
+<a href="#autor"><b>—</b>Sobre o autor e próximos passos</a>
+</div>
+</section>
+
+<section class="chapter" id="intro"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Introdução</div><h2>Lean como Sistema de Criação de Valor</h2>
+<p class="lead">Lean começa com uma pergunta de negócio: <strong>que problema do cliente estamos resolvendo, e por qual fluxo esse valor chega até ele?</strong></p>
+<p>Lean Manufacturing é uma forma de pensar e de administrar o sistema que cria valor. 5S, Kanban, SMED, VSM e Kaizen são meios, não o objetivo final. O objetivo é entregar aquilo que o cliente valoriza com qualidade, no prazo requerido, com menor lead time, menos desperdício, menos capital imobilizado e maior capacidade de aprender.</p>
+<p>Empresas tradicionais tendem a otimizar departamentos isoladamente: compras minimiza o preço unitário, produção maximiza a utilização das máquinas, logística consolida cargas, qualidade aumenta a inspeção e finanças corta estoque por meta. A soma desses ótimos locais pode piorar o sistema, com mais estoque, filas maiores e atrasos. Lean muda a unidade de análise do departamento para o <strong>fluxo de valor</strong>: todas as etapas, de material e de informação, que transformam um pedido em produto entregue.</p>
+<div class="grid3">
+<div class="card soft"><span class="badge">Propósito</span><h4>Valor ao cliente</h4><p>Definir com clareza a necessidade que o sistema deve atender, em qualidade, prazo, quantidade e custo.</p></div>
+<div class="card soft"><span class="badge">Processo</span><h4>Fluxo</h4><p>Fazer material e informação avançarem com menos fila, menos lote, menos retrabalho e menos espera.</p></div>
+<div class="card soft"><span class="badge">Pessoas</span><h4>Aprendizado</h4><p>Desenvolver em todos os níveis a capacidade de enxergar problemas e resolvê-los diariamente.</p></div>
+</div>
+<h3>Ferramenta, método, sistema de produção e sistema de gestão</h3>
+<table>
+<tr><th>Nível</th><th>Exemplo</th><th>Pergunta que responde</th></tr>
+<tr><td>Ferramenta</td><td>Cartão Kanban, quadro de 5S, folha de SMED</td><td>Como executar uma tarefa específica?</td></tr>
+<tr><td>Método</td><td>VSM, A3, evento Kaizen</td><td>Como analisar e mudar um processo?</td></tr>
+<tr><td>Sistema de produção</td><td>Fluxo puxado nivelado com Jidoka</td><td>Como o material e a informação devem fluir?</td></tr>
+<tr><td>Sistema de gestão</td><td>Hoshin Kanri, gestão diária, desenvolvimento de líderes</td><td>Como a organização decide, aprende e sustenta?</td></tr>
+</table>
+<p>Uma fábrica pode usar Kanban e 5S e continuar operando pela lógica da produção em massa. A transformação acontece quando os quatro níveis apontam na mesma direção.</p>
+<div class="callout warn"><strong>Lean não é “fazer mais com menos pessoas”.</strong> Quando Lean é tratado apenas como redução de quadro, as pessoas passam a esconder desperdícios e oportunidades, e a transformação perde sua principal fonte de aprendizagem: o Gemba. No caso S-100 (capítulo 21), o operador liberado pela melhoria é realocado, não desligado.</div>
+<div class="quote">Lean é a busca sistemática por mais valor e menos desperdício, conectando propósito, processo e pessoas.<span class="attribution">Síntese do autor</span></div>
+</section>
+
+<section class="chapter" id="historia"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 1</div><h2>Raízes Históricas: de Ford ao “Lean Production”</h2>
+<p class="lead">Lean é uma síntese, construída ao longo do século XX, de ideias sobre fluxo, qualidade, estabilidade e gestão. Conhecer essa história evita duas simplificações comuns: “Lean é japonês e não serve aqui” e “Lean é um kit de ferramentas”.</p>
+<h3>Ford e o poder do fluxo</h3>
+<p>Na década de 1910, Henry Ford mostrou o potencial do fluxo contínuo com a linha de montagem móvel: o tempo de montagem caiu drasticamente porque o produto passou a se mover entre postos padronizados. O sistema, porém, dependia de alto volume e baixa variedade. Variedade e flexibilidade eram justamente o que o mercado japonês do pós-guerra exigiria.</p>
+<h3>Sakichi e Kiichiro Toyoda</h3>
+<p>A história oficial da Toyota rastreia o conceito de <strong>Jidoka</strong> até os teares automáticos de Sakichi Toyoda, que paravam sozinhos quando um fio se rompia, separando o trabalho humano do trabalho da máquina e impedindo a produção de tecido defeituoso. Kiichiro Toyoda, fundador da divisão automotiva, formulou a ideia de <strong>Just-in-Time</strong>: produzir apenas o necessário, no momento necessário e na quantidade necessária.</p>
+<h3>Taiichi Ohno e a construção do TPS</h3>
+<p>No pós-guerra, com escassez de capital, mercado pequeno e grande variedade de modelos, Taiichi Ohno, com o apoio de Eiji Toyoda e de outras lideranças, desenvolveu por tentativa e erro os mecanismos de fluxo, produção puxada, Kanban, nivelamento e eliminação de desperdícios. Ohno inspirou-se, entre outras referências, na lógica de reposição dos supermercados norte-americanos: o cliente retira o que precisa e a prateleira é reabastecida conforme o consumo. Shigeo Shingo contribuiu com métodos de engenharia como o SMED e o controle de qualidade na fonte com Poka-Yoke.</p>
+<h3>Do TPS ao “lean production”</h3>
+<p>Em 1988, John Krafcik, pesquisador do International Motor Vehicle Program do MIT, usou a expressão “lean production” no artigo <em>Triumph of the Lean Production System</em>. Em 1990, James Womack, Daniel Jones e Daniel Roos popularizaram o termo em <em>The Machine That Changed the World</em>, que comparou montadoras do mundo inteiro. Em 1996, Womack e Jones sintetizaram a lógica em cinco princípios no livro <em>Lean Thinking</em>, que levou a abordagem para além da indústria automotiva.</p>
+<div class="visual"><div class="visual-title">Figura 1 — Evolução do pensamento Lean</div>
+<svg viewBox="0 0 1100 420">
+<line x1="80" y1="210" x2="1020" y2="210" stroke="#AAB9C4" stroke-width="5"/>
+<g font-family="Arial" text-anchor="middle">
+<g fill="#0B7974"><circle cx="135" cy="210" r="12"/><circle cx="315" cy="210" r="12"/><circle cx="495" cy="210" r="12"/><circle cx="675" cy="210" r="12"/><circle cx="855" cy="210" r="12"/></g>
+<g fill="#071A2B" font-size="18" font-weight="700"><text x="135" y="175">1910s</text><text x="315" y="175">1930s–50s</text><text x="495" y="175">1950s–70s</text><text x="675" y="175">1988–1990</text><text x="855" y="175">1996+</text></g>
+<g fill="#627283" font-size="15"><text x="135" y="245">Ford</text><text x="135" y="267">fluxo em massa</text><text x="315" y="245">Toyoda</text><text x="315" y="267">Jidoka + JIT</text><text x="495" y="245">Ohno / Toyota</text><text x="495" y="267">TPS</text><text x="675" y="245">MIT / Krafcik</text><text x="675" y="267">lean production</text><text x="855" y="245">Womack & Jones</text><text x="855" y="267">Lean Thinking</text></g>
+</g></svg></div>
+<div class="callout"><strong>Nuance importante:</strong> Lean Manufacturing não é sinônimo perfeito de Toyota Production System. Lean é uma generalização dos princípios observados na Toyota; o TPS é um sistema específico, histórico e ainda em evolução. Copiar a forma das ferramentas da Toyota sem compreender os problemas que elas resolvem é uma das causas mais comuns de fracasso (capítulo 26).</div>
+</section>
+
+<section class="chapter" id="autores"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 2</div><h2>Autores e Obras de Referência</h2>
+<p class="lead">Nenhum autor explica sozinho o Lean. A tabela abaixo conecta cada referência à pergunta que ela ajuda a responder e à obra em que essa contribuição aparece.</p>
+<table>
+<tr><th>Autor</th><th>Contribuição central</th><th>Obra de referência</th></tr>
+<tr><td>Taiichi Ohno</td><td>Arquitetura do TPS, produção puxada, Kanban, os sete desperdícios e o combate à superprodução</td><td><em>Toyota Production System: Beyond Large-Scale Production</em> (1988)</td></tr>
+<tr><td>Shigeo Shingo</td><td>Visão de engenharia do TPS, SMED, inspeção na fonte e Poka-Yoke</td><td><em>A Revolution in Manufacturing: The SMED System</em> (1985); <em>Zero Quality Control</em> (1986)</td></tr>
+<tr><td>Yasuhiro Monden</td><td>Descrição técnica detalhada do JIT, incluindo o dimensionamento de Kanban</td><td><em>Toyota Production System: An Integrated Approach to Just-in-Time</em></td></tr>
+<tr><td>Seiichi Nakajima</td><td>TPM, as seis grandes perdas e o OEE</td><td><em>Introduction to TPM</em> (1988)</td></tr>
+<tr><td>John Krafcik</td><td>Cunhou “lean production” na pesquisa do MIT</td><td><em>Triumph of the Lean Production System</em> (1988)</td></tr>
+<tr><td>Womack, Jones e Roos</td><td>Comparação global de montadoras e difusão do termo</td><td><em>The Machine That Changed the World</em> (1990)</td></tr>
+<tr><td>Womack e Jones</td><td>Os cinco princípios do pensamento Lean</td><td><em>Lean Thinking</em> (1996)</td></tr>
+<tr><td>Mike Rother e John Shook</td><td>Mapeamento do Fluxo de Valor (VSM)</td><td><em>Learning to See</em> (1998)</td></tr>
+<tr><td>Rother e Rick Harris</td><td>Projeto de células e fluxo contínuo</td><td><em>Creating Continuous Flow</em> (2001)</td></tr>
+<tr><td>Art Smalley</td><td>Sistemas puxados nivelados</td><td><em>Creating Level Pull</em> (2004)</td></tr>
+<tr><td>Jeffrey Liker</td><td>14 princípios do modelo Toyota, incluindo a ênfase no desenvolvimento de pessoas</td><td><em>The Toyota Way</em> (2004)</td></tr>
+<tr><td>Mike Rother</td><td>Improvement Kata e Coaching Kata</td><td><em>Toyota Kata</em> (2009)</td></tr>
+<tr><td>John Shook</td><td>A3 como processo de gestão e desenvolvimento</td><td><em>Managing to Learn</em> (2008)</td></tr>
+<tr><td>Yoji Akao</td><td>Desdobramento de diretrizes</td><td><em>Hoshin Kanri</em> (1991)</td></tr>
+</table>
+<div class="callout"><strong>Para o leitor brasileiro:</strong> o Lean Institute Brasil publica em português o <em>Léxico Lean</em> e as traduções de <em>Learning to See</em> (<em>Aprendendo a Enxergar</em>), <em>Creating Continuous Flow</em> e outras obras do Lean Enterprise Institute. A obra de Ohno tem edição em português pela Bookman, com o título <em>O Sistema Toyota de Produção: além da produção em larga escala</em>.</div>
+</section>
+
+<section class="chapter" id="tps"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 3</div><h2>O Toyota Production System</h2>
+<p class="lead">A Toyota apresenta o TPS como um sistema voltado à eliminação completa do desperdício e apoiado em dois pilares: <strong>Just-in-Time</strong> e <strong>Jidoka</strong>.</p>
+<div class="visual"><div class="visual-title">Figura 2 — Casa conceitual do TPS</div>
+<svg viewBox="0 0 1100 560">
+<polygon points="170,170 550,45 930,170" fill="#174A73"/>
+<text x="550" y="150" text-anchor="middle" fill="#FFFFFF" font-family="Arial" font-size="15" font-weight="700">QUALIDADE • MENOR LEAD TIME • CUSTO • SEGURANÇA</text>
+<rect x="200" y="185" width="260" height="235" rx="16" fill="#E8F7F5" stroke="#76BEB7" stroke-width="3"/>
+<rect x="640" y="185" width="260" height="235" rx="16" fill="#E8F7F5" stroke="#76BEB7" stroke-width="3"/>
+<text x="330" y="235" text-anchor="middle" font-family="Arial" fill="#071A2B" font-size="25" font-weight="700">JUST-IN-TIME</text>
+<text x="330" y="275" text-anchor="middle" font-family="Arial" fill="#627283" font-size="17">Takt • Fluxo • Pull</text>
+<text x="330" y="305" text-anchor="middle" font-family="Arial" fill="#627283" font-size="17">Kanban • Heijunka</text>
+<text x="770" y="235" text-anchor="middle" font-family="Arial" fill="#071A2B" font-size="25" font-weight="700">JIDOKA</text>
+<text x="770" y="275" text-anchor="middle" font-family="Arial" fill="#627283" font-size="17">Parar no desvio</text>
+<text x="770" y="305" text-anchor="middle" font-family="Arial" fill="#627283" font-size="17">Andon • Poka-Yoke</text>
+<rect x="470" y="205" width="160" height="190" rx="16" fill="#F4F8FA" stroke="#AFC0CC" stroke-width="2"/>
+<text x="550" y="250" text-anchor="middle" font-family="Arial" fill="#071A2B" font-size="21" font-weight="700">KAIZEN</text>
+<text x="550" y="285" text-anchor="middle" font-family="Arial" fill="#627283" font-size="15">Pessoas</text>
+<text x="550" y="310" text-anchor="middle" font-family="Arial" fill="#627283" font-size="15">Gemba</text>
+<text x="550" y="335" text-anchor="middle" font-family="Arial" fill="#627283" font-size="15">Problem Solving</text>
+<rect x="150" y="440" width="800" height="70" rx="15" fill="#0B7974"/>
+<text x="550" y="482" text-anchor="middle" font-family="Arial" fill="white" font-size="23" font-weight="700">ESTABILIDADE • TRABALHO PADRONIZADO • 5S • MANUTENÇÃO</text>
+</svg></div>
+<div class="grid2">
+<div class="card"><h4>Just-in-Time</h4><p>Produzir e movimentar somente o necessário, no momento e na quantidade necessários. Os mecanismos centrais são o takt (ritmo da demanda), o fluxo contínuo onde possível e a produção puxada com supermercados onde o fluxo é interrompido.</p></div>
+<div class="card"><h4>Jidoka</h4><p>Automação com toque humano: detectar a anormalidade, parar, conter e corrigir, para que o defeito não siga adiante. Inclui a separação entre trabalho do homem e trabalho da máquina, Andon e Poka-Yoke.</p></div>
+</div>
+<h3>A base: estabilidade</h3>
+<p>A “casa” só se sustenta sobre uma base estável: métodos padronizados, equipamentos confiáveis, materiais disponíveis, qualidade previsível e pessoas treinadas. Sem estabilidade, o JIT expõe problemas mais rápido do que a organização consegue resolvê-los, e o resultado são faltas, urgências e a volta dos estoques de proteção.</p>
+<div class="callout"><strong>Interdependência:</strong> diferentes escolas desenham a casa do TPS de formas distintas, e a figura acima é didática. O ponto essencial é a interdependência: pull sem estabilidade gera falta; fluxo sem confiabilidade gera parada; Heijunka sem setup rápido destrói capacidade; Jidoka sem resposta rápida apenas para a linha.</div>
+</section>
+
+<section class="chapter" id="principios"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 4</div><h2>Os Cinco Princípios de Womack &amp; Jones</h2>
+<p class="lead">Em <em>Lean Thinking</em> (1996), Womack e Jones resumiram a lógica Lean em cinco princípios encadeados.</p>
+<div class="flow"><div class="step">1 Valor</div><div class="arrow">→</div><div class="step">2 Fluxo de valor</div><div class="arrow">→</div><div class="step">3 Fluxo</div><div class="arrow">→</div><div class="step">4 Puxar</div><div class="arrow">→</div><div class="step">5 Perfeição</div></div>
+<table>
+<tr><th>Princípio</th><th>Significado</th><th>Pergunta prática</th><th>Ferramentas típicas</th></tr>
+<tr><td>1. Valor</td><td>Definido pelo cliente final, em termos de produto específico, preço, prazo e qualidade</td><td>Pelo que o cliente realmente pagaria?</td><td>VOC, especificações, CTQs</td></tr>
+<tr><td>2. Fluxo de valor</td><td>Todas as ações, com e sem valor, necessárias para entregar uma família de produtos</td><td>Onde estão as filas, os lotes e os retrabalhos?</td><td>VSM, matriz de famílias</td></tr>
+<tr><td>3. Fluxo</td><td>Fazer as etapas que agregam valor ocorrerem sem interrupção</td><td>O que impede a peça de avançar agora?</td><td>Células, balanceamento, SMED, TPM</td></tr>
+<tr><td>4. Puxar</td><td>Produzir apenas quando o cliente seguinte sinaliza a necessidade</td><td>Quem autoriza a produção desta peça?</td><td>Supermercado, Kanban, FIFO, pacemaker</td></tr>
+<tr><td>5. Perfeição</td><td>Repetir o ciclo continuamente, reduzindo esforço, tempo, espaço, custo e erro</td><td>Qual é o próximo gap visível?</td><td>Kaizen, A3, Kata, gestão diária</td></tr>
+</table>
+<div class="callout"><strong>“Perfeição” não significa processo sem problemas.</strong> Significa uma direção: cada ciclo de melhoria torna visível o próximo problema, e o sistema aprende a resolvê-lo. A melhoria contínua não termina porque o padrão nunca é o estado final.</div>
+<div class="callout warn"><strong>Ponto de atenção:</strong> aplicar os princípios 3 e 4 sem ter feito os princípios 1 e 2 é a forma mais rápida de criar “Kanban de estoque errado”, ou seja, um fluxo eficiente de algo que o cliente não valoriza.</div>
+</section>
+
+<section class="chapter" id="valor"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 5</div><h2>Valor, Atividade Necessária e Desperdício</h2>
+<p class="lead">Lean distingue três tipos de atividade. A classificação não é burocrática: ela define o que se elimina, o que se reduz e o que se protege.</p>
+<table>
+<tr><th>Categoria</th><th>Definição</th><th>Exemplo industrial</th><th>Tratamento</th></tr>
+<tr><td>Agrega valor (VA)</td><td>Transforma o produto de forma que o cliente deseja, e é feita certa da primeira vez</td><td>Estampar o perfil especificado; soldar o cordão</td><td>Proteger e fazer fluir</td></tr>
+<tr><td>Necessária sem valor (NNVA)</td><td>Não cria valor percebido, mas é exigida hoje por requisito técnico, legal ou de segurança</td><td>Inspeção regulatória, registro de rastreabilidade, setup</td><td>Reduzir e simplificar</td></tr>
+<tr><td>Desperdício puro</td><td>Consome recurso sem necessidade</td><td>Procurar ferramenta, esperar empilhadeira, retrabalhar</td><td>Eliminar</td></tr>
+</table>
+<p>Na maioria dos fluxos industriais mapeados pela primeira vez, as atividades que agregam valor ocupam uma fração muito pequena do lead time total. O restante é espera em fila e em estoque. No caso S-100 (capítulo 10), essa fração é de 0,03% do tempo de permanência da peça na fábrica. É por isso que Lean ataca primeiro as filas entre as etapas, e não a velocidade das máquinas.</p>
+<div class="callout danger"><strong>Simplificação perigosa:</strong> uma atividade regulatória, de segurança ou de validação pode não agregar valor percebido, mas não pode ser removida por decisão de melhoria. O caminho é executá-la com menos desperdício, por exemplo automatizando o registro ou inspecionando na fonte em vez de no fim.</div>
+</section>
+
+<section class="chapter" id="3m"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 6</div><h2>Muda, Mura e Muri: os Três Ms</h2>
+<p class="lead">A Toyota trabalha com três lentes complementares. Focar apenas na Muda ignora as duas condições que mais a produzem.</p>
+<div class="grid3">
+<div class="card s-card"><span class="num">1</span><em>Muda</em><strong>Desperdício</strong><p>Atividade que consome recurso sem criar valor: espera, transporte, defeito, estoque.</p></div>
+<div class="card s-card"><span class="num">2</span><em>Mura</em><strong>Irregularidade</strong><p>Oscilação de volume, mix ou ritmo: picos no fim do mês, lotes desiguais, programação instável.</p></div>
+<div class="card s-card"><span class="num">3</span><em>Muri</em><strong>Sobrecarga</strong><p>Exigir de pessoas ou equipamentos mais do que a condição sustentável permite.</p></div>
+</div>
+<div class="flow"><div class="step">Mura<br><span class="small">demanda e programação irregulares</span></div><div class="arrow">→</div><div class="step">Muri<br><span class="small">picos de sobrecarga</span></div><div class="arrow">→</div><div class="step">Muda<br><span class="small">quebra, defeito, espera, estoque</span></div></div>
+<p>Exemplo: quando a programação concentra 40% do volume do mês na última semana (Mura), máquinas e pessoas operam acima da condição normal (Muri). Daí vêm quebras, defeitos, horas extras e estoques de proteção (Muda). Nivelar a programação (Heijunka, capítulo 14) costuma reduzir mais Muda do que um evento de eliminação de desperdícios no posto.</p>
+</section>
+
+<section class="chapter" id="desperdicios"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 7</div><h2>Os Oito Desperdícios</h2>
+<p class="lead">Ohno consolidou sete categorias clássicas de desperdício. Muitas escolas atuais acrescentam uma oitava, o talento não utilizado, difundida entre outros por Jeffrey Liker em <em>The Toyota Way</em> (2004). Essa oitava categoria não aparece na lista original de Ohno.</p>
+<table>
+<tr><th>Desperdício</th><th>Como aparece na fábrica</th><th>Causas típicas</th><th>Indicador</th></tr>
+<tr><td>1. Superprodução</td><td>Produzir antes, mais ou mais rápido do que o próximo processo precisa</td><td>Lotes grandes, metas de utilização, setup longo, previsão</td><td>WIP, dias de estoque, lead time</td></tr>
+<tr><td>2. Espera</td><td>Operador ou máquina parados aguardando material, informação, aprovação ou ciclo</td><td>Desbalanceamento, falta de material, quebras</td><td>Tempo ocioso, taxa de ocupação</td></tr>
+<tr><td>3. Transporte</td><td>Movimentar material entre áreas distantes ou várias vezes</td><td>Layout funcional, armazéns intermediários</td><td>Distância percorrida, número de movimentações</td></tr>
+<tr><td>4. Processamento excessivo</td><td>Fazer mais do que o cliente exige: tolerância apertada sem razão, inspeção dupla</td><td>Especificação mal definida, falta de confiança no processo</td><td>Tempo de ciclo, custo por unidade</td></tr>
+<tr><td>5. Estoque</td><td>Matéria-prima, WIP ou produto acabado acima do necessário</td><td>Superprodução, instabilidade, lotes</td><td>Giro, dias de cobertura, capital imobilizado</td></tr>
+<tr><td>6. Movimento</td><td>Caminhar, procurar, alcançar, curvar-se</td><td>Posto mal projetado, falta de 5S e de kits</td><td>Passos por ciclo, tempo de procura, ergonomia</td></tr>
+<tr><td>7. Defeitos</td><td>Refugo, retrabalho, reinspeção, reclamação</td><td>Falta de padrão, ausência de Poka-Yoke, variação</td><td>FPY, PPM, custo da má qualidade</td></tr>
+<tr><td>8. Talento não utilizado</td><td>Quem conhece o problema não participa da solução</td><td>Gestão por comando, ausência de rotina de melhoria</td><td>Ideias implementadas por pessoa, reincidência</td></tr>
+</table>
+<div class="callout"><strong>Por que a superprodução é “o pior” desperdício:</strong> Ohno a destacava porque ela cria ou esconde os demais. Produzir antes da hora gera estoque, que exige transporte e espaço, esconde defeitos até que sejam descobertos em lote e consome capacidade que faltará para o item realmente necessário.</div>
+<h4>Como caçar desperdícios no Gemba</h4>
+<ol>
+<li>Escolha uma família de produtos e siga uma peça real do recebimento à expedição.</li>
+<li>Cronometre o tempo em que a peça está sendo transformada e o tempo total que ela leva para atravessar o processo.</li>
+<li>Registre cada parada, fila, movimentação e retrabalho e classifique-os nas oito categorias.</li>
+<li>Pergunte aos operadores o que mais atrapalha o trabalho; o oitavo desperdício começa a ser eliminado aqui.</li>
+<li>Priorize pelo impacto no lead time e na segurança, não pela facilidade.</li>
+</ol>
+</section>
+<section class="chapter" id="metricas"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 8</div><h2>Métricas do Fluxo: Takt, Cycle Time, Lead Time e Lei de Little</h2>
+<p class="lead">Antes de desenhar qualquer melhoria, é preciso falar a mesma língua. Confundir takt com tempo de ciclo, ou lead time com tempo de processamento, é o erro de cálculo mais comum em projetos Lean.</p>
+<table>
+<tr><th>Métrica</th><th>Definição</th><th>Fórmula ou origem</th><th>Unidade</th></tr>
+<tr><td>Takt time</td><td>Ritmo em que o cliente consome; é uma meta de ritmo, não uma medição</td><td>Tempo disponível ÷ demanda</td><td>s/peça</td></tr>
+<tr><td>Tempo de ciclo (CT)</td><td>Intervalo observado entre duas peças que saem de uma etapa</td><td>Cronometragem no Gemba</td><td>s/peça</td></tr>
+<tr><td>Tempo de processamento</td><td>Tempo em que a peça está efetivamente sendo trabalhada</td><td>Soma dos tempos de ciclo das etapas</td><td>s</td></tr>
+<tr><td>Lead time (LT)</td><td>Tempo que uma peça leva para atravessar todo o fluxo</td><td>WIP ÷ taxa de saída (Lei de Little)</td><td>dias</td></tr>
+<tr><td>Dias de estoque</td><td>Cobertura de um estoque frente à demanda</td><td>Quantidade ÷ demanda diária</td><td>dias</td></tr>
+<tr><td>PCE</td><td>Eficiência do ciclo do processo</td><td>Tempo de processamento ÷ lead time</td><td>%</td></tr>
+<tr><td>OEE</td><td>Eficácia global do equipamento</td><td>Disponibilidade × Desempenho × Qualidade</td><td>%</td></tr>
+</table>
+<h3>Takt time</h3>
+<div class="formula">Takt = Tempo disponível de produção por dia ÷ Demanda do cliente por dia</div>
+<p>O tempo disponível exclui pausas planejadas (refeição, reunião de turno), mas <strong>não</strong> exclui quebras, setups ou faltas de material, que são perdas a eliminar, e não tempo “indisponível”. Exemplo: dois turnos de 480 minutos, com 30 minutos de refeição e 10 minutos de reunião cada, resultam em 2 × 440 = 880 min = 52.800 s por dia. Com demanda de 440 peças por dia, o takt é 52.800 ÷ 440 = <strong>120 s/peça</strong>.</p>
+<h3>Lei de Little</h3>
+<p>Demonstrada por John D. C. Little em 1961, a lei relaciona três grandezas de qualquer sistema estável em regime: o estoque em processo (WIP), a taxa de saída (throughput) e o tempo médio de permanência (lead time).</p>
+<div class="formula">Lead time = WIP ÷ Throughput</div>
+<p>Se uma fábrica tem 9.240 peças entre matéria-prima e produto acabado e expede 440 peças por dia, uma peça leva em média 9.240 ÷ 440 = <strong>21 dias</strong> para atravessá-la. A consequência prática é direta: com a mesma taxa de saída, a única forma de reduzir o lead time é reduzir o estoque no sistema. Acelerar máquinas sem reduzir o WIP não reduz o lead time.</p>
+<h3>Por que a utilização de 100% é uma armadilha</h3>
+<p>A física das filas, tratada em profundidade por Hopp e Spearman em <em>Factory Physics</em>, mostra que, com variabilidade, o tempo de fila cresce de forma não linear quando a utilização de um recurso se aproxima de 100%. Um recurso carregado a 95% com chegadas e tempos variáveis forma filas muito maiores do que o mesmo recurso a 80%. Por isso Lean ataca a variabilidade (setups, quebras, defeitos e mix irregular) antes de tentar “encher” as máquinas.</p>
+<div class="callout warn"><strong>Pontos de atenção:</strong> (1) o takt é calculado por família de produtos e por fluxo, não para a fábrica inteira; (2) se a demanda variar mais de 20 a 30% entre meses, reveja o takt com a frequência necessária e redimensione as células; (3) tempo de ciclo maior que o takt significa capacidade insuficiente no ritmo atual, o que gera fila, hora extra ou atraso.</div>
+</section>
+
+<section class="chapter" id="vsm"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 9</div><h2>VSM — Mapeamento do Fluxo de Valor</h2>
+<p class="lead">O Value Stream Mapping, sistematizado por Mike Rother e John Shook em <em>Learning to See</em> (1998), representa numa única folha o fluxo de material e de informação de uma família de produtos, da porta de entrada à porta de saída.</p>
+<h3>As oito etapas do método</h3>
+<div class="timeline">
+<div class="time"><b>1</b><div><strong>Escolha a família de produtos.</strong> Use uma matriz produto × processo e agrupe itens que passam por etapas e equipamentos semelhantes. Um VSM da fábrica inteira não é acionável.</div></div>
+<div class="time"><b>2</b><div><strong>Defina o gerente do fluxo de valor.</strong> Uma pessoa com autoridade para atravessar departamentos e responder pelo resultado do fluxo.</div></div>
+<div class="time"><b>3</b><div><strong>Mapeie o estado atual no Gemba, com lápis.</strong> Comece pela expedição e caminhe contra o fluxo. Conte estoques e cronometre tempos você mesmo, sem usar o ERP.</div></div>
+<div class="time"><b>4</b><div><strong>Registre os dados de processo:</strong> tempo de ciclo, setup, disponibilidade, número de operadores, turnos, tamanho de lote, refugo.</div></div>
+<div class="time"><b>5</b><div><strong>Desenhe o fluxo de informação:</strong> como chegam os pedidos, quem programa, que processos recebem ordem e com que frequência.</div></div>
+<div class="time"><b>6</b><div><strong>Trace a linha do tempo:</strong> dias de estoque (convertidos pela demanda diária) nas partes altas e tempos de processamento nas baixas. Some e calcule o PCE.</div></div>
+<div class="time"><b>7</b><div><strong>Desenhe o estado futuro</strong> respondendo às oito perguntas de Rother e Shook (abaixo).</div></div>
+<div class="time"><b>8</b><div><strong>Monte o plano de implantação</strong> por “loops” (o loop do pacemaker primeiro), com metas, responsáveis e datas, e revise mensalmente.</div></div>
+</div>
+<h3>As oito perguntas do estado futuro</h3>
+<table>
+<tr><th>#</th><th>Pergunta</th><th>Ferramenta associada</th></tr>
+<tr><td>1</td><td>Qual é o takt time?</td><td>Takt (cap. 8)</td></tr>
+<tr><td>2</td><td>Vamos produzir para um supermercado de produto acabado ou diretamente para expedição?</td><td>Estratégia de estoque</td></tr>
+<tr><td>3</td><td>Onde podemos usar fluxo contínuo?</td><td>Células (cap. 11)</td></tr>
+<tr><td>4</td><td>Onde precisaremos de supermercados para controlar a produção a montante?</td><td>Kanban (cap. 12)</td></tr>
+<tr><td>5</td><td>Em que ponto único a programação será enviada (processo puxador, ou pacemaker)?</td><td>Programação</td></tr>
+<tr><td>6</td><td>Como nivelaremos o mix no processo puxador?</td><td>Heijunka (cap. 14)</td></tr>
+<tr><td>7</td><td>Qual incremento de trabalho liberaremos e retiraremos regularmente?</td><td>Pitch (cap. 14)</td></tr>
+<tr><td>8</td><td>Que melhorias de processo serão necessárias?</td><td>SMED, TPM, Jidoka (caps. 13, 15 e 18)</td></tr>
+</table>
+<div class="grid3">
+<div class="card soft"><h4>Ícones essenciais</h4><p>Caixa de processo, caixa de dados, triângulo de estoque, seta empurrada listrada, supermercado, Kanban de produção e de retirada, FIFO, olho de programação, linha do tempo.</p></div>
+<div class="card soft"><h4>Erros comuns</h4><p>Mapear o processo “como deveria ser”, usar médias do ERP, mapear apenas o material, desenhar o futuro sem resolver o takt, fazer o VSM e não ter um plano.</p></div>
+<div class="card soft"><h4>Saídas mínimas</h4><p>Mapa atual, mapa futuro, lista de kaizens priorizados por loop, metas de lead time e de WIP e uma rotina de revisão.</p></div>
+</div>
+</section>
+
+<section class="chapter" id="caso1"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 10</div><h2>Caso S-100 (Parte 1): o Estado Atual em Números</h2>
+<div class="callout warn"><strong>Caso didático com dados simulados.</strong> A empresa e os números abaixo foram construídos para ensinar o método, e todos os cálculos foram conferidos. Os dados não representam nenhuma empresa real.</div>
+<p class="lead">Uma fabricante de autopeças produz a família de <strong>suportes de fixação S-100</strong>, com três códigos: S-100A, S-100B e S-100C. O cliente, uma montadora, reclama de atrasos, e a fábrica faz hora extra todos os dias embora tenha estoque “em todo lugar”.</p>
+<h3>Demanda e takt</h3>
+<table class="num">
+<tr><th>Item</th><th>Valor</th><th>Cálculo</th></tr>
+<tr><td>Demanda mensal (20 dias úteis)</td><td>8.800 peças</td><td>440 × 20</td></tr>
+<tr><td>Demanda diária</td><td>440 peças</td><td>A 220 (50%) • B 132 (30%) • C 88 (20%)</td></tr>
+<tr><td>Turnos</td><td>2 × 480 min</td><td>menos 30 min de refeição e 10 min de reunião por turno</td></tr>
+<tr><td>Tempo disponível</td><td>880 min = 52.800 s</td><td>2 × (480 − 30 − 10)</td></tr>
+<tr><td><strong>Takt time</strong></td><td><strong>120 s</strong></td><td>52.800 ÷ 440</td></tr>
+</table>
+<h3>Processos</h3>
+<table class="num">
+<tr><th>Etapa</th><th>Tempo de ciclo</th><th>Operadores</th><th>Observação</th></tr>
+<tr><td>Estampagem (prensa compartilhada)</td><td>45 s</td><td>1</td><td>Setup de 60 min; a prensa também atende outra família</td></tr>
+<tr><td>Solda robotizada</td><td>110 s</td><td>1</td><td>Tempo ideal de 100 s; OEE analisado no cap. 18</td></tr>
+<tr><td>Montagem manual</td><td>135 s</td><td>1</td><td>Inclui 25 s de desperdício (procura, caminhada, ajuste)</td></tr>
+<tr><td>Inspeção e embalagem</td><td>60 s</td><td>1</td><td>—</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>350 s</strong></td><td><strong>4</strong></td><td>Tempo de processamento</td></tr>
+</table>
+<h3>Estoques e lead time</h3>
+<table class="num">
+<tr><th>Ponto de estoque</th><th>Peças</th><th>Dias (÷ 440)</th></tr>
+<tr><td>Matéria-prima (bobinas, em peças equivalentes)</td><td>2.200</td><td>5,0</td></tr>
+<tr><td>Após estampagem</td><td>2.640</td><td>6,0</td></tr>
+<tr><td>Após solda</td><td>1.320</td><td>3,0</td></tr>
+<tr><td>Após montagem</td><td>880</td><td>2,0</td></tr>
+<tr><td>Produto acabado</td><td>2.200</td><td>5,0</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>9.240</strong></td><td><strong>21,0</strong></td></tr>
+</table>
+<div class="visual"><div class="visual-title">Figura 3 — VSM simplificado do estado atual (família S-100)</div>
+<svg viewBox="0 0 1100 360" role="img" aria-label="VSM do estado atual">
+<rect x="20" y="20" width="160" height="56" rx="8" fill="#F4F8FA" stroke="#174A73" stroke-width="2"/><text x="100" y="45" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#071A2B">Fornecedor</text><text x="100" y="64" text-anchor="middle" font-family="Arial" font-size="12" fill="#172330">bobinas</text>
+<rect x="470" y="20" width="160" height="56" rx="8" fill="#071A2B"/><text x="550" y="45" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#FFFFFF">PCP / ERP</text><text x="550" y="64" text-anchor="middle" font-family="Arial" font-size="12" fill="#D6E6EE">ordens semanais a cada etapa</text>
+<rect x="920" y="20" width="160" height="56" rx="8" fill="#F4F8FA" stroke="#174A73" stroke-width="2"/><text x="1000" y="45" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#071A2B">Montadora</text><text x="1000" y="64" text-anchor="middle" font-family="Arial" font-size="12" fill="#172330">440 peças/dia</text>
+<g font-family="Arial" text-anchor="middle">
+<polygon points="70,190 100,140 130,190" fill="#B26A0D"/><text x="100" y="183" font-size="13" font-weight="700" fill="#FFFFFF">I</text><text x="100" y="208" font-size="12" fill="#172330">2.200 • 5 d</text>
+<rect x="150" y="130" width="140" height="70" rx="6" fill="#174A73"/><text x="220" y="158" font-size="14" font-weight="700" fill="#FFFFFF">Estampagem</text><text x="220" y="178" font-size="12" fill="#D6E6EE">CT 45 s • setup 60</text>
+<polygon points="310,190 340,140 370,190" fill="#B26A0D"/><text x="340" y="183" font-size="13" font-weight="700" fill="#FFFFFF">I</text><text x="340" y="208" font-size="12" fill="#172330">2.640 • 6 d</text>
+<rect x="390" y="130" width="140" height="70" rx="6" fill="#174A73"/><text x="460" y="158" font-size="14" font-weight="700" fill="#FFFFFF">Solda robô</text><text x="460" y="178" font-size="12" fill="#D6E6EE">CT 110 s</text>
+<polygon points="550,190 580,140 610,190" fill="#B26A0D"/><text x="580" y="183" font-size="13" font-weight="700" fill="#FFFFFF">I</text><text x="580" y="208" font-size="12" fill="#172330">1.320 • 3 d</text>
+<rect x="630" y="130" width="140" height="70" rx="6" fill="#B63E35"/><text x="700" y="158" font-size="14" font-weight="700" fill="#FFFFFF">Montagem</text><text x="700" y="178" font-size="12" fill="#FFFFFF">CT 135 s &gt; takt</text>
+<polygon points="790,190 820,140 850,190" fill="#B26A0D"/><text x="820" y="183" font-size="13" font-weight="700" fill="#FFFFFF">I</text><text x="820" y="208" font-size="12" fill="#172330">880 • 2 d</text>
+<rect x="870" y="130" width="140" height="70" rx="6" fill="#174A73"/><text x="940" y="158" font-size="14" font-weight="700" fill="#FFFFFF">Insp. + embal.</text><text x="940" y="178" font-size="12" fill="#D6E6EE">CT 60 s</text>
+<polygon points="1030,190 1060,140 1090,190" fill="#B26A0D"/><text x="1060" y="183" font-size="13" font-weight="700" fill="#FFFFFF">I</text><text x="1060" y="208" font-size="12" fill="#172330">2.200 • 5 d</text>
+</g>
+<path d="M30 270 H130 V310 H310 V270 H370 V310 H550 V270 H610 V310 H790 V270 H850 V310 H1030 V270 H1090" fill="none" stroke="#071A2B" stroke-width="2.5"/>
+<g font-family="Arial" font-size="12" text-anchor="middle" fill="#172330"><text x="80" y="262">5 d</text><text x="340" y="262">6 d</text><text x="580" y="262">3 d</text><text x="820" y="262">2 d</text><text x="1060" y="262">5 d</text><text x="220" y="328">45 s</text><text x="460" y="328">110 s</text><text x="700" y="328">135 s</text><text x="940" y="328">60 s</text></g>
+<text x="550" y="352" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#071A2B">Lead time 21,0 dias • Processamento 350 s • PCE 0,03% • Takt 120 s</text>
+</svg></div>
+<h3>Diagnóstico</h3>
+<div class="formula">Lead time = 9.240 ÷ 440 = 21,0 dias<br>Tempo disponível em 21 dias = 21 × 52.800 = 1.108.800 s<br>PCE = 350 ÷ 1.108.800 = 0,0316%</div>
+<div class="grid2">
+<div class="card"><h4>1. Gargalo abaixo do takt</h4><p>A montagem tem ciclo de 135 s, maior que o takt de 120 s. A capacidade é de 52.800 ÷ 135 = 391 peças por dia (arredondando para baixo), com déficit de 49 peças. Cobrir esse déficit exige 49 × 135 = 6.615 s = <strong>110,25 min de hora extra por dia</strong>, ou 36,75 h por mês.</p></div>
+<div class="card"><h4>2. Prensa com lotes enormes</h4><p>Com setup de 60 min, a prensa compartilhada só consegue fazer uma troca por dia para esta família, ou seja, cada código é estampado a cada 3 dias, em lotes de 3 dias de demanda. Isso explica os 6 dias de estoque após a estampagem (cap. 13).</p></div>
+<div class="card"><h4>3. Programação empurrada em cada etapa</h4><p>O PCP envia ordens semanais a todas as etapas. Cada uma produz conforme a ordem, não conforme o consumo do cliente seguinte, e os estoques intermediários funcionam como amortecedores da falta de sincronia.</p></div>
+<div class="card"><h4>4. Solda com perdas ocultas</h4><p>O robô deveria fazer a peça em 100 s, mas o ciclo médio observado é de 110 s, por microparadas e falta de material. Ele “parece” ter folga porque o gargalo está na montagem.</p></div>
+</div>
+<div class="callout ok"><strong>Leitura do mapa:</strong> a peça passa 21 dias na fábrica para receber 350 segundos de processamento. Comprar máquinas mais rápidas não resolve; resolver o fluxo sim. O estado futuro deste mesmo fluxo é construído nos capítulos 11 a 18 e consolidado no capítulo 21.</div>
+</section>
+<section class="chapter" id="fluxo"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 11</div><h2>Fluxo Contínuo, Células e Balanceamento</h2>
+<p class="lead">Fluxo contínuo significa produzir e mover uma peça por vez (ou um pequeno lote constante) entre etapas, cada uma fazendo apenas o que a próxima precisa. Onde ele é possível, filas e estoques intermediários desaparecem.</p>
+<h3>Quando usar fluxo contínuo</h3>
+<ul>
+<li>Os tempos de ciclo das etapas estão próximos do takt ou podem ser combinados para isso.</li>
+<li>Os equipamentos são confiáveis o suficiente; sem isso, o fluxo para a cada quebra.</li>
+<li>Os setups entre os produtos da família são curtos ou inexistentes.</li>
+<li>As etapas podem ser fisicamente aproximadas, normalmente em célula em U.</li>
+</ul>
+<p>Processos com ciclo muito diferente do takt (uma prensa de 45 s numa família com takt de 120 s), que atendem várias famílias ou que exigem lotes por natureza (tratamento térmico, pintura) costumam ficar fora da célula, ligados por supermercado ou FIFO.</p>
+<h3>Número de operadores e gráfico Yamazumi</h3>
+<div class="formula">Número de operadores = Conteúdo total de trabalho manual ÷ Takt</div>
+<p>O Yamazumi empilha, por operador, os elementos de trabalho em barras comparadas com a linha do takt. Ele torna visível o desbalanceamento e o desperdício dentro do ciclo.</p>
+<h3>Aplicação no caso S-100</h3>
+<p>Primeiro, um kaizen na montagem eliminou 25 s de desperdício (kit de componentes no ponto de uso, dispositivo de fixação rápida e eliminação de reajustes), e o ciclo caiu de 135 s para 110 s. Em seguida, solda, montagem e inspeção/embalagem foram reunidas numa célula em U.</p>
+<table class="num">
+<tr><th>Elemento de trabalho manual</th><th>Tempo</th></tr>
+<tr><td>Carregar e descarregar o robô (mesa giratória de duas estações: o operador troca a peça numa estação enquanto o robô solda na outra)</td><td>30 s</td></tr>
+<tr><td>Montagem manual, depois do kaizen</td><td>110 s</td></tr>
+<tr><td>Inspeção e embalagem</td><td>60 s</td></tr>
+<tr><td><strong>Conteúdo de trabalho total</strong></td><td><strong>200 s</strong></td></tr>
+</table>
+<div class="formula">200 ÷ 120 = 1,67 → 2 operadores • 200 ÷ 2 = 100 s por operador • ocupação 100 ÷ 120 = 83,3%</div>
+<div class="visual"><div class="visual-title">Figura 4 — Yamazumi da célula S-100 (estado futuro)</div>
+<svg viewBox="0 0 900 360" role="img" aria-label="Yamazumi">
+<line x1="80" y1="40" x2="80" y2="300" stroke="#172330"/><line x1="80" y1="300" x2="860" y2="300" stroke="#172330"/>
+<g font-family="Arial" font-size="12" fill="#172330" text-anchor="end"><text x="72" y="304">0</text><text x="72" y="204">60</text><text x="72" y="104">120</text></g>
+<line x1="80" y1="100" x2="860" y2="100" stroke="#B63E35" stroke-width="3" stroke-dasharray="10 6"/><text x="856" y="92" text-anchor="end" font-family="Arial" font-size="13" font-weight="700" fill="#B63E35">Takt 120 s</text>
+<rect x="160" y="250" width="140" height="50" fill="#13A9A2"/><text x="230" y="280" text-anchor="middle" font-family="Arial" font-size="12" fill="#05131F">Robô C/D 30</text>
+<rect x="160" y="133.3" width="140" height="116.7" fill="#174A73"/><text x="230" y="196" text-anchor="middle" font-family="Arial" font-size="12" fill="#FFFFFF">Montagem 70</text>
+<text x="230" y="126" text-anchor="middle" font-family="Arial" font-size="13" font-weight="700" fill="#071A2B">Operador 1 = 100 s</text>
+<rect x="400" y="233.3" width="140" height="66.7" fill="#174A73"/><text x="470" y="271" text-anchor="middle" font-family="Arial" font-size="12" fill="#FFFFFF">Montagem 40</text>
+<rect x="400" y="133.3" width="140" height="100" fill="#237A4A"/><text x="470" y="188" text-anchor="middle" font-family="Arial" font-size="12" fill="#FFFFFF">Insp. + embal. 60</text>
+<text x="470" y="126" text-anchor="middle" font-family="Arial" font-size="13" font-weight="700" fill="#071A2B">Operador 2 = 100 s</text>
+<rect x="640" y="116.7" width="140" height="183.3" fill="#6B5FA8"/><text x="710" y="214" text-anchor="middle" font-family="Arial" font-size="12" fill="#FFFFFF">Ciclo automático</text>
+<text x="710" y="110" text-anchor="middle" font-family="Arial" font-size="13" font-weight="700" fill="#071A2B">Robô = 110 s</text>
+<text x="470" y="335" text-anchor="middle" font-family="Arial" font-size="13" fill="#172330">Todos os recursos abaixo do takt: a célula produz 440 peças/dia sem hora extra</text>
+</svg></div>
+<p>A divisão de elementos entre os operadores é ilustrativa; na prática, é definida no Gemba com a Tabela de Trabalho Padronizado Combinado (cap. 16). Como a carga e a descarga acontecem na estação livre da mesa giratória, elas não somam ao ciclo do robô. O ciclo automático do robô (110 s) também fica abaixo do takt, e a folga de 10 s é protegida pela melhoria de OEE do capítulo 18.</p>
+<div class="callout warn"><strong>Pontos de atenção:</strong> não balanceie a 100% do takt, porque qualquer variação vira atraso. Ocupações entre 85% e 95% são referência usual em células manuais estáveis; no caso, 83,3% deixa margem para a curva de aprendizagem. Quando o ganho de produtividade permitir liberar um operador, libere o melhor, para atuar em melhoria, e não o menos experiente.</div>
+</section>
+
+<section class="chapter" id="pull"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 12</div><h2>Sistema Puxado, Supermercado e Kanban</h2>
+<p class="lead">Onde o fluxo contínuo não é possível, a produção é controlada pelo consumo real: o processo cliente retira do supermercado, e o processo fornecedor repõe exatamente o que foi retirado.</p>
+<div class="grid3">
+<div class="card soft"><h4>Supermercado</h4><p>Estoque controlado, com quantidade máxima, endereço fixo e reposição pelo consumo.</p></div>
+<div class="card soft"><h4>FIFO</h4><p>Fila entre dois processos, com capacidade máxima fixa e ordem de chegada. Quando a pista enche, o processo fornecedor para.</p></div>
+<div class="card soft"><h4>Kanban</h4><p>Sinal (cartão, contêiner, eletrônico) que autoriza a retirada ou a produção de uma quantidade definida.</p></div>
+</div>
+<h3>Regras do Kanban</h3>
+<ol>
+<li>O processo seguinte retira do anterior apenas o que consumiu, na quantidade indicada no Kanban.</li>
+<li>O processo anterior produz apenas o que foi retirado, na sequência em que os Kanbans chegaram.</li>
+<li>Nenhuma peça é produzida ou movimentada sem Kanban.</li>
+<li>Toda peça tem um Kanban anexado.</li>
+<li>Defeitos não são enviados ao processo seguinte.</li>
+<li>O número de Kanbans é reduzido gradualmente para expor problemas.</li>
+</ol>
+<h3>Dimensionamento</h3>
+<p>Uma forma clássica, descrita por Monden, é:</p>
+<div class="formula">N = D × L × (1 + α) ÷ C<br><span class="small">D = demanda diária • L = tempo de reposição em dias • α = fator de segurança • C = peças por contêiner</span></div>
+<p>No caso S-100, o supermercado fica entre a prensa e a célula. Com o SMED do capítulo 13, a prensa passa a repor cada código a cada meio dia (L = 0,5 d). Fator de segurança α = 0,2; contêiner de 22 peças.</p>
+<table class="num">
+<tr><th>Código</th><th>D (pç/dia)</th><th>Cálculo</th><th>N calculado</th><th>Kanbans adotados</th><th>Estoque máximo</th></tr>
+<tr><td>S-100A</td><td>220</td><td>220 × 0,5 × 1,2 ÷ 22</td><td>6,0</td><td>6</td><td>132</td></tr>
+<tr><td>S-100B</td><td>132</td><td>132 × 0,5 × 1,2 ÷ 22</td><td>3,6</td><td>4</td><td>88</td></tr>
+<tr><td>S-100C</td><td>88</td><td>88 × 0,5 × 1,2 ÷ 22</td><td>2,4</td><td>3</td><td>66</td></tr>
+<tr><td><strong>Total</strong></td><td>440</td><td>—</td><td>—</td><td><strong>13</strong></td><td><strong>286</strong></td></tr>
+</table>
+<p>Compare: antes, havia 2.640 peças após a estampagem. Agora o supermercado tem no máximo 286, e o nível real oscila abaixo disso.</p>
+<div class="callout warn"><strong>Pontos de atenção:</strong> Kanban não funciona com demanda muito irregular nem com itens de baixíssimo giro; nesses casos, use FIFO ou produção contra pedido. Reveja o dimensionamento quando a demanda mudar. O fator α deve cair com o tempo, porque representa a instabilidade que ainda não foi resolvida.</div>
+</section>
+
+<section class="chapter" id="smed"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 13</div><h2>SMED, Lote e EPEI</h2>
+<p class="lead">Shigeo Shingo sistematizou o SMED (Single-Minute Exchange of Die): reduzir o setup a menos de 10 minutos, ou seja, a um único dígito. O objetivo não é ganhar capacidade para produzir lotes maiores, e sim trocar mais vezes, com lotes menores.</p>
+<h3>As quatro etapas</h3>
+<div class="flow"><div class="step">1 Observar e separar o setup interno do externo</div><div class="arrow">→</div><div class="step">2 Converter interno em externo</div><div class="arrow">→</div><div class="step">3 Simplificar o interno</div><div class="arrow">→</div><div class="step">4 Eliminar ajustes</div></div>
+<p><strong>Setup interno</strong> só pode ser feito com a máquina parada. <strong>Setup externo</strong> pode ser feito com a máquina operando: buscar ferramenta, pré-aquecer, pré-ajustar, preparar documentação.</p>
+<h3>Aplicação na prensa compartilhada do caso S-100</h3>
+<table class="num">
+<tr><th>Elemento do setup</th><th>Antes (min)</th><th>Depois (min)</th><th>Ação</th></tr>
+<tr><td>Buscar matriz, ferramentas e documentação</td><td>12</td><td>0</td><td>Convertido em externo: carrinho de setup preparado durante a produção</td></tr>
+<tr><td>Remover a matriz anterior</td><td>10</td><td>6</td><td>Fixadores rápidos e altura padronizada</td></tr>
+<tr><td>Instalar a nova matriz</td><td>10</td><td>5</td><td>Guias de centralização e mesa de rolos</td></tr>
+<tr><td>Ajustes e tentativas</td><td>20</td><td>2</td><td>Calços padronizados e batentes fixos, sem ajuste por tentativa</td></tr>
+<tr><td>Primeira peça e liberação</td><td>8</td><td>2</td><td>Dispositivo passa/não passa no ponto de uso</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>60</strong></td><td><strong>15</strong></td><td><strong>−75%</strong></td></tr>
+</table>
+<h3>EPEI: de quanto em quanto tempo cada código é produzido</h3>
+<p>EPEI (Every Part Every Interval) é o intervalo em que todos os códigos de uma família podem ser produzidos ao menos uma vez. Ele é limitado pelo tempo disponível para setups.</p>
+<table class="num">
+<tr><th>Tempo da prensa por dia</th><th>Minutos</th></tr>
+<tr><td>Tempo disponível</td><td>880</td></tr>
+<tr><td>(−) Quebras e paradas médias</td><td>40</td></tr>
+<tr><td>(−) Produção da outra família atendida pela prensa (incluindo os setups dela)</td><td>420</td></tr>
+<tr><td>(−) Produção da família S-100: 440 × 45 s</td><td>330</td></tr>
+<tr><td><strong>Tempo livre para setups da S-100</strong></td><td><strong>90</strong></td></tr>
+</table>
+<div class="grid2">
+<div class="card"><h4>Antes: setup de 60 min</h4><p>90 ÷ 60 = 1 setup por dia. Com 3 códigos, um ciclo completo leva 3 dias: <strong>EPEI = 3 dias</strong>. Lotes de 3 dias de demanda: A 660, B 396 e C 264 peças.</p></div>
+<div class="card"><h4>Depois: setup de 15 min</h4><p>90 ÷ 15 = 6 setups por dia, ou 2 ciclos completos: <strong>EPEI = 0,5 dia</strong>. Lotes de meio dia: A 110, B 66 e C 44 peças, o que viabiliza o supermercado com L = 0,5 d do capítulo 12.</p></div>
+</div>
+<div class="callout"><strong>A lógica econômica:</strong> com o SMED, os 90 minutos de tempo livre não foram usados para produzir mais, e sim para trocar mais. O ganho aparece como estoque menor, lead time menor e resposta mais rápida a mudanças de mix.</div>
+<div class="callout warn"><strong>Pontos de atenção:</strong> filme o setup e analise o vídeo com quem o executa. Padronize o novo método (cap. 16) antes de comemorar. Setup curto só vira estoque menor se a programação também mudar, ou seja, se os lotes forem efetivamente reduzidos.</div>
+</section>
+
+<section class="chapter" id="heijunka"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 14</div><h2>Heijunka, Pitch e Caixa de Nivelamento</h2>
+<p class="lead">Heijunka é nivelar o volume e o mix da produção ao longo do tempo no processo puxador. Em vez de produzir “toda a demanda de A, depois toda a de B”, produz-se um pouco de cada em sequência repetitiva.</p>
+<h3>Pitch</h3>
+<div class="formula">Pitch = Takt × Quantidade por contêiner = 120 s × 22 = 2.640 s = 44 min</div>
+<p>A cada 44 minutos, o abastecedor (o “milk run” interno) retira um contêiner de produto acabado da célula e entrega à célula o Kanban do próximo contêiner a produzir. Em um dia, são 880 ÷ 44 = <strong>20 pitches</strong>, que correspondem a 20 contêineres de 22 peças, ou seja, 440 peças.</p>
+<h3>Mix por dia e sequência</h3>
+<table class="num">
+<tr><th>Código</th><th>Demanda/dia</th><th>Kanbans (contêineres)/dia</th></tr>
+<tr><td>S-100A</td><td>220</td><td>10</td></tr>
+<tr><td>S-100B</td><td>132</td><td>6</td></tr>
+<tr><td>S-100C</td><td>88</td><td>4</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>440</strong></td><td><strong>20</strong></td></tr>
+</table>
+<p>A sequência <strong>A B A C A B A C A B</strong>, repetida duas vezes por dia, entrega 10 A, 6 B e 4 C, exatamente a proporção da demanda.</p>
+<div class="visual"><div class="visual-title">Figura 5 — Caixa de nivelamento (primeiras 10 colunas de pitch)</div>
+<svg viewBox="0 0 1000 200" role="img" aria-label="Caixa heijunka">
+<g font-family="Arial" font-size="13">
+<text x="20" y="40" font-weight="700" fill="#071A2B">Pitch</text>
+<g text-anchor="middle" fill="#172330"><text x="140" y="40">1</text><text x="225" y="40">2</text><text x="310" y="40">3</text><text x="395" y="40">4</text><text x="480" y="40">5</text><text x="565" y="40">6</text><text x="650" y="40">7</text><text x="735" y="40">8</text><text x="820" y="40">9</text><text x="905" y="40">10</text></g>
+<text x="20" y="85" font-weight="700" fill="#071A2B">S-100A</text><text x="20" y="130" font-weight="700" fill="#071A2B">S-100B</text><text x="20" y="175" font-weight="700" fill="#071A2B">S-100C</text>
+</g>
+<g fill="#F4F8FA" stroke="#D9E2E9"><rect x="100" y="60" width="850" height="40"/><rect x="100" y="105" width="850" height="40"/><rect x="100" y="150" width="850" height="40"/></g>
+<g fill="#174A73"><rect x="110" y="66" width="60" height="28" rx="4"/><rect x="280" y="66" width="60" height="28" rx="4"/><rect x="450" y="66" width="60" height="28" rx="4"/><rect x="620" y="66" width="60" height="28" rx="4"/><rect x="790" y="66" width="60" height="28" rx="4"/></g>
+<g fill="#0B7974"><rect x="195" y="111" width="60" height="28" rx="4"/><rect x="535" y="111" width="60" height="28" rx="4"/><rect x="875" y="111" width="60" height="28" rx="4"/></g>
+<g fill="#B26A0D"><rect x="365" y="156" width="60" height="28" rx="4"/><rect x="705" y="156" width="60" height="28" rx="4"/></g>
+</svg></div>
+<div class="callout"><strong>Por que nivelar:</strong> sem Heijunka, o supermercado precisa ter estoque para absorver os picos de cada código, e a prensa a montante enxerga uma demanda “em ondas”. Com Heijunka, o consumo do supermercado fica regular, e a quantidade de Kanbans calculada no capítulo 12 é suficiente.</div>
+<div class="callout warn"><strong>Pré-requisitos:</strong> setups curtos no processo puxador (ou nenhum, como na célula S-100), disciplina na sequência e um responsável pela caixa de nivelamento. Nivelar com setup de 60 minutos destrói a capacidade.</div>
+</section>
+<section class="chapter" id="jidoka"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 15</div><h2>Jidoka, Andon e Poka-Yoke</h2>
+<p class="lead">Jidoka é o segundo pilar do TPS: construir qualidade no processo, parando ao primeiro sinal de anormalidade em vez de inspecionar no fim e descobrir o problema em lote.</p>
+<h3>Os quatro passos do Jidoka</h3>
+<div class="flow"><div class="step">1 Detectar a anormalidade</div><div class="arrow">→</div><div class="step">2 Parar</div><div class="arrow">→</div><div class="step">3 Corrigir e conter</div><div class="arrow">→</div><div class="step">4 Investigar a causa raiz e padronizar</div></div>
+<div class="grid2">
+<div class="card"><h4>Andon</h4><p>Sistema visual (luz, painel, sinal sonoro) com que operador ou máquina chamam ajuda. O Andon só funciona se houver <strong>resposta</strong>: um líder que chega em segundos ou minutos, com regra clara de escalonamento. Andon sem resposta ensina as pessoas a não pedir ajuda.</p></div>
+<div class="card"><h4>Posição fixa de parada</h4><p>Em linhas, o operador sinaliza o problema e a linha para no fim do ciclo, num ponto definido, se o problema não for resolvido até lá. Isso dá tempo de resposta sem parar a linha a cada sinal.</p></div>
+</div>
+<h3>Poka-Yoke</h3>
+<p>Shingo distinguiu dois tipos de dispositivo à prova de erro e defendeu a <strong>inspeção na fonte</strong>, que atua sobre a condição que gera o erro antes que ele vire defeito.</p>
+<table>
+<tr><th>Tipo</th><th>Funcionamento</th><th>Exemplo no caso S-100</th></tr>
+<tr><td>Controle</td><td>Impede fisicamente o erro ou para o processo</td><td>Pino de posicionamento assimétrico que impede montar o suporte invertido no dispositivo de solda</td></tr>
+<tr><td>Advertência</td><td>Sinaliza o erro com alarme ou luz</td><td>Sensor que acende luz vermelha se faltar um parafuso na bandeja do kit</td></tr>
+</table>
+<div class="grid3">
+<div class="card soft"><h4>Método de contato</h4><p>Detecta forma, dimensão ou posição.</p></div>
+<div class="card soft"><h4>Valor fixo</h4><p>Verifica se o número de movimentos ou de peças está correto.</p></div>
+<div class="card soft"><h4>Etapa de movimento</h4><p>Verifica se a sequência de passos foi seguida.</p></div>
+</div>
+<div class="callout warn"><strong>Pontos de atenção:</strong> treine os operadores para parar e torne a parada segura para eles, sem punição por acionar o Andon. Meça o tempo de resposta ao Andon e o número de acionamentos. Um número baixo de acionamentos geralmente indica problemas escondidos, e não ausência de problemas.</div>
+</section>
+
+<section class="chapter" id="padrao"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 16</div><h2>Trabalho Padronizado e TWI</h2>
+<p class="lead">Trabalho padronizado é a melhor forma conhecida, hoje, de executar uma tarefa com segurança, qualidade e eficiência. É a base da melhoria: sem padrão, não há como saber se houve melhoria nem como sustentá-la.</p>
+<h3>Os três elementos</h3>
+<div class="grid3">
+<div class="card"><span class="badge">1</span><h4>Takt time</h4><p>O ritmo em que o trabalho deve ser concluído.</p></div>
+<div class="card"><span class="badge">2</span><h4>Sequência de trabalho</h4><p>A ordem dos elementos que o operador executa em cada ciclo.</p></div>
+<div class="card"><span class="badge">3</span><h4>Estoque padrão em processo</h4><p>A quantidade mínima de peças dentro da célula necessária para o trabalho fluir.</p></div>
+</div>
+<h3>Documentos</h3>
+<table>
+<tr><th>Documento</th><th>Uso</th></tr>
+<tr><td>Folha de capacidade do processo</td><td>Capacidade de cada máquina, considerando ciclo e setup</td></tr>
+<tr><td>Tabela de trabalho padronizado combinado</td><td>Sobrepõe o tempo manual, o tempo de máquina e a caminhada frente ao takt</td></tr>
+<tr><td>Folha de trabalho padronizado</td><td>Layout, sequência, estoque padrão, pontos de qualidade e de segurança, afixada no posto</td></tr>
+<tr><td>Instrução de trabalho (TWI-JI)</td><td>Passos principais, pontos-chave e razões, usada para treinar</td></tr>
+</table>
+<h3>TWI — Training Within Industry</h3>
+<p>O programa TWI, desenvolvido nos Estados Unidos durante a Segunda Guerra Mundial e posteriormente adotado no Japão, tem três módulos: <strong>Job Instruction</strong> (como treinar), <strong>Job Methods</strong> (como melhorar o método) e <strong>Job Relations</strong> (como liderar pessoas). O JI ensina em quatro passos: preparar o aprendiz, apresentar a operação, fazê-lo executar e acompanhar.</p>
+<p>No caso S-100, a célula de dois operadores tem estoque padrão de 6 peças: uma em cada estação da mesa giratória, uma na montagem, uma em espera de montagem, uma em inspeção e uma em embalagem.</p>
+<div class="callout"><strong>Padrão não é rigidez.</strong> O padrão é o ponto de partida para o próximo kaizen. Quem executa a tarefa deve participar de sua revisão, e o líder deve verificá-lo diariamente.</div>
+</section>
+
+<section class="chapter" id="visual"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 17</div><h2>5S e Gestão Visual</h2>
+<p class="lead">5S e gestão visual tornam o normal e o anormal evidentes a qualquer pessoa em poucos segundos. São a infraestrutura da estabilidade, e não um programa de limpeza.</p>
+<table>
+<tr><th>Senso</th><th>Japonês</th><th>Prática</th></tr>
+<tr><td>Utilização</td><td>Seiri</td><td>Separar o necessário do desnecessário; etiqueta vermelha</td></tr>
+<tr><td>Ordenação</td><td>Seiton</td><td>Um lugar para cada coisa, identificado, perto do ponto de uso</td></tr>
+<tr><td>Limpeza</td><td>Seiso</td><td>Limpar é inspecionar: vazamentos, folgas e desgaste aparecem</td></tr>
+<tr><td>Padronização</td><td>Seiketsu</td><td>Padrões visuais e rotinas que mantêm os três primeiros</td></tr>
+<tr><td>Disciplina</td><td>Shitsuke</td><td>Hábito sustentado por auditoria e por liderança</td></tr>
+</table>
+<h3>Gestão visual em três níveis</h3>
+<div class="grid3">
+<div class="card soft"><h4>Indicar</h4><p>Identificação, endereços, sinalização de piso.</p></div>
+<div class="card soft"><h4>Sinalizar</h4><p>Andon, níveis mínimo e máximo, cores de status.</p></div>
+<div class="card soft"><h4>Controlar</h4><p>Limites físicos que impedem o erro, como um supermercado que não comporta mais do que o máximo.</p></div>
+</div>
+<p>Um quadro de produção por hora (planejado × realizado, com o motivo do desvio) é a ferramenta visual mais útil de uma célula. No caso S-100, com takt de 120 s, o plano é de 30 peças por hora.</p>
+<div class="callout">O e-book <strong>5S</strong> da coleção JB Process &amp; Tech aprofunda a implantação, a auditoria e a sustentação.</div>
+</section>
+
+<section class="chapter" id="tpm"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 18</div><h2>TPM, Seis Grandes Perdas e OEE</h2>
+<p class="lead">Fluxo contínuo e produção puxada exigem equipamentos confiáveis. A Manutenção Produtiva Total (TPM), sistematizada por Seiichi Nakajima, envolve operadores e manutenção na eliminação das perdas dos equipamentos.</p>
+<h3>As seis grandes perdas e o OEE</h3>
+<table>
+<tr><th>Componente do OEE</th><th>Perda</th><th>Exemplo</th></tr>
+<tr><td rowspan="2">Disponibilidade</td><td>1. Quebras</td><td>Falha do robô de solda</td></tr>
+<tr><td>2. Setup e ajustes</td><td>Troca de dispositivo, regulagem</td></tr>
+<tr><td rowspan="2">Desempenho</td><td>3. Pequenas paradas e ociosidade</td><td>Sensor sujo, peça mal posicionada</td></tr>
+<tr><td>4. Velocidade reduzida</td><td>Robô em velocidade abaixo da nominal</td></tr>
+<tr><td rowspan="2">Qualidade</td><td>5. Defeitos e retrabalho</td><td>Cordão de solda fora da especificação</td></tr>
+<tr><td>6. Perdas de partida</td><td>Peças refugadas após setup ou retomada</td></tr>
+</table>
+<div class="formula">Disponibilidade = Tempo de operação ÷ Tempo planejado<br>Desempenho = (Ciclo ideal × Peças totais) ÷ Tempo de operação<br>Qualidade = Peças boas ÷ Peças totais<br>OEE = D × P × Q = (Ciclo ideal × Peças boas) ÷ Tempo planejado</div>
+<h3>OEE do robô de solda no caso S-100 (um dia)</h3>
+<table class="num">
+<tr><th>Item</th><th>Valor</th></tr>
+<tr><td>Tempo planejado</td><td>880 min (52.800 s)</td></tr>
+<tr><td>Quebras</td><td>35 min</td></tr>
+<tr><td>Falta de material</td><td>21 min</td></tr>
+<tr><td>Tempo de operação</td><td>824 min (49.440 s)</td></tr>
+<tr><td>Ciclo ideal</td><td>100 s</td></tr>
+<tr><td>Peças produzidas</td><td>449</td></tr>
+<tr><td>Peças boas</td><td>440</td></tr>
+</table>
+<div class="formula">D = 824 ÷ 880 = 93,636%<br>P = (100 × 449) ÷ 49.440 = 90,817%<br>Q = 440 ÷ 449 = 97,996%<br>OEE = 93,636% × 90,817% × 97,996% = 83,33%<br>Verificação: (100 × 440) ÷ 52.800 = 83,33% ✓</div>
+<p>O ciclo médio real é 49.440 ÷ 449 = 110,1 s, compatível com os 110 s observados no VSM. O robô entrega as 440 peças boas por dia, mas com pouca margem: qualquer quebra adicional de 20 min deixa a célula abaixo da demanda. Por isso o plano de estado futuro inclui manutenção autônoma e ataque às pequenas paradas do robô.</p>
+<div class="callout warn"><strong>Pontos de atenção:</strong> (1) defina por escrito o que entra no tempo planejado; neste caso, a falta de material foi tratada como perda de disponibilidade, mas há empresas que a excluem, o que muda o OEE; (2) use o ciclo ideal de projeto, e não o “ciclo que a gente consegue”; (3) a referência de 85% frequentemente associada a Nakajima como “classe mundial” não substitui a comparação com o próprio histórico; (4) OEE é indicador de equipamento, não de pessoa.</div>
+</section>
+
+<section class="chapter" id="kaizen"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 19</div><h2>Kaizen, A3 e Toyota Kata</h2>
+<p class="lead">Kaizen é a melhoria contínua em passos pequenos, feita pelas pessoas que fazem o trabalho. Ele ocorre em três formas complementares.</p>
+<table>
+<tr><th>Forma</th><th>Escopo</th><th>Duração</th><th>Exemplo no caso S-100</th></tr>
+<tr><td>Kaizen diário</td><td>Posto, equipe</td><td>Minutos a dias</td><td>Ajuste do kit de componentes</td></tr>
+<tr><td>Evento kaizen</td><td>Processo, célula</td><td>3 a 5 dias</td><td>Criação da célula em U</td></tr>
+<tr><td>Projeto ou A3</td><td>Fluxo, problema complexo</td><td>Semanas a meses</td><td>SMED da prensa; OEE do robô</td></tr>
+</table>
+<h3>A3</h3>
+<p>O A3, descrito por John Shook em <em>Managing to Learn</em>, organiza numa folha a história do problema: contexto, condição atual, meta, análise de causa raiz, contramedidas, plano e acompanhamento. Seu valor está no diálogo entre quem escreve e quem orienta, e não no formulário.</p>
+<h3>Toyota Kata</h3>
+<p>Mike Rother descreveu duas rotinas práticas:</p>
+<div class="flow"><div class="step">1 Entender a direção</div><div class="arrow">→</div><div class="step">2 Conhecer a condição atual</div><div class="arrow">→</div><div class="step">3 Definir a próxima condição-alvo</div><div class="arrow">→</div><div class="step">4 Experimentar (PDCA) rumo a ela</div></div>
+<p>O <strong>Coaching Kata</strong> é o diálogo diário de 15 a 20 minutos entre o líder e o aprendiz, guiado por cinco perguntas: qual é a condição-alvo; qual é a condição atual; que obstáculos impedem chegar lá e qual se está abordando agora; qual é o próximo passo e o que se espera dele; e quando se poderá ver o que foi aprendido.</p>
+<div class="callout">O e-book <strong>Kaizen</strong> da coleção JB Process &amp; Tech aprofunda os eventos, o PDCA e a gestão de ideias.</div>
+</section>
+
+<section class="chapter" id="gestao"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 20</div><h2>Gestão Diária, Hoshin Kanri e Liderança</h2>
+<p class="lead">Ferramentas criam melhoria; a gestão a sustenta. Sem uma rotina de liderança, os ganhos de um projeto Lean costumam regredir em poucos meses.</p>
+<h3>Gestão diária em camadas</h3>
+<table>
+<tr><th>Nível</th><th>Rotina</th><th>Duração</th><th>Pauta</th></tr>
+<tr><td>Célula</td><td>Reunião no quadro, no início do turno</td><td>10 min</td><td>Segurança, plano × realizado por hora, problemas, ações</td></tr>
+<tr><td>Supervisão</td><td>Gemba walk e verificação de padrões</td><td>30 min</td><td>Desvios, Andon, auditoria de trabalho padronizado</td></tr>
+<tr><td>Gerência</td><td>Reunião de fluxo de valor</td><td>30 min</td><td>Lead time, OEE, entregas, escalonamento</td></tr>
+<tr><td>Direção</td><td>Revisão mensal de Hoshin</td><td>2 h</td><td>Metas anuais, A3 estratégicos, recursos</td></tr>
+</table>
+<h3>Hoshin Kanri</h3>
+<p>O desdobramento de diretrizes, sistematizado por Yoji Akao, conecta poucas prioridades estratégicas às metas e projetos de cada nível por meio do <strong>catchball</strong>: um diálogo de ida e volta em que cada nível propõe como contribuirá e com quais recursos. A matriz X é uma ferramenta comum para visualizar esse alinhamento.</p>
+<h3>O papel do líder</h3>
+<ul>
+<li>Ir ao Gemba para ver, perguntar e mostrar respeito, não para cobrar.</li>
+<li>Responder ao Andon e remover obstáculos.</li>
+<li>Ensinar a resolver problemas, em vez de resolvê-los pelos outros.</li>
+<li>Proteger o tempo de melhoria da equipe, mesmo em semanas difíceis.</li>
+</ul>
+</section>
+<section class="chapter" id="caso2"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 21</div><h2>Caso S-100 (Parte 2): Estado Futuro e Resultados</h2>
+<div class="callout warn"><strong>Dados simulados</strong>, continuação do capítulo 10. Os resultados são projeções do estado futuro desenhado, e não medições de uma empresa real.</div>
+<p class="lead">Respondendo às oito perguntas do capítulo 9, o estado futuro da família S-100 ficou assim:</p>
+<table>
+<tr><th>Pergunta</th><th>Resposta no caso S-100</th></tr>
+<tr><td>1. Takt</td><td>120 s</td></tr>
+<tr><td>2. Supermercado de acabado ou expedição direta?</td><td>Pequeno estoque de expedição de 1 dia (440 peças), alimentado pela célula</td></tr>
+<tr><td>3. Fluxo contínuo</td><td>Célula em U com solda, montagem e inspeção/embalagem, com 2 operadores (cap. 11)</td></tr>
+<tr><td>4. Supermercados</td><td>Entre a prensa compartilhada e a célula: 13 Kanbans, máximo de 286 peças (cap. 12)</td></tr>
+<tr><td>5. Processo puxador</td><td>A célula, que recebe a sequência da caixa de nivelamento</td></tr>
+<tr><td>6. Nivelamento do mix</td><td>Sequência A B A C A B A C A B, duas vezes por dia (cap. 14)</td></tr>
+<tr><td>7. Incremento de trabalho</td><td>Pitch de 44 min (22 peças)</td></tr>
+<tr><td>8. Melhorias necessárias</td><td>Kaizen na montagem (−25 s); SMED na prensa (60 → 15 min); TPM no robô; Poka-Yoke no dispositivo de solda; entregas de bobina duas vezes por semana</td></tr>
+</table>
+<div class="visual"><div class="visual-title">Figura 6 — VSM simplificado do estado futuro</div>
+<svg viewBox="0 0 1100 300" role="img" aria-label="VSM do estado futuro">
+<g font-family="Arial" text-anchor="middle">
+<polygon points="40,150 70,100 100,150" fill="#B26A0D"/><text x="70" y="143" font-size="13" font-weight="700" fill="#FFFFFF">I</text><text x="70" y="170" font-size="12" fill="#172330">MP 880 • 2 d</text>
+<rect x="130" y="90" width="170" height="70" rx="6" fill="#174A73"/><text x="215" y="118" font-size="14" font-weight="700" fill="#FFFFFF">Prensa</text><text x="215" y="138" font-size="12" fill="#D6E6EE">setup 15 min • EPEI 0,5 d</text>
+<rect x="340" y="90" width="150" height="70" rx="6" fill="#F4F8FA" stroke="#0B7974" stroke-width="3"/><text x="415" y="118" font-size="14" font-weight="700" fill="#071A2B">Supermercado</text><text x="415" y="138" font-size="12" fill="#172330">13 Kanbans • máx. 286</text>
+<rect x="530" y="80" width="300" height="90" rx="10" fill="#0B7974"/><text x="680" y="110" font-size="15" font-weight="700" fill="#FFFFFF">Célula em U (puxadora)</text><text x="680" y="132" font-size="12" fill="#FFFFFF">solda • montagem • inspeção/embalagem</text><text x="680" y="152" font-size="12" fill="#FFFFFF">2 operadores • WIP padrão 6</text>
+<polygon points="860,150 890,100 920,150" fill="#B26A0D"/><text x="890" y="143" font-size="13" font-weight="700" fill="#FFFFFF">I</text><text x="890" y="170" font-size="12" fill="#172330">PA 440 • 1 d</text>
+<rect x="950" y="90" width="130" height="70" rx="6" fill="#F4F8FA" stroke="#174A73" stroke-width="2"/><text x="1015" y="122" font-size="14" font-weight="700" fill="#071A2B">Montadora</text><text x="1015" y="142" font-size="12" fill="#172330">440/dia</text>
+<rect x="580" y="20" width="200" height="40" rx="6" fill="#071A2B"/><text x="680" y="45" font-size="13" font-weight="700" fill="#FFFFFF">Caixa heijunka • pitch 44 min</text>
+</g>
+<g stroke="#071A2B" stroke-width="2" fill="none"><path d="M100 125 H130"/><path d="M300 125 H340"/><path d="M490 125 H530"/><path d="M830 125 H860"/><path d="M920 125 H950"/></g>
+<text x="550" y="230" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#071A2B">Estoque total 1.612 peças • Lead time 3,66 dias • Processamento 325 s • PCE 0,17%</text>
+<text x="550" y="258" text-anchor="middle" font-family="Arial" font-size="13" fill="#172330">880 + 286 + 6 + 440 = 1.612 • 1.612 ÷ 440 = 3,66 d</text>
+</svg></div>
+<h3>Antes × depois</h3>
+<table class="num">
+<tr><th>Indicador</th><th>Estado atual</th><th>Estado futuro</th><th>Variação</th></tr>
+<tr><td>Estoque total (peças)</td><td>9.240</td><td>1.612 (máximo)</td><td>−82,6%</td></tr>
+<tr><td>Lead time (dias)</td><td>21,0</td><td>3,66</td><td>−82,6%</td></tr>
+<tr><td>Tempo de processamento (s)</td><td>350</td><td>325</td><td>−25 s</td></tr>
+<tr><td>PCE</td><td>0,0316%</td><td>0,168%</td><td>≈ 5,3 ×</td></tr>
+<tr><td>Hora extra (min/dia)</td><td>110,25</td><td>0</td><td>−36,75 h/mês</td></tr>
+<tr><td>Operadores no fluxo</td><td>4</td><td>3</td><td>1 realocado</td></tr>
+<tr><td>Setup da prensa (min)</td><td>60</td><td>15</td><td>−75%</td></tr>
+<tr><td>EPEI (dias)</td><td>3</td><td>0,5</td><td>6 × mais frequente</td></tr>
+<tr><td>OEE do robô</td><td>83,33%</td><td>meta a definir pelo A3 de TPM</td><td>—</td></tr>
+</table>
+<div class="formula">Estoque liberado = 9.240 − 1.612 = 7.628 peças<br>Capital liberado (custo médio simulado de R$ 18/peça) = 7.628 × 18 = R$ 137.304 (efeito único de caixa, não anual)</div>
+<p>O lead time e o estoque caem na mesma proporção porque, pela Lei de Little, com a mesma taxa de saída de 440 peças por dia, um é proporcional ao outro. O ganho de processamento é pequeno (25 s): a melhoria veio quase toda da redução de filas, como o capítulo 5 antecipava.</p>
+<div class="callout ok"><strong>Sobre as pessoas:</strong> o operador liberado pela célula passa a integrar o time de melhoria e a manutenção autônoma do robô. Essa decisão, comunicada antes do evento kaizen, é condição para a participação genuína da equipe.</div>
+<div class="callout warn"><strong>Limitações do caso:</strong> o custo médio de R$ 18 aplicado a todos os estoques é uma simplificação, já que a matéria-prima vale menos que o produto acabado. A demanda foi considerada estável, e a variabilidade foi absorvida pelo fator α do Kanban e pela folga das ocupações.</div>
+</section>
+
+<section class="chapter" id="lss"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 22</div><h2>Lean × Lean Six Sigma e Lean Além da Fábrica</h2>
+<p class="lead">Lean e Six Sigma atacam problemas diferentes e se complementam: Lean trata de fluxo, velocidade e desperdício; Six Sigma, de variação e capacidade do processo.</p>
+<table>
+<tr><th>Dimensão</th><th>Lean</th><th>Six Sigma</th></tr>
+<tr><td>Foco</td><td>Fluxo, lead time, desperdício</td><td>Variação, defeitos, capacidade</td></tr>
+<tr><td>Pergunta típica</td><td>Por que a peça espera?</td><td>Por que o processo varia?</td></tr>
+<tr><td>Método</td><td>VSM, kaizen, A3, PDCA</td><td>DMAIC, estatística</td></tr>
+<tr><td>Ritmo</td><td>Rápido, muitos experimentos pequenos</td><td>Projetos de semanas a meses</td></tr>
+<tr><td>Quando escolher</td><td>Causa visível no Gemba</td><td>Causa oculta em múltiplas variáveis</td></tr>
+</table>
+<p>No caso S-100, o problema de lead time foi resolvido com Lean. Se o refugo de 9 peças por dia na solda tivesse múltiplas causas interagindo (parâmetros, material, dispositivo), um projeto DMAIC seria o caminho adequado. O e-book <strong>Six Sigma</strong> da coleção trata esse método.</p>
+<h3>Lean além da manufatura</h3>
+<div class="grid3">
+<div class="card soft"><h4>Serviços e escritório</h4><p>O “produto” é uma informação ou uma decisão: pedido, proposta, nota. Os desperdícios mais comuns são espera por aprovação, retrabalho de cadastro e filas de e-mail.</p></div>
+<div class="card soft"><h4>Saúde</h4><p>Fluxo de pacientes, padronização de procedimentos, gestão visual de leitos e prevenção de erro de medicação.</p></div>
+<div class="card soft"><h4>Desenvolvimento de produto e software</h4><p>Limitar o trabalho em andamento, reduzir o tamanho dos lotes de entrega e obter feedback cedo. Kanban de software e práticas ágeis aplicam a mesma lógica de fluxo.</p></div>
+</div>
+</section>
+
+<section class="chapter" id="digital"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 23</div><h2>Lean e Indústria 4.0</h2>
+<p class="lead">Tecnologia digital amplifica o sistema existente: um processo estável fica mais inteligente, e um processo caótico fica caótico mais rápido.</p>
+<table>
+<tr><th>Tecnologia</th><th>Uso coerente com Lean</th><th>Risco</th></tr>
+<tr><td>Coleta automática de OEE (IIoT)</td><td>Pequenas paradas visíveis em tempo real</td><td>Painéis que ninguém usa para agir</td></tr>
+<tr><td>e-Kanban</td><td>Sinal de reposição com fornecedor externo</td><td>Esconder o estoque físico atrás de uma tela</td></tr>
+<tr><td>MES e rastreabilidade</td><td>Registro de qualidade sem papel</td><td>Automatizar um fluxo com desperdício</td></tr>
+<tr><td>Análise de dados e IA</td><td>Priorizar causas de parada e prever falhas</td><td>Substituir a ida ao Gemba</td></tr>
+<tr><td>Cobots e AMR</td><td>Remover tarefas pesadas ou de transporte</td><td>Automatizar o transporte em vez de eliminá-lo</td></tr>
+</table>
+<div class="callout"><strong>Regra prática:</strong> estabilize e simplifique primeiro, padronize em seguida e só então automatize. Pergunte sempre se a tecnologia reduz o lead time, a variação ou o esforço humano, ou se apenas registra o problema melhor.</div>
+</section>
+
+<section class="chapter" id="roadmap"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 24</div><h2>Roadmap de Implantação em 12 Meses</h2>
+<p class="lead">Um roteiro de referência para uma planta de porte médio que começa por um fluxo-piloto. Prazos reais dependem do contexto, e o roadmap deve ser revisado a cada trimestre.</p>
+<div class="timeline">
+<div class="time"><b>M1–2</b><div><strong>Preparar.</strong> Patrocínio da direção, escolha da família-piloto, gerente do fluxo de valor, compromisso público de não demitir por produtividade, formação básica (8 desperdícios, VSM, A3). VSM do estado atual. <em>Entrega:</em> mapa atual validado no Gemba.</div></div>
+<div class="time"><b>M2–3</b><div><strong>Estabilizar.</strong> 5S na área-piloto, quadro de produção por hora, gestão diária na célula e início da manutenção autônoma. <em>Entrega:</em> plano × realizado visível e rotina diária funcionando.</div></div>
+<div class="time"><b>M3–5</b><div><strong>Fluir.</strong> VSM do estado futuro, eventos kaizen de célula e balanceamento, trabalho padronizado, Poka-Yoke e Andon com resposta. <em>Entrega:</em> célula operando no takt.</div></div>
+<div class="time"><b>M5–7</b><div><strong>Puxar.</strong> SMED no processo a montante, supermercado e Kanban, redução gradual dos Kanbans. <em>Entrega:</em> EPEI e WIP reduzidos e medidos.</div></div>
+<div class="time"><b>M7–9</b><div><strong>Nivelar.</strong> Caixa heijunka, pitch e abastecimento interno; revisão do OEE dos equipamentos críticos. <em>Entrega:</em> lead time do fluxo-piloto na meta.</div></div>
+<div class="time"><b>M9–12</b><div><strong>Sustentar e expandir.</strong> Auditoria de padrões em camadas, Kata com líderes, Hoshin para o próximo ano e segundo fluxo de valor. <em>Entrega:</em> ganhos sustentados por 3 meses e plano de expansão.</div></div>
+</div>
+<h3>Indicadores do roadmap</h3>
+<table>
+<tr><th>Tipo</th><th>Indicadores</th></tr>
+<tr><td>Resultado</td><td>Lead time, entrega no prazo (OTD), WIP em dias, produtividade, custo da má qualidade, segurança</td></tr>
+<tr><td>Processo</td><td>OEE, setup, EPEI, FPY, plano × realizado por hora</td></tr>
+<tr><td>Comportamento</td><td>Aderência à gestão diária, auditorias de padrão, tempo de resposta ao Andon, kaizens por pessoa</td></tr>
+</table>
+</section>
+
+<section class="chapter" id="casos"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 25</div><h2>Estudos de Caso Documentados</h2>
+<p class="lead">Os casos abaixo foram publicados pelo NIST Manufacturing Extension Partnership (MEP), programa do governo norte-americano de apoio a pequenas e médias indústrias. Os números são os informados nas fontes; consulte os links para o contexto completo.</p>
+<div class="grid2">
+<div class="card"><span class="badge">NY MEP • 2024</span><h4>Current Applications</h4><p>Fabricante de motores elétricos sob encomenda em Watertown (NY), com cerca de 60 funcionários. Com VSM, gráficos de balanceamento, células, trabalho padronizado, 5S e fluxo unitário, a empresa relatou redução de 50% no lead time, WIP de 105 para 5 unidades e produção diária de 40 para 105 unidades, eliminando uma carteira de 1.000 unidades em atraso.</p><p class="small">Fonte: <a href="https://www.nist.gov/mep/successstories/2024/lean-tools-provide-lead-time-reduction" target="_blank" rel="noopener">nist.gov/mep/successstories/2024/lean-tools-provide-lead-time-reduction</a></p></div>
+<div class="card"><span class="badge">GaMEP • 2024</span><h4>Groov-Pin</h4><p>Fabricante de fixadores industriais (pinos ranhurados e insertos roscados) em Newnan (GA), fundada em 1926. Com 5S, eventos kaizen e TWI ao longo de uma parceria de vários anos, o indicador de entrega subiu de 72% para 96%, o prazo de entrega de uma das principais linhas caiu de 14 para 6 semanas e o setup caiu de 8 para 2 horas.</p><p class="small">Fonte: <a href="https://www.nist.gov/mep/successstories/2024/longtime-partnership-leads-impactful-results-manufacturer" target="_blank" rel="noopener">nist.gov/mep/successstories/2024/longtime-partnership-leads-impactful-results-manufacturer</a></p></div>
+<div class="card"><span class="badge">Oregon MEP • 2022</span><h4>Egg Press</h4><p>Gráfica de impressão tipográfica (letterpress) e papelaria em Portland (OR). Com VSM e sistema de mínimo/máximo, reduziu o estoque em 35%, reduziu em 15% os tempos de produção, embalagem e processamento e relatou economia superior a US$ 32 mil.</p><p class="small">Fonte: <a href="https://www.nist.gov/mep/successstories/2022/oregon-manufacturer-egg-press-streamlined-production-through-lean-and" target="_blank" rel="noopener">nist.gov/mep/successstories/2022/oregon-manufacturer-egg-press-streamlined-production-through-lean-and</a></p></div>
+<div class="card"><span class="badge">TMEP • 2022</span><h4>Safe-T-Cover</h4><p>Fabricante de gabinetes de alumínio para proteção de bombas, válvulas e hidrômetros em Nashville (TN), com cerca de 20 funcionários. Com formação em VSM e 5S, relatou US$ 250 mil de economia de custos e US$ 500 mil em custos evitados, e adiou a necessidade de expandir a planta.</p><p class="small">Fonte: <a href="https://www.nist.gov/mep/successstories/2022/value-stream-mapping-and-5s-help-delay-plant-expansionlocation-expenses" target="_blank" rel="noopener">nist.gov/mep/successstories/2022/value-stream-mapping-and-5s-help-delay-plant-expansionlocation-expenses</a></p></div>
+</div>
+<div class="callout"><strong>O que os casos têm em comum:</strong> todos começaram por um fluxo ou área específica e mediram lead time, estoque ou entrega antes e depois. Nenhum começou por uma implantação simultânea na fábrica inteira.</div>
+<div class="callout warn"><strong>Leitura crítica:</strong> casos de sucesso publicados por programas de apoio tendem a mostrar os melhores resultados. Use-os como evidência de que o método funciona em pequenas e médias empresas, não como previsão do resultado de outra empresa.</div>
+</section>
+
+<section class="chapter" id="falhas"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 26</div><h2>Por que Transformações Lean Fracassam</h2>
+<table>
+<tr><th>Modo de falha</th><th>Sintoma</th><th>Contramedida</th></tr>
+<tr><td>Lean como kit de ferramentas</td><td>5S e Kanban sem mudança no fluxo nem na gestão</td><td>Começar pelo VSM e pelo problema do negócio</td></tr>
+<tr><td>Lean como corte de pessoal</td><td>Ideias param de surgir, e as pessoas escondem o desperdício</td><td>Compromisso explícito de realocação</td></tr>
+<tr><td>Projeto sem dono</td><td>Ganhos regridem depois da consultoria</td><td>Gerente do fluxo de valor e gestão diária</td></tr>
+<tr><td>Pull sem estabilidade</td><td>Faltas, urgências, volta dos estoques</td><td>Estabilizar (5S, TPM, padrão) antes de puxar</td></tr>
+<tr><td>Copiar sem entender</td><td>Caixa heijunka decorativa, quadros desatualizados</td><td>Perguntar que problema cada ferramenta resolve</td></tr>
+<tr><td>Escopo grande demais</td><td>Muitas frentes e nenhuma concluída</td><td>Um fluxo-piloto, concluído e sustentado</td></tr>
+<tr><td>Metas locais conflitantes</td><td>Compras, produção e logística otimizam a própria meta</td><td>Indicadores do fluxo de valor e Hoshin</td></tr>
+<tr><td>Liderança ausente do Gemba</td><td>Decisões tomadas por relatório</td><td>Gemba walk e Kata na agenda dos líderes</td></tr>
+</table>
+</section>
+<section class="chapter" id="exercicios"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 27</div><h2>Exercícios</h2>
+<p class="lead">Oito exercícios para fixar os cálculos do e-book. Tente resolvê-los antes de consultar o gabarito do capítulo 28.</p>
+<div class="exercise"><b class="n">Exercício 1 — Takt.</b> Uma linha opera 2 turnos de 450 minutos líquidos (já descontadas as pausas planejadas). A demanda é de 600 peças por dia. Qual é o takt time em segundos?</div>
+<div class="exercise"><b class="n">Exercício 2 — Operadores.</b> O conteúdo total de trabalho manual de uma célula é de 315 s por peça, e o takt é o do Exercício 1. Quantos operadores são necessários, qual é a carga por operador num balanceamento perfeito e qual é a ocupação?</div>
+<div class="exercise"><b class="n">Exercício 3 — Lei de Little.</b> Um fluxo tem 1.200 peças em processo e expede 400 peças por dia. Qual é o lead time médio?</div>
+<div class="exercise"><b class="n">Exercício 4 — OEE.</b> Uma máquina tem 480 min planejados no turno e ficou 48 min parada. O ciclo ideal é de 30 s. Ela produziu 780 peças, das quais 760 boas. Calcule disponibilidade, desempenho, qualidade e OEE.</div>
+<div class="exercise"><b class="n">Exercício 5 — Kanban.</b> A demanda diária de um item é de 300 peças, o tempo de reposição é de 0,25 dia, o fator de segurança é de 10% e o contêiner comporta 15 peças. Quantos Kanbans são necessários?</div>
+<div class="exercise"><b class="n">Exercício 6 — PCE.</b> Um pedido recebe 12 minutos de processamento e leva 4 dias para atravessar a fábrica, que opera 960 minutos por dia. Qual é o PCE?</div>
+<div class="exercise"><b class="n">Exercício 7 — SMED.</b> Um setup caiu de 50 para 18 minutos. A empresa decide usar 40% do tempo liberado em cada troca para fazer trocas adicionais (lotes menores); o restante volta como capacidade produtiva. Quantos minutos de capacidade cada troca devolve?</div>
+<div class="exercise"><b class="n">Exercício 8 — EPEI.</b> Uma máquina tem 120 minutos livres por dia para setups e produz 4 códigos. Qual é o EPEI com setup de 20 minutos? E com setup de 10 minutos? Considere apenas ciclos completos (todos os códigos).</div>
+</section>
+
+<section class="chapter" id="gabarito"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 28</div><h2>Gabarito Comentado</h2>
+<div class="answer"><strong>1.</strong> Tempo disponível = 2 × 450 × 60 = 54.000 s. Takt = 54.000 ÷ 600 = <strong>90 s</strong>. <span class="small">Erro comum: descontar quebras e setups do tempo disponível; eles são perdas, não pausas planejadas.</span></div>
+<div class="answer"><strong>2.</strong> 315 ÷ 90 = 3,5, arredondado para <strong>4 operadores</strong>. Carga = 315 ÷ 4 = 78,75 s por operador; ocupação = 78,75 ÷ 90 = <strong>87,5%</strong>. <span class="small">Antes de aceitar 4 operadores, faça kaizen para buscar o conteúdo de 270 s (3 × 90), que permitiria 3 operadores no takt.</span></div>
+<div class="answer"><strong>3.</strong> Lead time = 1.200 ÷ 400 = <strong>3 dias</strong>. <span class="small">Reduzir o lead time para 1 dia exige baixar o WIP para 400 peças, mantida a taxa de saída.</span></div>
+<div class="answer"><strong>4.</strong> D = (480 − 48) ÷ 480 = <strong>90,00%</strong>. P = (30 × 780) ÷ (432 × 60) = 23.400 ÷ 25.920 = <strong>90,28%</strong>. Q = 760 ÷ 780 = <strong>97,44%</strong>. OEE = 0,9 × 0,9028 × 0,9744 = <strong>79,17%</strong>. Verificação: (30 × 760) ÷ (480 × 60) = 22.800 ÷ 28.800 = 79,17% ✓.</div>
+<div class="answer"><strong>5.</strong> N = 300 × 0,25 × 1,1 ÷ 15 = 5,5, arredondado para <strong>6 Kanbans</strong>. <span class="small">Sempre arredonde para cima; a redução vem depois, eliminando a causa da instabilidade.</span></div>
+<div class="answer"><strong>6.</strong> Lead time = 4 × 960 = 3.840 min. PCE = 12 ÷ 3.840 = <strong>0,3125%</strong>. <span class="small">Menos de 0,5% é típico de fluxos empurrados sem mapeamento.</span></div>
+<div class="answer"><strong>7.</strong> Tempo liberado = 50 − 18 = 32 min por troca. Capacidade devolvida = 32 × (1 − 0,4) = <strong>19,2 min por troca</strong>. Os outros 12,8 min financiam trocas adicionais.</div>
+<div class="answer"><strong>8.</strong> Com setup de 20 min: 120 ÷ 20 = 6 setups por dia, que permitem 1 ciclo completo de 4 códigos, ou seja, <strong>EPEI = 1 dia</strong>. Com setup de 10 min: 120 ÷ 10 = 12 setups, que permitem 3 ciclos completos, ou seja, <strong>EPEI = 1/3 de dia</strong>. <span class="small">Os 2 setups que sobram no primeiro caso podem antecipar os códigos de maior giro.</span></div>
+</section>
+
+<section class="chapter" id="checklist"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 29</div><h2>Checklist de Autoavaliação Lean</h2>
+<p class="lead">Avalie um fluxo de valor específico, e não a empresa inteira. Atribua 0 (não existe), 1 (existe parcialmente ou sem rotina) ou 2 (existe, é usado e é sustentado) a cada item.</p>
+<table class="check">
+<tr><th>#</th><th>Item</th><th>Nota (0–2)</th></tr>
+<tr><td colspan="3"><strong>Valor e fluxo de valor</strong></td></tr>
+<tr><td>1</td><td>As famílias de produtos estão definidas e cada uma tem um responsável pelo fluxo de valor</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>2</td><td>Existe um VSM do estado atual feito no Gemba há menos de 12 meses</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>3</td><td>Existe um VSM do estado futuro com plano de implantação acompanhado</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>4</td><td>Lead time e WIP do fluxo são medidos e têm meta</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td colspan="3"><strong>Estabilidade</strong></td></tr>
+<tr><td>5</td><td>5S está implantado e auditado periodicamente na área</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>6</td><td>O OEE dos equipamentos críticos é medido, e as maiores perdas têm plano</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>7</td><td>Existe trabalho padronizado afixado e verificado pelos líderes</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>8</td><td>Os operadores são treinados com método estruturado (por exemplo, TWI-JI)</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td colspan="3"><strong>Fluxo e pull</strong></td></tr>
+<tr><td>9</td><td>O takt é calculado e conhecido pelos operadores</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>10</td><td>Há fluxo contínuo ou células onde ele é viável</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>11</td><td>A produção a montante é controlada por supermercado, Kanban ou FIFO</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>12</td><td>A programação é enviada a um único processo puxador</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>13</td><td>Os setups dos gargalos foram reduzidos com SMED, e o EPEI é conhecido</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>14</td><td>Volume e mix são nivelados no processo puxador</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td colspan="3"><strong>Qualidade na fonte</strong></td></tr>
+<tr><td>15</td><td>Existe Andon com tempo de resposta definido e medido</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>16</td><td>Os defeitos recorrentes foram tratados com Poka-Yoke</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td colspan="3"><strong>Gestão e cultura</strong></td></tr>
+<tr><td>17</td><td>Há gestão diária em camadas com quadro e escalonamento</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>18</td><td>Os problemas são resolvidos com A3 ou PDCA estruturado</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>19</td><td>Os líderes vão ao Gemba com rotina definida e fazem coaching</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td>20</td><td>As metas do fluxo estão ligadas à estratégia (Hoshin Kanri)</td><td>☐ 0 ☐ 1 ☐ 2</td></tr>
+<tr><td colspan="2"><strong>Total</strong></td><td><strong>___ / 40</strong></td></tr>
+</table>
+<table>
+<tr><th>Pontuação</th><th>Nível</th><th>Leitura e próximo passo</th></tr>
+<tr><td>0–13</td><td>1. Ferramentas</td><td>Iniciativas isoladas. Comece pelo VSM de uma família e por 5S e gestão diária na área-piloto.</td></tr>
+<tr><td>14–23</td><td>2. Projetos</td><td>Projetos com resultado, mas sem sustentação. Crie o papel de gerente do fluxo de valor e padronize.</td></tr>
+<tr><td>24–31</td><td>3. Fluxos</td><td>Fluxo-piloto funcionando. Implante pull e nivelamento e expanda para o segundo fluxo.</td></tr>
+<tr><td>32–37</td><td>4. Sistema</td><td>Lean como sistema de produção. Fortaleça Kata e Hoshin e estenda aos fornecedores.</td></tr>
+<tr><td>38–40</td><td>5. Cultura</td><td>Melhoria como rotina de todos. Desafie as metas e compartilhe o aprendizado.</td></tr>
+</table>
+<p class="small">A escala é uma ferramenta de diagnóstico do autor para orientar o próximo passo. Não se trata de um modelo de certificação.</p>
+</section>
+
+<section class="chapter" id="mapa"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 30</div><h2>Mapa Mental Executivo</h2>
+<p class="lead">Uma visão de conjunto para revisar o sistema Lean em uma página.</p>
+<div class="visual"><div class="visual-title">Figura 7 — Visão geral do sistema Lean</div>
+<svg viewBox="0 0 1200 760">
+<ellipse cx="600" cy="380" rx="145" ry="84" fill="#0B7974"/>
+<text x="600" y="372" text-anchor="middle" fill="white" font-family="Arial" font-size="34" font-weight="700">LEAN</text>
+<text x="600" y="407" text-anchor="middle" fill="#D7F4F0" font-family="Arial" font-size="17">valor + fluxo + pessoas</text>
+<g stroke="#9BB7C6" stroke-width="3" fill="none"><path d="M600 295C600 210 600 170 600 125"/><path d="M730 330C850 265 920 235 1000 200"/><path d="M735 435C855 500 920 535 1000 575"/><path d="M600 465C600 550 600 600 600 650"/><path d="M465 435C345 500 280 535 195 575"/><path d="M470 325C350 260 285 225 195 190"/></g>
+<g font-family="Arial" text-anchor="middle">
+<rect x="455" y="40" width="290" height="95" rx="20" fill="#E8F7F5"/><text x="600" y="76" fill="#071A2B" font-size="22" font-weight="700">VALOR</text><text x="600" y="106" fill="#627283" font-size="16">cliente • propósito</text>
+<rect x="920" y="140" width="245" height="120" rx="20" fill="#EEF4F8"/><text x="1042" y="176" fill="#071A2B" font-size="22" font-weight="700">FLUXO</text><text x="1042" y="204" fill="#627283" font-size="16">VSM • takt • células</text><text x="1042" y="228" fill="#627283" font-size="16">lead time • lote</text>
+<rect x="930" y="515" width="235" height="120" rx="20" fill="#FFF4E7"/><text x="1047" y="551" fill="#071A2B" font-size="22" font-weight="700">PULL</text><text x="1047" y="579" fill="#627283" font-size="16">Kanban • supermercado</text><text x="1047" y="603" fill="#627283" font-size="16">Heijunka</text>
+<rect x="445" y="640" width="310" height="95" rx="20" fill="#F0FAF4"/><text x="600" y="676" fill="#071A2B" font-size="22" font-weight="700">ESTABILIDADE</text><text x="600" y="706" fill="#627283" font-size="16">padrão • TPM • 5S</text>
+<rect x="35" y="515" width="270" height="120" rx="20" fill="#FFF1EF"/><text x="170" y="551" fill="#071A2B" font-size="22" font-weight="700">JIDOKA</text><text x="170" y="579" fill="#627283" font-size="16">Andon • Poka-Yoke</text><text x="170" y="603" fill="#627283" font-size="16">qualidade na fonte</text>
+<rect x="30" y="130" width="285" height="130" rx="20" fill="#EDF7FD"/><text x="172" y="167" fill="#071A2B" font-size="22" font-weight="700">PESSOAS & KAIZEN</text><text x="172" y="195" fill="#627283" font-size="16">Gemba • A3 • PDCA</text><text x="172" y="219" fill="#627283" font-size="16">liderança • Hoshin</text><text x="172" y="243" fill="#627283" font-size="16">aprendizado</text>
+</g></svg></div>
+</section>
+
+<section class="chapter" id="mensagens"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 31</div><h2>Mensagens-chave do Autor</h2>
+<div class="message-grid">
+<div class="message-card"><b>01</b><p>Comece pelo cliente e pelo fluxo de valor, não pela ferramenta.</p></div>
+<div class="message-card"><b>02</b><p>Lead time é estoque dividido por throughput. Para reduzir o tempo, reduza a fila.</p></div>
+<div class="message-card"><b>03</b><p>Estabilidade vem antes do pull. Sem 5S, TPM e padrão, o Kanban vira falta.</p></div>
+<div class="message-card"><b>04</b><p>SMED serve para trocar mais vezes e fazer lotes menores, não para produzir mais do mesmo.</p></div>
+<div class="message-card"><b>05</b><p>Pare para corrigir. Um problema escondido custa mais que uma linha parada.</p></div>
+<div class="message-card"><b>06</b><p>O padrão de hoje é a base da melhoria de amanhã.</p></div>
+<div class="message-card"><b>07</b><p>Ganho de produtividade não pode virar demissão; se virar, a melhoria acaba.</p></div>
+<div class="message-card"><b>08</b><p>A liderança sustenta o Lean no Gemba, todos os dias.</p></div>
+</div>
+</section>
+
+<section class="chapter" id="glossario"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 32</div><h2>Glossário</h2>
+<div class="glossary">
+<div class="term"><b>A3</b><span>Relatório de uma folha que estrutura a solução de problemas e o diálogo de orientação.</span></div>
+<div class="term"><b>Andon</b><span>Sinal visual ou sonoro de anormalidade que aciona uma resposta.</span></div>
+<div class="term"><b>Catchball</b><span>Diálogo de ida e volta entre níveis no desdobramento de metas (Hoshin).</span></div>
+<div class="term"><b>Célula</b><span>Arranjo de etapas próximas, geralmente em U, que permite fluxo unitário.</span></div>
+<div class="term"><b>Coaching Kata</b><span>Rotina diária de perguntas do líder para desenvolver o raciocínio científico do aprendiz.</span></div>
+<div class="term"><b>EPEI</b><span>Every Part Every Interval: intervalo em que todos os códigos são produzidos ao menos uma vez.</span></div>
+<div class="term"><b>FIFO</b><span>Fila com capacidade máxima e ordem de chegada entre dois processos.</span></div>
+<div class="term"><b>Gemba</b><span>O lugar onde o valor é criado: chão de fábrica, balcão, consultório.</span></div>
+<div class="term"><b>Heijunka</b><span>Nivelamento do volume e do mix da produção ao longo do tempo.</span></div>
+<div class="term"><b>Hoshin Kanri</b><span>Desdobramento de diretrizes estratégicas em metas e projetos por nível.</span></div>
+<div class="term"><b>Jidoka</b><span>Automação com toque humano: parar ao detectar anormalidade.</span></div>
+<div class="term"><b>JIT</b><span>Just-in-Time: produzir o necessário, quando necessário, na quantidade necessária.</span></div>
+<div class="term"><b>Kaizen</b><span>Melhoria contínua em passos pequenos, feita por quem executa o trabalho.</span></div>
+<div class="term"><b>Kanban</b><span>Sinal que autoriza a produção ou retirada de uma quantidade definida.</span></div>
+<div class="term"><b>Lead time</b><span>Tempo total de atravessamento de uma peça ou pedido pelo fluxo.</span></div>
+<div class="term"><b>Lei de Little</b><span>Lead time = WIP ÷ throughput, em sistemas estáveis.</span></div>
+<div class="term"><b>Muda, Mura, Muri</b><span>Desperdício, irregularidade e sobrecarga.</span></div>
+<div class="term"><b>OEE</b><span>Eficácia global do equipamento: disponibilidade × desempenho × qualidade.</span></div>
+<div class="term"><b>Pacemaker</b><span>Processo puxador: o único ponto que recebe a programação do cliente.</span></div>
+<div class="term"><b>PCE</b><span>Process Cycle Efficiency: tempo de processamento ÷ lead time.</span></div>
+<div class="term"><b>Pitch</b><span>Takt × quantidade por contêiner; incremento de trabalho liberado e retirado.</span></div>
+<div class="term"><b>Poka-Yoke</b><span>Dispositivo à prova de erro que impede ou sinaliza um erro antes que vire defeito.</span></div>
+<div class="term"><b>SMED</b><span>Método de troca rápida de ferramenta, com meta de setup em menos de 10 minutos.</span></div>
+<div class="term"><b>Supermercado</b><span>Estoque controlado, com máximo definido e reposição pelo consumo.</span></div>
+<div class="term"><b>Takt time</b><span>Tempo disponível ÷ demanda: o ritmo do cliente.</span></div>
+<div class="term"><b>TPM</b><span>Manutenção Produtiva Total: operadores e manutenção eliminando perdas de equipamento.</span></div>
+<div class="term"><b>TPS</b><span>Toyota Production System, a origem histórica do Lean.</span></div>
+<div class="term"><b>TWI</b><span>Training Within Industry: programas JI, JM e JR de treinamento e liderança.</span></div>
+<div class="term"><b>VSM</b><span>Value Stream Mapping: mapa de material e de informação de uma família de produtos.</span></div>
+<div class="term"><b>WIP</b><span>Work in process: estoque em processo.</span></div>
+<div class="term"><b>Yamazumi</b><span>Gráfico de barras empilhadas do conteúdo de trabalho por operador frente ao takt.</span></div>
+</div>
+</section>
+<section class="chapter" id="referencias"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Capítulo 33</div><h2>Referências</h2>
+<h3>Obras fundamentais</h3>
+<ol class="refs">
+<li><b>AKAO, Yoji (ed.).</b> <em>Hoshin Kanri: Policy Deployment for Successful TQM.</em> Cambridge, MA: Productivity Press, 1991.</li>
+<li><b>DINERO, Donald A.</b> <em>Training Within Industry: The Foundation of Lean.</em> New York: Productivity Press, 2005.</li>
+<li><b>HOPP, Wallace J.; SPEARMAN, Mark L.</b> <em>Factory Physics.</em> 3. ed. New York: McGraw-Hill, 2008.</li>
+<li><b>KRAFCIK, John F.</b> Triumph of the Lean Production System. <em>Sloan Management Review</em>, v. 30, n. 1, p. 41–52, 1988.</li>
+<li><b>LIKER, Jeffrey K.</b> <em>The Toyota Way: 14 Management Principles from the World's Greatest Manufacturer.</em> New York: McGraw-Hill, 2004.</li>
+<li><b>LITTLE, John D. C.</b> A Proof for the Queuing Formula: L = λW. <em>Operations Research</em>, v. 9, n. 3, p. 383–387, 1961.</li>
+<li><b>MARCHWINSKI, Chet; SHOOK, John (eds.).</b> <em>Lean Lexicon: A Graphical Glossary for Lean Thinkers.</em> Cambridge, MA: Lean Enterprise Institute, 2003. Edição em português: <em>Léxico Lean</em>, Lean Institute Brasil.</li>
+<li><b>MONDEN, Yasuhiro.</b> <em>Toyota Production System: An Integrated Approach to Just-in-Time.</em> 4. ed. Boca Raton: CRC Press, 2011.</li>
+<li><b>NAKAJIMA, Seiichi.</b> <em>Introduction to TPM: Total Productive Maintenance.</em> Cambridge, MA: Productivity Press, 1988.</li>
+<li><b>OHNO, Taiichi.</b> <em>Toyota Production System: Beyond Large-Scale Production.</em> Cambridge, MA: Productivity Press, 1988. Edição em português: <em>O Sistema Toyota de Produção: além da produção em larga escala.</em> Porto Alegre: Bookman, 1997.</li>
+<li><b>ROTHER, Mike.</b> <em>Toyota Kata: Managing People for Improvement, Adaptiveness, and Superior Results.</em> New York: McGraw-Hill, 2009.</li>
+<li><b>ROTHER, Mike; HARRIS, Rick.</b> <em>Creating Continuous Flow.</em> Brookline, MA: Lean Enterprise Institute, 2001.</li>
+<li><b>ROTHER, Mike; SHOOK, John.</b> <em>Learning to See: Value Stream Mapping to Add Value and Eliminate Muda.</em> Brookline, MA: Lean Enterprise Institute, 1998. Edição em português: <em>Aprendendo a Enxergar</em>, Lean Institute Brasil.</li>
+<li><b>SHINGO, Shigeo.</b> <em>A Revolution in Manufacturing: The SMED System.</em> Cambridge, MA: Productivity Press, 1985.</li>
+<li><b>SHINGO, Shigeo.</b> <em>Zero Quality Control: Source Inspection and the Poka-Yoke System.</em> Cambridge, MA: Productivity Press, 1986.</li>
+<li><b>SHINGO, Shigeo.</b> <em>A Study of the Toyota Production System from an Industrial Engineering Viewpoint.</em> Ed. rev. Cambridge, MA: Productivity Press, 1989. Edição em português: <em>O Sistema Toyota de Produção do ponto de vista da Engenharia de Produção.</em> Porto Alegre: Bookman, 1996.</li>
+<li><b>SHOOK, John.</b> <em>Managing to Learn: Using the A3 Management Process.</em> Cambridge, MA: Lean Enterprise Institute, 2008.</li>
+<li><b>SMALLEY, Art.</b> <em>Creating Level Pull.</em> Brookline, MA: Lean Enterprise Institute, 2004.</li>
+<li><b>WOMACK, James P.; JONES, Daniel T.</b> <em>Lean Thinking: Banish Waste and Create Wealth in Your Corporation.</em> New York: Simon &amp; Schuster, 1996. 2. ed. New York: Free Press, 2003.</li>
+<li><b>WOMACK, James P.; JONES, Daniel T.; ROOS, Daniel.</b> <em>The Machine That Changed the World.</em> New York: Rawson Associates, 1990.</li>
+</ol>
+<h3>Fontes institucionais</h3>
+<ol class="refs">
+<li><b>Toyota Motor Corporation.</b> Toyota Production System. <a href="https://global.toyota/en/company/vision-and-philosophy/production-system/" target="_blank" rel="noopener">global.toyota — TPS</a>.</li>
+<li><b>Toyota Motor Corporation.</b> Virtual Plant Tour — Toyota Production System. <a href="https://global.toyota/en/company/plant-tours/production-system/" target="_blank" rel="noopener">global.toyota — Plant Tour</a>.</li>
+<li><b>Lean Enterprise Institute.</b> Lean Lexicon: Lean Thinking and Practice. <a href="https://www.lean.org/lexicon-terms/lean-thinking-and-practice/" target="_blank" rel="noopener">lean.org</a>.</li>
+<li><b>Lean Enterprise Institute.</b> Lean Lexicon: Seven Wastes. <a href="https://www.lean.org/lexicon-terms/seven-wastes/" target="_blank" rel="noopener">lean.org</a>.</li>
+<li><b>Lean Enterprise Institute.</b> Lean Lexicon: Muda, Mura, Muri. <a href="https://www.lean.org/lexicon-terms/muda-mura-muri/" target="_blank" rel="noopener">lean.org</a>.</li>
+<li><b>Lean Enterprise Institute.</b> Lean Lexicon: Standardized Work. <a href="https://www.lean.org/lexicon-terms/standardized-work/" target="_blank" rel="noopener">lean.org</a>.</li>
+</ol>
+<h3>Estudos de caso documentados (NIST MEP)</h3>
+<ol class="refs">
+<li><b>NIST MEP / NY MEP.</b> <em>Lean Tools Provide Lead Time Reduction</em> (Current Applications), 2024. <a href="https://www.nist.gov/mep/successstories/2024/lean-tools-provide-lead-time-reduction" target="_blank" rel="noopener">nist.gov</a>.</li>
+<li><b>NIST MEP / GaMEP.</b> <em>Longtime Partnership Leads to Impactful Results for Manufacturer</em> (Groov-Pin), 2024. <a href="https://www.nist.gov/mep/successstories/2024/longtime-partnership-leads-impactful-results-manufacturer" target="_blank" rel="noopener">nist.gov</a>.</li>
+<li><b>NIST MEP / Oregon MEP.</b> <em>Oregon Manufacturer Egg Press Streamlined Production Through Lean and Continuous Improvement</em>, 2022. <a href="https://www.nist.gov/mep/successstories/2022/oregon-manufacturer-egg-press-streamlined-production-through-lean-and" target="_blank" rel="noopener">nist.gov</a>.</li>
+<li><b>NIST MEP / TMEP (UT CIS).</b> <em>Value Stream Mapping and 5S Help Delay a Plant Expansion/Location Expenses</em> (Safe-T-Cover), 2022. <a href="https://www.nist.gov/mep/successstories/2022/value-stream-mapping-and-5s-help-delay-plant-expansionlocation-expenses" target="_blank" rel="noopener">nist.gov</a>.</li>
+</ol>
+<div class="reference-note"><strong>Nota de integridade:</strong> este e-book privilegia síntese e interpretação próprias. As frases de síntese são do autor. O caso S-100 usa dados simulados, identificados como tais, e todos os seus cálculos foram conferidos. Os casos externos trazem as fontes indicadas, e os números citados são os publicados nessas fontes.</div>
+</section>
+
+<section class="chapter" id="autor"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Sobre o autor</div><h2>Quem escreveu este e-book</h2>
+<div class="grid2">
+<div class="card soft"><p style="font-size:22px;font-weight:900;color:var(--navy);margin-bottom:4px">Bruno Hipólito</p><p class="small" style="margin-top:0">Fundador da JB Process &amp; Tech • Master Black Belt em Lean Seis Sigma</p><p><strong>Bruno Hipólito</strong> é fundador da JB Process &amp; Tech, consultoria em Lean Six Sigma, melhoria contínua, treinamentos, engenharia de processos e soluções digitais com dados e inteligência artificial.</p><p>Atua como Coordenador de Engenharia de Processo na indústria e soma mais de 20 anos de trajetória industrial, da operação de produção ao controle de qualidade, P&amp;D e engenharia de processos.</p><p>É Master Black Belt em Lean Seis Sigma e concluiu a Formação de Líderes Kaizen (Grupo Voitto, 2021). É bacharel em Química (FAI) e em Engenharia de Produção (UniCesumar), especialista em Biotecnologia (UEM) e pós-graduado em Ciência de Dados e Big Data Analytics (FAMEESP).</p><p>É autor do livro <em>Gestão de Indicadores — Da teoria à prática: KPIs, metas e desempenho</em>.</p></div>
+<div class="card"><h4>JB Process &amp; Tech</h4><p>Engenharia de Processos • Excelência Operacional • Lean Six Sigma • Dados &amp; BI • Tecnologia &amp; IA.</p><p>Outros e-books da coleção Knowledge Series: <a href="https://jbprocesstech.com.br/ebooks/six-sigma/" target="_blank" rel="noopener">Six Sigma</a>, <a href="https://jbprocesstech.com.br/ebooks/kaizen/" target="_blank" rel="noopener">Kaizen</a>, <a href="https://jbprocesstech.com.br/ebooks/5s/" target="_blank" rel="noopener">5S</a> e <a href="https://jbprocesstech.com.br/ebooks/excelencia-operacional-integrada/" target="_blank" rel="noopener">Excelência Operacional Integrada</a>.</p><p><a href="https://jbprocesstech.com.br/" target="_blank" rel="noopener">jbprocesstech.com.br</a></p></div>
+</div>
+</section>
+
+<section id="contato">
+<div class="cta">
+<div class="kicker" style="color:#9FE3DE">Próximo passo</div>
+<h2>Leve o fluxo de valor da sua fábrica do mapa ao resultado</h2>
+<p>A JB Process &amp; Tech apoia indústrias com <strong>diagnóstico e consultoria</strong> em fluxo de valor, VSM, células, Kanban, SMED, OEE e gestão diária, e com <strong>treinamentos</strong> em Lean Manufacturing, Lean Six Sigma, 5S, Kaizen e CEP. A conversa começa pelo processo e pelo resultado esperado, não pela ferramenta.</p>
+<a class="btn" href="https://wa.me/5518996328579?text=Ol%C3%A1%21%20Li%20o%20e-book%20Lean%20Manufacturing%20da%20JB%20Process%20%26%20Tech%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico." target="_blank" rel="noopener">Solicitar diagnóstico pelo WhatsApp</a>
+<a class="btn" href="https://wa.me/5518996328579?text=Ol%C3%A1%21%20Li%20o%20e-book%20Lean%20Manufacturing%20da%20JB%20Process%20%26%20Tech%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20treinamentos." target="_blank" rel="noopener">Treinamentos para minha equipe</a>
+<a class="btn" href="https://jbprocesstech.com.br/#contato" target="_blank" rel="noopener">Contato pelo site</a>
+<p class="small" style="color:#D6E6EE;margin-top:14px">WhatsApp e telefone: (18) 99632-8579 • jbprocesstech.com.br</p>
+</div>
+</section>
+</main>
+<footer class="footer">
+<strong>JB Process &amp; Tech</strong><br>
+Excelência Operacional • Lean Six Sigma • Engenharia • Data Analytics • Transformação Digital<br><br>
+E-book técnico • Knowledge Series • 1ª edição • 15/11/2026 • Autor: Bruno Hipólito<br>© 2026 JB Process &amp; Tech. Todos os direitos reservados. Uso pessoal; proibida a reprodução, total ou parcial, sem autorização.
+</footer>
 </body>
 </html>
