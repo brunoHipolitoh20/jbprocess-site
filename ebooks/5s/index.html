@@ -1,15 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="E-book técnico premium da JB Process & Tech sobre 5S: fundamentos, história, autores, cinco sensos, gestão visual, aplicações industriais, cultura, tecnologia e estudos de caso.">
-<title>5S — A Base da Disciplina Operacional | JB Process & Tech</title>
+<title>5S — A Base da Disciplina Operacional | JB Process &amp; Tech</title>
+<meta name="description" content="E-book técnico gratuito sobre 5S: os cinco sensos, Red Tag, gestão visual, NR-26 e ABNT NBR 7195, 5S e TPM, checklists de auditoria por senso para imprimir, roteiro de 12 semanas, 5S no escritório e digital, caso simulado, casos documentados e exercícios.">
+<meta name="author" content="Bruno Hipólito">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jbprocesstech.com.br/ebooks/5s/">
+<meta property="og:type" content="book">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="JB Process &amp; Tech">
+<meta property="og:title" content="5S — A Base da Disciplina Operacional">
+<meta property="og:description" content="Cinco sensos, NR-26 e NBR 7195, 5S e TPM, checklists por senso, roteiro de 12 semanas, 5S digital, caso e exercícios.">
+<meta property="og:url" content="https://jbprocesstech.com.br/ebooks/5s/">
+<meta property="og:image" content="https://jbprocesstech.com.br/ebooks/5s/og-5s.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Capa do e-book 5S — JB Process &amp; Tech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5S — A Base da Disciplina Operacional">
+<meta name="twitter:description" content="Cinco sensos, NR-26 e NBR 7195, checklists por senso, roteiro de 12 semanas, 5S digital, caso e exercícios.">
+<meta name="twitter:image" content="https://jbprocesstech.com.br/ebooks/5s/og-5s.png">
+<meta property="book:author" content="Bruno Hipólito">
+<meta property="book:release_date" content="2026-11-15">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Book", "name": "5S — A Base da Disciplina Operacional", "bookEdition": "1ª edição", "inLanguage": "pt-BR", "author": {"@type": "Person", "name": "Bruno Hipólito", "jobTitle": "Fundador da JB Process & Tech"}, "publisher": {"@type": "Organization", "name": "JB Process & Tech", "url": "https://jbprocesstech.com.br/"}, "datePublished": "2026-11-15", "image": "https://jbprocesstech.com.br/ebooks/5s/og-5s.png", "copyrightYear": 2026, "copyrightHolder": {"@type": "Organization", "name": "JB Process & Tech"}, "url": "https://jbprocesstech.com.br/ebooks/5s/", "isAccessibleForFree": true, "about": ["5S", "Gestão visual", "NR-26", "NBR 7195", "TPM", "Lean"]}
+</script>
 <style>
 :root{
 --navy:#071A2B;--navy2:#0B2C46;--blue:#174A73;--teal:#0B7974;--cyan:#13A9A2;
 --green:#237A4A;--amber:#B26A0D;--red:#B63E35;--purple:#6B5FA8;--ink:#172330;
---muted:#627283;--line:#D9E2E9;--soft:#F4F8FA;--white:#FFF;--shadow:0 15px 42px rgba(7,26,43,.10)
+--muted:#55667A;--line:#D9E2E9;--soft:#F4F8FA;--white:#FFF;--shadow:0 15px 42px rgba(7,26,43,.10)
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:#EDF2F5;color:var(--ink);font:16px/1.68 Inter,Segoe UI,Arial,sans-serif}
@@ -83,73 +105,67 @@ section.chapter{break-before:page;border-top:0;padding-top:0}#sumario{break-befo
 h2{font-size:23pt;margin-top:0}h3{font-size:14.5pt}h4{font-size:11.5pt}h2,h3,h4{break-after:avoid-page}
 p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.message-grid{gap:4mm}.visual,.card,table{break-inside:avoid}.back-toc{display:none}
 }
+
+/* 1ª edição — classes adicionais */
+.ph{background:#FFF1B8;color:#5A4300;border:1px dashed #C79A00;border-radius:6px;padding:1px 6px;font-weight:800;font-style:normal}
+.exercise{border:1px solid var(--line);border-left:5px solid var(--purple);border-radius:14px;padding:16px 18px;margin:16px 0;background:#FAF9FE}
+.exercise b.n{color:var(--purple)}
+.answer{border:1px solid var(--line);border-left:5px solid var(--green);border-radius:14px;padding:14px 18px;margin:14px 0;background:#F6FBF8}
+.check td:last-child,.check th:last-child{text-align:center;width:120px}
+.num td:not(:first-child),.num th:not(:first-child){text-align:right}
+.cta{background:linear-gradient(135deg,#071A2B,#0B4F59);color:#fff;border-radius:22px;padding:30px}
+.cta h2,.cta h3{color:#fff}.cta p{color:#D6E6EE}
+.cta .btn{display:inline-block;background:#13A9A2;color:#05131F;font-weight:900;text-decoration:none;padding:12px 18px;border-radius:12px;margin:8px 8px 0 0}
+.lead-form{background:#fff;color:var(--ink);border-radius:16px;padding:20px;margin-top:18px}
+.lead-form label{display:block;font-size:13px;font-weight:800;color:var(--navy);margin:10px 0 4px}
+.lead-form input,.lead-form select{width:100%;padding:10px;border:1px solid #B9C7D2;border-radius:10px;font:inherit}
+.lead-form .consent{display:flex;gap:8px;align-items:flex-start;font-size:13px;margin-top:12px}.lead-form .consent input{width:auto;margin-top:4px}
+.lead-form button{margin-top:14px;background:#9AA8B4;color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:900}
+@media print{.lead-form{display:none}.footer{break-before:avoid;page-break-before:avoid;break-inside:avoid;padding:8px 10px;font-size:11px}.cta{padding:22px;break-inside:avoid;page-break-inside:avoid}.cta .btn{border:1px solid #13A9A2}}
+
+
+.case table{background:#fff;color:var(--ink)}.case table a{color:#0B7974}.case .formula{color:var(--ink)}
+@media print{.grid4{grid-template-columns:repeat(4,1fr)}.grid3{grid-template-columns:repeat(3,1fr)}.grid2,.glossary,.message-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-
 <header class="hero"><div class="hero-inner premium-cover">
 <div class="brand">JB Process &amp; Tech • Knowledge Series</div>
-<div class="cover-meta">Edição Técnica Premium • 2026 • Excelência Operacional</div>
+<div class="cover-meta">Edição Técnica Premium • 1ª edição • 2026 • Excelência Operacional</div>
 <div class="cover-grid"><div class="cover-left">
-<div class="eyebrow">E-book profissional e compartilhável</div>
+<div class="eyebrow">E-book técnico gratuito • com checklists, caso simulado e exercícios</div>
 <h1>5S</h1>
 <div class="subtitle">A Base da Disciplina Operacional</div>
-<p class="cover-strap">Organização • Gestão Visual • Segurança • Produtividade • Padronização • Cultura • Melhoria Contínua</p>
+<p class="cover-strap">Organização • Gestão Visual • Segurança • NR-26 • TPM • Padronização • 5S Digital • Cultura • Melhoria Contínua</p>
 <p class="hero-note">Um guia aprofundado para transformar o ambiente de trabalho em um sistema visual, seguro, organizado e capaz de revelar anomalias antes que elas se tornem perdas.</p>
 </div></div>
-<div class="cover-bottom">Enxergar → Organizar → Inspecionar → Padronizar → Sustentar → Melhorar</div>
+<div class="cover-bottom">Autor: <strong>Bruno Hipólito</strong> • Master Black Belt em Lean Seis Sigma • Enxergar → Organizar → Inspecionar → Padronizar → Sustentar → Melhorar</div>
 </div></header>
-
-
-<nav><div class="inner">
-<a href="#sumario">Sumário</a><a href="#introducao">Introdução</a><a href="#historia">História</a><a href="#autores">Autores</a>
-<a href="#sistema">Sistema 5S</a><a href="#seiri">Seiri</a><a href="#seiton">Seiton</a><a href="#seiso">Seiso</a>
-<a href="#seiketsu">Seiketsu</a><a href="#shitsuke">Shitsuke</a><a href="#visual">Visual</a><a href="#implantacao">Implantação</a>
-<a href="#auditoria">Auditoria</a><a href="#industrial">Industrial</a><a href="#casos">Casos</a><a href="#digital">Digital</a>
-<a href="#mapa">Mapa Mental</a><a href="#referencias">Referências</a>
-</div></nav>
-
+<nav><div class="inner"><a href="#sumario">Sumário</a><a href="#historia">História</a><a href="#sistema">Sistema 5S</a><a href="#seiri">Seiri</a><a href="#seiton">Seiton</a><a href="#seiso">Seiso</a><a href="#seiketsu">Seiketsu</a><a href="#shitsuke">Shitsuke</a><a href="#normas">NR-26 / NBR 7195</a><a href="#tpm">TPM</a><a href="#redtag">Red Tag</a><a href="#roadmap">Roteiro</a><a href="#checklists">Checklists</a><a href="#industrial">Caso</a><a href="#escritorio">Escritório e digital</a><a href="#casos">Casos</a><a href="#sustentacao">Sustentação</a><a href="#exercicios">Exercícios</a><a href="#referencias">Referências</a><a href="#contato">Contato</a></div></nav>
 <main>
-
+<section id="ficha">
+<div class="kicker">Ficha técnica</div><h2>Sobre esta edição</h2>
+<table>
+<tr><th>Título</th><td>5S — A Base da Disciplina Operacional</td></tr>
+<tr><th>Edição</th><td>1ª edição • publicada em 15/11/2026</td></tr>
+<tr><th>Autor</th><td>Bruno Hipólito — fundador da JB Process &amp; Tech; Master Black Belt em Lean Seis Sigma</td></tr>
+<tr><th>Editora</th><td>JB Process &amp; Tech • Knowledge Series</td></tr>
+<tr><th>Licença de uso</th><td>© 2026 JB Process &amp; Tech. Todos os direitos reservados. Uso pessoal; proibida a reprodução, total ou parcial, sem autorização.</td></tr>
+<tr><th>Como citar</th><td>HIPÓLITO, Bruno. <em>5S: a base da disciplina operacional</em>. 1. ed. JB Process &amp; Tech, 2026. Disponível em: https://jbprocesstech.com.br/ebooks/5s/.</td></tr>
+</table>
+</section>
 <section id="nota">
 <div class="kicker">Nota ao leitor</div><h2>5S não é “faxina”. É gestão da condição básica.</h2>
 <p class="lead">Este e-book trata o 5S como um sistema de organização, segurança, gestão visual, disciplina e estabilização do trabalho — não como uma campanha estética.</p>
 <p>A definição mais conhecida utiliza cinco termos japoneses: <strong>Seiri, Seiton, Seiso, Seiketsu e Shitsuke</strong>. Em português, as traduções variam: utilização/seleção, ordenação/organização, limpeza/inspeção, padronização e disciplina/sustentação. A tradução literal é menos importante que o propósito operacional de cada etapa.</p>
 <div class="callout"><strong>Ponto central:</strong> o 5S cria condições para que o normal seja visível e o anormal seja percebido rapidamente. Um ambiente apenas “bonito” pode ter alto desperdício; um ambiente 5S deve facilitar o trabalho, reduzir procura, eliminar excessos, tornar riscos visíveis e apoiar o trabalho padronizado.</div>
+<div class="callout warn"><strong>Sobre os dados.</strong> O caso integrado (capítulo 18) e os exercícios usam dados <strong>simulados</strong>, construídos para fins didáticos e conferidos por script. Os casos documentados (capítulo 22) reproduzem os números publicados nas fontes indicadas. As referências às normas brasileiras (capítulo 10) foram conferidas nas versões vigentes em novembro de 2026.</div>
 <div class="quote">5S é uma infraestrutura de estabilidade operacional: organiza o ambiente para que segurança, qualidade, fluxo e melhoria possam acontecer de forma previsível.</div>
 </section>
-
 <section id="sumario">
 <div class="kicker">Sumário</div><h2>Mapa do e-book</h2>
-<div class="toc">
-<a href="#introducao"><b>00</b>Introdução — 5S como sistema de gestão</a>
-<a href="#historia"><b>01</b>Raízes históricas e evolução</a>
-<a href="#autores"><b>02</b>Autores e referências conceituais</a>
-<a href="#sistema"><b>03</b>A arquitetura dos cinco sensos</a>
-<a href="#seiri"><b>04</b>Seiri — separar, eliminar e decidir</a>
-<a href="#seiton"><b>05</b>Seiton — ordenar para o fluxo</a>
-<a href="#seiso"><b>06</b>Seiso — limpar para inspecionar</a>
-<a href="#seiketsu"><b>07</b>Seiketsu — padronizar a condição</a>
-<a href="#shitsuke"><b>08</b>Shitsuke — disciplina e sustentação</a>
-<a href="#safety"><b>09</b>Safety: o “sexto S” e suas nuances</a>
-<a href="#visual"><b>10</b>5S, gestão visual e trabalho padronizado</a>
-<a href="#redtag"><b>11</b>Red Tag e tratamento dos excessos</a>
-<a href="#implantacao"><b>12</b>Implantação passo a passo</a>
-<a href="#auditoria"><b>13</b>Auditorias, scorecards e maturidade</a>
-<a href="#industrial"><b>14</b>Aplicação industrial integrada</a>
-<a href="#laboratorio"><b>15</b>Laboratórios, logística e escritórios</a>
-<a href="#digital"><b>16</b>5S digital e Indústria 4.0</a>
-<a href="#casos"><b>17</b>Estudos de caso documentados</a>
-<a href="#falhas"><b>18</b>Por que programas 5S fracassam</a>
-<a href="#lideranca"><b>19</b>Liderança, cultura e sustentação</a>
-<a href="#mapa"><b>20</b>Mapa Mental Executivo</a>
-<a href="#mensagens"><b>21</b>Mensagens-chave do autor</a>
-<a href="#glossario"><b>22</b>Glossário</a>
-<a href="#referencias"><b>23</b>Referências</a>
-</div>
+<div class="toc"><a href="#introducao"><b>00</b>Introdução — 5S como sistema de gestão</a><a href="#historia"><b>01</b>Raízes históricas, os “sensos” no Brasil e obras de referência</a><a href="#autores"><b>02</b>Autores e referências conceituais</a><a href="#sistema"><b>03</b>A arquitetura dos cinco sensos</a><a href="#seiri"><b>04</b>Seiri — separar, eliminar e decidir</a><a href="#seiton"><b>05</b>Seiton — ordenar para o fluxo</a><a href="#seiso"><b>06</b>Seiso — limpar para inspecionar</a><a href="#seiketsu"><b>07</b>Seiketsu — padronizar a condição</a><a href="#shitsuke"><b>08</b>Shitsuke — disciplina e sustentação</a><a href="#safety"><b>09</b>Safety: o “sexto S” e suas nuances</a><a href="#normas"><b>10</b>Sinalização no Brasil: NR-26, NBR 7195 e NBR 6493</a><a href="#tpm"><b>11</b>5S, segurança e TPM</a><a href="#visual"><b>12</b>5S, gestão visual e trabalho padronizado</a><a href="#redtag"><b>13</b>Red Tag e tratamento dos excessos</a><a href="#implantacao"><b>14</b>Implantação passo a passo</a><a href="#roadmap"><b>15</b>Roteiro de implantação em 12 semanas</a><a href="#auditoria"><b>16</b>Auditorias e maturidade</a><a href="#checklists"><b>17</b>Checklists de auditoria por senso (para imprimir)</a><a href="#industrial"><b>18</b>Aplicação industrial integrada (caso simulado)</a><a href="#laboratorio"><b>19</b>Laboratórios, logística e escritórios</a><a href="#digital"><b>20</b>5S digital e Indústria 4.0</a><a href="#escritorio"><b>21</b>5S no escritório e 5S digital na prática</a><a href="#casos"><b>22</b>Estudos de caso documentados</a><a href="#falhas"><b>23</b>Por que programas 5S fracassam</a><a href="#lideranca"><b>24</b>Liderança, cultura e sustentação</a><a href="#sustentacao"><b>25</b>Sustentação: rotinas que mantêm o 5S vivo</a><a href="#mapa"><b>26</b>Mapa Mental Executivo</a><a href="#mensagens"><b>27</b>Mensagens-chave do autor</a><a href="#exercicios"><b>28</b>Exercícios de fixação</a><a href="#gabarito"><b>29</b>Gabarito comentado</a><a href="#glossario"><b>30</b>Glossário</a><a href="#referencias"><b>31</b>Referências</a><a href="#autor"><b>••</b>Sobre o autor e próximos passos</a></div>
 </section>
-
-
 <section class="chapter" id="introducao"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Introdução</div><h2>5S como Sistema de Gestão da Condição Básica</h2>
 <p class="lead">Quando materiais, ferramentas, documentos, rotas e padrões não possuem uma condição definida, o processo consome energia procurando, improvisando, corrigindo e contornando problemas.</p>
@@ -171,7 +187,6 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <rect x="410" y="48" width="230" height="50" rx="14" fill="#F5F9FB"/><text x="525" y="80" fill="#071A2B" font-size="19" font-weight="700">EXCELÊNCIA OPERACIONAL</text>
 </g></svg></div>
 </section>
-
 <section class="chapter" id="historia"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Capítulo 1</div><h2>Raízes Históricas e Evolução do 5S</h2>
 <p class="lead">Assim como o Kaizen, o 5S não deve ser atribuído de forma simplista a um único “inventor”. Ele foi consolidado no contexto da gestão japonesa e das práticas de produção enxuta.</p>
@@ -185,9 +200,24 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <div class="time"><b>Expansão global</b><br>5S passa a ser aplicado em saúde, laboratórios, logística, escritórios, serviços e ambientes digitais.</div>
 </div>
 <div class="callout warn"><strong>Rigor histórico:</strong> dizer “5S foi criado por Toyota” pode ser útil como simplificação didática, mas o desenvolvimento real foi gradual. Mais preciso é afirmar que a abordagem foi consolidada na gestão japonesa e difundida fortemente em associação ao TPS e ao Lean.</div>
+<h3>O 5S no Brasil: os “sensos”</h3>
+<p>No Brasil, o 5S se difundiu a partir dos programas de qualidade das décadas de 1990, e os termos japoneses costumam ser traduzidos como <strong>sensos</strong>: senso de utilização (Seiri), de ordenação ou organização (Seiton), de limpeza (Seiso), de saúde, normatização ou padronização (Seiketsu) e de autodisciplina (Shitsuke). A JICA, por exemplo, usa “utilização, organização, limpeza, normatização e autodisciplina” ao descrever o 5S aplicado no Hospital Japonês Santa Cruz. As variações de tradução não mudam o propósito de cada etapa.</p>
+<table><thead><tr><th>Termo japonês</th><th>Tradução brasileira usual</th><th>Pergunta central</th></tr></thead><tbody>
+<tr><td>Seiri</td><td>Senso de utilização</td><td>Isso é necessário aqui?</td></tr>
+<tr><td>Seiton</td><td>Senso de ordenação / organização</td><td>Cada coisa tem lugar, quantidade e identificação?</td></tr>
+<tr><td>Seiso</td><td>Senso de limpeza</td><td>A limpeza revela anomalias?</td></tr>
+<tr><td>Seiketsu</td><td>Senso de saúde / normatização / padronização</td><td>A condição correta é visível e repetível?</td></tr>
+<tr><td>Shitsuke</td><td>Senso de autodisciplina</td><td>A rotina se mantém sem campanha?</td></tr>
+</tbody></table>
+<h3>Linha do tempo das obras de referência</h3>
+<table><thead><tr><th>Ano</th><th>Obra</th></tr></thead><tbody>
+<tr><td>1988</td><td>Nakajima, <em>Introduction to TPM</em> (edição em inglês): limpeza-inspeção como primeiro passo da manutenção autônoma.</td></tr>
+<tr><td>1991</td><td>Osada, <em>The 5S's: Five Keys to a Total Quality Environment</em> (Asian Productivity Organization).</td></tr>
+<tr><td>1995</td><td>Hirano, <em>5 Pillars of the Visual Workplace</em> (Productivity Press).</td></tr>
+<tr><td>1997</td><td>Imai, <em>Gemba Kaizen</em>: <em>housekeeping</em>, eliminação de muda e padronização como atividades básicas do Gemba.</td></tr>
+<tr><td>2005</td><td>Galsworth, <em>Visual Workplace, Visual Thinking</em>.</td></tr>
+</tbody></table>
 </section>
-
-
 <section class="chapter" id="autores"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Capítulo 2</div><h2>Autores e Referências Conceituais</h2>
 <p class="lead">O 5S profissional ganha profundidade quando conectado a workplace organization, gestão visual, padronização, Kaizen e qualidade.</p>
@@ -216,7 +246,6 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <tr><td>LEI</td><td>Lean + padrão</td><td>O 5S está revelando desperdícios e apoiando trabalho padronizado?</td></tr>
 </tbody></table>
 </section>
-
 <section class="chapter" id="sistema"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Capítulo 3</div><h2>A Arquitetura dos Cinco Sensos</h2>
 <p class="lead">Os cinco sensos não são cinco campanhas independentes. Eles formam uma sequência lógica que transforma o ambiente em um sistema de trabalho mais previsível.</p>
@@ -248,8 +277,6 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <tr><td>Responsabilidade do “time 5S”.</td><td>Responsabilidade do dono do processo.</td></tr>
 </tbody></table>
 </section>
-
-
 <section class="chapter" id="seiri"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Capítulo 4</div><h2>Seiri — Separar, Eliminar e Decidir</h2>
 <p class="lead">Seiri remove do ambiente tudo que não contribui para o trabalho atual — ou define claramente o destino do que ainda precisa de decisão.</p>
@@ -267,7 +294,6 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <ul><li>Descartar item sem verificar requisitos regulatórios ou de manutenção.</li><li>Eliminar estoque necessário sem compreender lead time e criticidade.</li><li>Transferir a desorganização para outro almoxarifado.</li><li>Confundir “raramente usado” com “desnecessário”.</li></ul>
 <div class="callout ok"><strong>KPI útil:</strong> área liberada (m²), itens eliminados, valor recuperado, itens obsoletos removidos, tempo de procura e inventário físico informal.</div>
 </section>
-
 <section class="chapter" id="seiton"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Capítulo 5</div><h2>Seiton — Ordenar para o Fluxo</h2>
 <p class="lead">Seiton responde: <strong>o que fica onde, em que quantidade, com que identificação e de que forma deve ser acessado?</strong></p>
@@ -291,7 +317,6 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 </g></svg></div>
 <div class="callout"><strong>Boa pergunta de Gemba:</strong> quantos passos, segundos, alcances e decisões são necessários para obter o item certo?</div>
 </section>
-
 <section class="chapter" id="seiso"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Capítulo 6</div><h2>Seiso — Limpar para Inspecionar</h2>
 <p class="lead">Seiso não é limpeza cosmética. É usar a limpeza como oportunidade de inspeção, prevenção e detecção de anormalidades.</p>
@@ -305,7 +330,6 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 </div>
 <div class="callout warn"><strong>Cuidado:</strong> 5S não substitui procedimentos sanitários, validação de limpeza, BPF, HACCP, GMP ou requisitos de higiene. Ele cria a condição visual e disciplinar que facilita o cumprimento desses sistemas.</div>
 </section>
-
 <section class="chapter" id="seiketsu"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Capítulo 7</div><h2>Seiketsu — Padronizar a Condição</h2>
 <p class="lead">Seiketsu transforma melhorias locais em uma condição repetível, compreensível e verificável.</p>
@@ -322,7 +346,6 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <p>Quando necessário, instruções devem estar disponíveis onde a decisão é tomada. Um procedimento escondido em rede pode estar formalmente “disponível” e operacionalmente ausente.</p>
 <div class="callout ok"><strong>Objetivo:</strong> permitir que uma pessoa identifique a condição correta e uma anomalia com o mínimo de interpretação subjetiva.</div>
 </section>
-
 <section class="chapter" id="shitsuke"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Capítulo 8</div><h2>Shitsuke — Disciplina e Sustentação</h2>
 <p class="lead">O quinto S é onde muitos programas falham: a organização inicial desaparece porque o sistema não incorporou rotina, liderança e responsabilidade.</p>
@@ -331,8 +354,6 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <ul><li>Dono definido para cada área.</li><li>Rotina curta de verificação no início/fim do turno.</li><li>Auditorias proporcionais à maturidade.</li><li>Gestão visual de desvios.</li><li>Plano de reação, não apenas nota.</li><li>Revisão de padrões após mudança de layout/processo.</li><li>Liderança no Gemba.</li></ul>
 <div class="quote">Sustentar não é “manter tudo como está”. É manter a condição básica enquanto o processo continua melhorando.</div>
 </section>
-
-
 <section class="chapter" id="safety"><a class="back-toc" href="#sumario">↑ Sumário</a>
 <div class="kicker">Capítulo 9</div><h2>Safety: o “Sexto S” e suas Nuances</h2>
 <p class="lead">Algumas empresas usam 6S e adicionam Safety. Outras mantêm 5S e tratam segurança como princípio transversal a todos os sensos.</p>
@@ -345,10 +366,47 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <tr><td>Shitsuke</td><td>Sustentar comportamento seguro e reação a desvios.</td></tr>
 </tbody></table>
 <div class="callout danger"><strong>Princípio inegociável:</strong> nunca usar 5S para “melhorar produtividade” removendo proteções, barreiras, estoque de segurança crítico ou controles obrigatórios.</div>
+<p>As cores e a sinalização de segurança têm regras próprias no Brasil: veja o capítulo 10. A relação do 5S com a manutenção autônoma e a segurança de máquinas está no capítulo 11.</p>
 </section>
-
+<section class="chapter" id="normas"><a class="back-toc" href="#sumario">↑ Sumário</a><div class="kicker">Capítulo 10</div><h2>Sinalização no Brasil: NR-26, ABNT NBR 7195 e NBR 6493</h2><p class="lead">Seiton e Seiketsu usam cor, demarcação e identificação. No Brasil, parte disso é regulada. Um programa 5S que pinta o chão ou identifica tubulações sem conhecer as normas pode criar sinais que contradizem a sinalização de segurança.</p>
+<h3>NR-26 — Sinalização e identificação de segurança</h3>
+<p>A redação vigente da Norma Regulamentadora nº 26 foi aprovada pela <strong>Portaria MTP nº 2.770, de 5 de setembro de 2022</strong> (DOU de 6/9/2022), que revogou as Portarias SIT nº 229/2011 e MTE nº 704/2015 e tipificou a NR-26 como norma especial. <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/sst-portarias/2022/portaria-mtp-n-o-2-770-nova-nr-26.pdf" target="_blank" rel="noopener">Fonte</a>.</p>
+<table><thead><tr><th>Item da NR-26</th><th>O que diz (síntese)</th><th>Ligação com o 5S</th></tr></thead><tbody>
+<tr><td>26.3.1</td><td>Devem ser adotadas cores para comunicação de segurança, para indicar e advertir sobre perigos e riscos.</td><td>A cor de segurança tem função legal; não é escolha estética do time 5S.</td></tr>
+<tr><td>26.3.2</td><td>As cores para equipamentos de segurança, delimitação de áreas, tubulações de líquidos e gases e advertência devem atender às normas técnicas oficiais.</td><td>É por esse item que a NBR 7195 e a NBR 6493 entram no programa.</td></tr>
+<tr><td>26.3.3</td><td>O uso de cores não dispensa outras formas de prevenção de acidentes.</td><td>Demarcar não substitui proteção de máquina, barreira ou procedimento.</td></tr>
+<tr><td>26.3.4</td><td>O uso de cores deve ser o mais reduzido possível, para não causar distração, confusão e fadiga.</td><td>A própria norma combate a “poluição visual” que o 5S maduro também evita.</td></tr>
+<tr><td>26.4</td><td>Produtos químicos devem ser classificados e rotulados conforme o GHS (pictogramas, palavra de advertência, frases de perigo e precaução), com ficha com dados de segurança.</td><td>Seiri e Seiton em almoxarifados químicos e laboratórios: nada de frascos sem rótulo ou transferidos para embalagens não identificadas.</td></tr>
+</tbody></table>
+<h3>ABNT NBR 7195:2018 — Cores para segurança</h3>
+<p>A edição vigente é a segunda, de julho de 2018, que substituiu a de 1995 e foi confirmada pela ABNT em dezembro de 2023. A norma lista sete cores. Exemplos de aplicação:</p>
+<table><thead><tr><th>Cor</th><th>Uso definido na norma</th><th>Exemplos</th></tr></thead><tbody>
+<tr><td><strong>Vermelha</strong></td><td>Equipamentos de proteção e combate a incêndio e sua localização; sinais de parada obrigatória e proibição; botões de parada de emergência.</td><td>Extintores, hidrantes, botoeiras de emergência. A norma diz que o vermelho <strong>não</strong> pode ser usado para indicar perigo.</td></tr>
+<tr><td><strong>Laranja</strong></td><td>Indicar “perigo”.</td><td>Partes móveis de máquinas (quando a apreciação de riscos indicar), equipamentos de salvamento aquático.</td></tr>
+<tr><td><strong>Amarela</strong></td><td>Advertência.</td><td>Corrimãos e rodapés de escadas, faixas de circulação conjunta de pessoas e empilhadeiras, partes salientes com risco de colisão, pontes rolantes.</td></tr>
+<tr><td><strong>Verde</strong></td><td>Condição segura.</td><td>Caixas de EPI, chuveiros de emergência e lava-olhos, rota de fuga.</td></tr>
+<tr><td><strong>Azul</strong></td><td>Ação obrigatória.</td><td>Sinais de uso obrigatório de EPI.</td></tr>
+<tr><td><strong>Violeta</strong></td><td>Perigos de radiações penetrantes e partículas nucleares.</td><td>Acesso a locais com material radioativo.</td></tr>
+<tr><td><strong>Branca</strong></td><td>Demarcação de áreas de pessoas e de emergência.</td><td>Faixas de passarelas e corredores exclusivos de pessoas; áreas em torno de equipamentos de primeiros socorros e emergência.</td></tr>
+</tbody></table>
+<h3>ABNT NBR 6493:2019 — Cores para identificação de tubulações</h3>
+<p>Para tubulações, a referência é a NBR 6493 (edição de novembro de 2019, que incorporou a Emenda 1 e foi confirmada em junho de 2024). Exemplos de cores principais: verde-emblema para água (exceto incêndio); vermelho-segurança para água e substâncias de combate a incêndio; azul-segurança para ar comprimido; branco para vapor; amarelo-segurança para gases não liquefeitos; laranja-segurança para produtos químicos não gasosos; lilás para álcalis; cinza-escuro para eletrodutos.</p>
+<div class="callout warn"><strong>Como aplicar no 5S:</strong> (1) antes de definir cores de demarcação, liste as cores já reservadas pela NBR 7195; (2) use cores neutras ou de código interno para endereçamento e status (por exemplo, posições de carrinhos, itens em quarentena) e documente esse código; (3) mantenha a Red Tag como etiqueta de decisão, não como sinal de segurança; (4) peça validação do SESMT antes de pintar faixas e identificar tubulações; (5) compre as normas no catálogo da ABNT: este capítulo resume, não substitui o texto oficial.</div></section>
+<section class="chapter" id="tpm"><a class="back-toc" href="#sumario">↑ Sumário</a><div class="kicker">Capítulo 11</div><h2>5S, Segurança e TPM</h2><p class="lead">O 5S é a porta de entrada da manutenção autônoma e uma das bases da segurança. Nos dois casos, o mecanismo é o mesmo: um ambiente limpo e organizado torna a anomalia visível antes que ela vire falha ou acidente.</p>
+<h3>5S e manutenção autônoma</h3>
+<p>No TPM, a manutenção autônoma é desenvolvida em sete passos (Nakajima, 1988). Os três primeiros são, na prática, 5S aplicado ao equipamento:</p>
+<table><thead><tr><th>Passo da manutenção autônoma</th><th>Conteúdo</th><th>Senso correspondente</th></tr></thead><tbody>
+<tr><td>1. Limpeza inicial</td><td>Limpar o equipamento para inspecioná-lo; etiquetar anomalias.</td><td>Seiso (e Seiri no entorno)</td></tr>
+<tr><td>2. Eliminar fontes de sujeira e locais de difícil acesso</td><td>Vedar, proteger, coletar na fonte; facilitar a limpeza e a inspeção.</td><td>Seiso no nível “eliminar a fonte”</td></tr>
+<tr><td>3. Padrões provisórios de limpeza, inspeção e lubrificação</td><td>Quem, o quê, como, com que frequência e em quanto tempo.</td><td>Seiketsu</td></tr>
+<tr><td>4 a 7. Inspeção geral, inspeção autônoma, padronização e gestão autônoma</td><td>Treinamento técnico do operador e autonomia crescente.</td><td>Shitsuke e melhoria contínua</td></tr>
+</tbody></table>
+<div class="grid3"><div class="card"><h4>Etiqueta de anomalia</h4><p>Diferente da Red Tag: identifica um defeito no equipamento (vazamento, folga, ruído) e gera uma ordem de serviço. Tem número, data, descrição, quem pode resolver (operador ou manutenção) e data de fechamento.</p></div><div class="card"><h4>Pontos de inspeção visual</h4><p>Marcas de faixa normal em manômetros, setas de sentido de rotação, indicação de nível de óleo, marcas de alinhamento em parafusos: o 5S torna o “normal” legível.</p></div><div class="card"><h4>Indicador comum</h4><p>Anomalias abertas, encontradas e fechadas por semana. Se o número encontrado cai a zero logo depois da limpeza inicial, provavelmente a inspeção parou, não os defeitos.</p></div></div>
+<h3>5S e segurança</h3>
+<p>Cada senso reduz riscos concretos: Seiri elimina obstáculos e produtos vencidos; Seiton mantém rotas livres e itens pesados em altura ergonômica; Seiso revela vazamentos e pisos escorregadios; Seiketsu padroniza a sinalização dentro das normas do capítulo 10; Shitsuke sustenta o comportamento. O 5S, porém, não substitui a apreciação de riscos, a proteção de máquinas nem os procedimentos de bloqueio de energia.</p>
+<div class="callout"><strong>Limpeza é tarefa de risco:</strong> limpar dentro de máquinas exige bloqueio e etiquetagem de energias perigosas, EPI e procedimento. Nunca limpe com o equipamento energizado “porque é rápido”.</div></section>
 <section class="chapter" id="visual"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 10</div><h2>5S, Gestão Visual e Trabalho Padronizado</h2>
+<div class="kicker">Capítulo 12</div><h2>5S, Gestão Visual e Trabalho Padronizado</h2>
 <p class="lead">5S cria a base física e visual; trabalho padronizado define como executar; gestão visual mostra rapidamente se a condição real está de acordo com o esperado.</p>
 <p>O Lean Enterprise Institute destaca que trabalho padronizado documenta o processo atual e serve como base para Kaizen. A organização visual reduz variabilidade, facilita treinamento e torna desvios perceptíveis.</p>
 <div class="flow"><div class="step">5S</div><div class="arrow">→</div><div class="step">Ambiente visual</div><div class="arrow">→</div><div class="step">Padrão visível</div><div class="arrow">→</div><div class="step">Anomalia visível</div><div class="arrow">→</div><div class="step">Reação</div><div class="arrow">→</div><div class="step">Kaizen</div></div>
@@ -360,9 +418,8 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <tr><td>Controle visual</td><td>Dispositivo que orienta ou impede erro.</td><td>Reduz dependência de interpretação.</td></tr>
 </tbody></table>
 </section>
-
 <section class="chapter" id="redtag"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 11</div><h2>Red Tag: Tratar Excessos sem Perder Controle</h2>
+<div class="kicker">Capítulo 13</div><h2>Red Tag: Tratar Excessos sem Perder Controle</h2>
 <p class="lead">Red Tag é uma ferramenta para itens cuja necessidade, propriedade ou destino ainda não está claro.</p>
 <div class="visual"><div class="visual-title">Figura 4 — Fluxo de decisão Red Tag</div>
 <svg viewBox="0 0 1080 440">
@@ -380,11 +437,10 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <h3>Informações mínimas de uma Red Tag</h3>
 <p><span class="pill">Descrição</span><span class="pill">Local</span><span class="pill">Motivo</span><span class="pill">Responsável</span><span class="pill">Data</span><span class="pill">Prazo de decisão</span><span class="pill">Destino</span></p>
 <div class="callout warn"><strong>Erro comum:</strong> criar uma “área de Red Tag eterna”. Quarentena sem prazo apenas desloca o desperdício. Todo item deve ter decisão, owner e data.</div>
+<p>O modelo de etiqueta e da planilha de controle está descrito no capítulo 17.</p>
 </section>
-
-
 <section class="chapter" id="implantacao"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 12</div><h2>Implantação do 5S Passo a Passo</h2>
+<div class="kicker">Capítulo 14</div><h2>Implantação do 5S Passo a Passo</h2>
 <p class="lead">Implantar 5S exige mais que um “dia D”. O evento inicial pode gerar energia, mas a cultura nasce da rotina posterior.</p>
 <h3>Fase 1 — Preparar</h3>
 <ol><li>Definir área-piloto com problema real.</li><li>Selecionar sponsor e dono da área.</li><li>Registrar baseline fotográfico e indicadores.</li><li>Mapear riscos e requisitos regulatórios.</li><li>Treinar o propósito — não apenas as traduções dos 5 Ss.</li></ol>
@@ -408,10 +464,21 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <tr><td>Qualidade</td><td>trocas, contaminação, itens vencidos, defeitos por organização.</td></tr>
 <tr><td>Sustentação</td><td>aderência ao padrão; desvios reincidentes; ações vencidas.</td></tr>
 </tbody></table>
+<p>O capítulo 15 transforma essas fases em um roteiro de 12 semanas para a área-piloto.</p>
 </section>
-
+<section class="chapter" id="roadmap"><a class="back-toc" href="#sumario">↑ Sumário</a><div class="kicker">Capítulo 15</div><h2>Roteiro de Implantação em 12 Semanas</h2><p class="lead">Um roteiro de referência para a área-piloto. Os prazos são indicativos e dependem do tamanho da área e da disponibilidade da equipe.</p>
+<table><thead><tr><th>Semanas</th><th>Etapa</th><th>Atividades principais</th><th>Entregável</th></tr></thead><tbody>
+<tr><td>1</td><td>Preparar</td><td>Escolher área-piloto com problema real; sponsor e dono; treinamento de 2–4 h; fotos e indicadores de base; primeira auditoria com o checklist.</td><td>Linha de base e plano.</td></tr>
+<tr><td>2–3</td><td>Seiri</td><td>Campanha de Red Tag; área de quarentena com prazo; decisões semanais; registro de itens e m² liberados.</td><td>Itens desnecessários fora; lista de decisões.</td></tr>
+<tr><td>4–5</td><td>Seiton</td><td>Layout pelo fluxo; endereçamento; quadros de ferramentas; mínimo/máximo; validação das cores com o SESMT.</td><td>Mapa de localização e identificação.</td></tr>
+<tr><td>6–7</td><td>Seiso</td><td>Limpeza-inspeção; etiquetas de anomalia; ações nas fontes de sujeira; padrão de limpeza.</td><td>Lista de anomalias e fontes tratadas.</td></tr>
+<tr><td>8–9</td><td>Seiketsu</td><td>Foto padrão; padrões no ponto de uso; código de cores documentado; verificação diária de 5 min.</td><td>Padrões visuais em uso.</td></tr>
+<tr><td>10–11</td><td>Shitsuke</td><td>Auditoria quinzenal; caminhada da liderança; tendência visível; tratamento de reincidências.</td><td>Rotina de sustentação ativa.</td></tr>
+<tr><td>12</td><td>Avaliar e replicar</td><td>Segunda auditoria completa; comparação de indicadores; lições aprendidas; plano de expansão.</td><td>Relatório A3 e plano de replicação.</td></tr>
+</tbody></table>
+<div class="callout ok"><strong>Replicação:</strong> expanda por ondas de duas ou três áreas, com pessoas do piloto como multiplicadoras. Replique o método e os critérios, não o layout.</div></section>
 <section class="chapter" id="auditoria"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 13</div><h2>Auditorias, Scorecards e Maturidade</h2>
+<div class="kicker">Capítulo 16</div><h2>Auditorias, Scorecards e Maturidade</h2>
 <p class="lead">Auditar 5S deve gerar melhoria, não apenas uma nota. O risco de um checklist rígido é premiar aparência e punir adaptação inteligente.</p>
 <h3>Audite princípios, não só tarefas</h3>
 <table><thead><tr><th>Pergunta fraca</th><th>Pergunta madura</th></tr></thead><tbody>
@@ -420,13 +487,7 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <tr><td>“Tudo está demarcado?”</td><td>“A demarcação comunica uma regra útil e é respeitada?”</td></tr>
 <tr><td>“A nota é acima de 90%?”</td><td>“Quais gaps impactam segurança, qualidade e fluxo?”</td></tr>
 </tbody></table>
-<h3>Exemplo de scorecard de maturidade</h3>
-<div class="score"><span>Seiri</span><div class="bar"><i style="width:86%"></i></div><strong>4,3</strong></div>
-<div class="score"><span>Seiton</span><div class="bar"><i style="width:74%"></i></div><strong>3,7</strong></div>
-<div class="score"><span>Seiso</span><div class="bar"><i style="width:62%"></i></div><strong>3,1</strong></div>
-<div class="score"><span>Seiketsu</span><div class="bar"><i style="width:50%"></i></div><strong>2,5</strong></div>
-<div class="score"><span>Shitsuke</span><div class="bar"><i style="width:42%"></i></div><strong>2,1</strong></div>
-<p class="small">Exemplo ilustrativo. Escala simulada de 1 a 5.</p>
+<p>O capítulo 17 traz checklists imprimíveis por senso, com pontuação de 0 a 50 e a leitura de cada faixa. A escala abaixo descreve os níveis de maturidade correspondentes.</p>
 <h3>Escala sugerida</h3>
 <table><thead><tr><th>Nível</th><th>Descrição</th></tr></thead><tbody>
 <tr><td>1 — Reativo</td><td>Condição depende de mutirões e pessoas-chave.</td></tr>
@@ -437,49 +498,49 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 </tbody></table>
 <div class="callout"><strong>Regra 80/20:</strong> não desperdice energia elevando de 96% para 98% uma nota estética enquanto outra área convive com procura, risco, obsolescência ou anomalias de alto impacto.</div>
 </section>
-
-
-<section class="chapter case" id="industrial"><a class="back-toc" href="#sumario" style="color:#9CE3DA;background:#10384D">↑ Sumário</a>
-<div class="kicker" style="color:#8FE5D6">Capítulo 14 • Caso Integrado</div><h2>Aplicação Industrial: 5S do Gemba ao Resultado</h2>
-<p class="lead"><strong>Dados simulados</strong> para demonstrar como quantificar um projeto 5S em uma área de manutenção e setup.</p>
+<section class="chapter" id="checklists"><a class="back-toc" href="#sumario">↑ Sumário</a><div class="kicker">Capítulo 17</div><h2>Checklists de Auditoria por Senso (para imprimir)</h2><p class="lead">Cinco itens por senso, pontuados com 0 (não atende), 1 (atende parcialmente) ou 2 (atende plenamente). Cada senso vale até 10 pontos; o total, até 50. Os itens descrevem condições observáveis, não opiniões.</p>
+<div class="callout"><strong>Como auditar:</strong> no Gemba, com o dono da área, em 20–30 minutos. Para cada nota 0 ou 1, registre a evidência (foto ou descrição) e uma ação com responsável e prazo. Audite com a mesma folha sempre, para comparar a tendência.</div>
+<h3>Seiri</h3><table class="check"><thead><tr><th>#</th><th>Condição verificada</th><th>0 / 1 / 2</th><th>Evidência / ação</th></tr></thead><tbody><tr><td>1</td><td>Não há itens desnecessários (sem uso conhecido) na área</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>2</td><td>Itens em dúvida têm Red Tag com responsável e prazo</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>3</td><td>A área de quarentena não tem itens com prazo vencido</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>4</td><td>Estoques no posto estão dentro de limites definidos</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>5</td><td>Documentos e arquivos obsoletos foram descartados ou arquivados</td><td>☐ ☐ ☐</td><td></td></tr><tr><td></td><td><strong>Subtotal Seiri</strong></td><td>___ / 10</td><td></td></tr></tbody></table><h3>Seiton</h3><table class="check"><thead><tr><th>#</th><th>Condição verificada</th><th>0 / 1 / 2</th><th>Evidência / ação</th></tr></thead><tbody><tr><td>1</td><td>Cada item tem local definido e identificado</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>2</td><td>Itens de uso frequente ficam no ponto de uso, em altura ergonômica</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>3</td><td>Há limites mínimo/máximo visíveis para consumíveis</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>4</td><td>Ferramentas têm posição visual (contorno, gaveta com espuma, quadro)</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>5</td><td>Rotas, saídas e equipamentos de emergência estão livres e sinalizados conforme a NBR 7195</td><td>☐ ☐ ☐</td><td></td></tr><tr><td></td><td><strong>Subtotal Seiton</strong></td><td>___ / 10</td><td></td></tr></tbody></table><h3>Seiso</h3><table class="check"><thead><tr><th>#</th><th>Condição verificada</th><th>0 / 1 / 2</th><th>Evidência / ação</th></tr></thead><tbody><tr><td>1</td><td>Pisos, bancadas e equipamentos estão limpos o bastante para ver anomalias</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>2</td><td>Há rotina de limpeza-inspeção com responsável e frequência</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>3</td><td>Anomalias encontradas são etiquetadas e registradas</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>4</td><td>Fontes de sujeira conhecidas têm ação para eliminar</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>5</td><td>Material de limpeza está disponível, identificado e organizado</td><td>☐ ☐ ☐</td><td></td></tr><tr><td></td><td><strong>Subtotal Seiso</strong></td><td>___ / 10</td><td></td></tr></tbody></table><h3>Seiketsu</h3><table class="check"><thead><tr><th>#</th><th>Condição verificada</th><th>0 / 1 / 2</th><th>Evidência / ação</th></tr></thead><tbody><tr><td>1</td><td>Existe foto ou desenho do padrão da área visível</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>2</td><td>Demarcações seguem um código de cores documentado e compatível com as normas</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>3</td><td>Padrões de limpeza e inspeção estão no ponto de uso</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>4</td><td>As identificações estão legíveis e atualizadas</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>5</td><td>Os padrões foram revisados após a última mudança de layout ou processo</td><td>☐ ☐ ☐</td><td></td></tr><tr><td></td><td><strong>Subtotal Seiketsu</strong></td><td>___ / 10</td><td></td></tr></tbody></table><h3>Shitsuke</h3><table class="check"><thead><tr><th>#</th><th>Condição verificada</th><th>0 / 1 / 2</th><th>Evidência / ação</th></tr></thead><tbody><tr><td>1</td><td>A verificação diária (5 min) é feita e registrada</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>2</td><td>A liderança faz caminhada com roteiro na área</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>3</td><td>Desvios da última auditoria têm ação com responsável e prazo</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>4</td><td>A tendência das auditorias é visível na área</td><td>☐ ☐ ☐</td><td></td></tr><tr><td>5</td><td>A equipe propôs e implantou melhorias no padrão no último mês</td><td>☐ ☐ ☐</td><td></td></tr><tr><td></td><td><strong>Subtotal Shitsuke</strong></td><td>___ / 10</td><td></td></tr></tbody></table>
+<h3>Leitura da pontuação</h3>
+<table><thead><tr><th>Total (0–50)</th><th>Nível aproximado</th><th>Foco recomendado</th></tr></thead><tbody>
+<tr><td>0–15</td><td>1 — Reativo</td><td>Seiri e Seiton na área-piloto; definir dono.</td></tr>
+<tr><td>16–25</td><td>2 — Organizado</td><td>Seiso como inspeção; padrões visuais.</td></tr>
+<tr><td>26–35</td><td>3 — Padronizado</td><td>Rotina diária e auditoria com reação.</td></tr>
+<tr><td>36–45</td><td>4 — Visual</td><td>Anomalias geram reação rápida; ligar ao TPM e ao Kaizen.</td></tr>
+<tr><td>46–50</td><td>5 — Autogerido</td><td>Equipe melhora o padrão; auditoria vira coaching.</td></tr>
+</tbody></table>
+<div class="interpret"><strong>Regra:</strong> um senso com nota abaixo de 4 limita o nível total, mesmo que a soma seja alta. Seiketsu e Shitsuke baixos com Seiri alto são o sinal clássico de um “Dia D” sem sustentação.</div>
+<div class="callout"><strong>Modelo de Red Tag descrito para reprodução:</strong> etiqueta vermelha de 10 × 15 cm, numerada, com: data; área e local; descrição e quantidade; categoria (matéria-prima, ferramenta, equipamento, documento, outro); motivo (sem uso, excesso, defeituoso, desconhecido); quem etiquetou; responsável pela decisão; prazo (sugestão: 30 dias); decisão (descartar, transferir, vender, reparar, manter no local); data da decisão. A planilha de controle repete esses campos e conta itens por decisão.</div></section>
+<section class="chapter case" id="industrial"><a class="back-toc" href="#sumario">↑ Sumário</a><div class="kicker" style="color:#8FE5D6">Capítulo 18 • Caso Integrado</div><h2>Aplicação Industrial: 5S do Gemba ao Resultado</h2>
+<p class="lead"><strong>Dados simulados</strong> para demonstrar como quantificar um projeto 5S em uma oficina de manutenção e setup. Os números foram conferidos por script e não representam uma empresa real.</p>
 <h3>Condição inicial</h3>
-<div class="grid4">
-<div class="card"><div class="kpi">18 min</div><div class="kpi-label">procura média por intervenção</div></div>
-<div class="card"><div class="kpi">320</div><div class="kpi-label">itens armazenados</div></div>
-<div class="card"><div class="kpi">46 m²</div><div class="kpi-label">área ocupada</div></div>
-<div class="card"><div class="kpi">12</div><div class="kpi-label">anomalias abertas</div></div>
-</div>
-<p>A oficina possuía peças sem identificação, ferramentas duplicadas, itens quebrados misturados aos utilizáveis, consumíveis sem mínimo/máximo e bancadas usadas como estoque temporário.</p>
+<div class="grid4"><div class="card"><div class="kpi">18 min</div><div class="kpi-label">procura média por intervenção</div></div><div class="card"><div class="kpi">320</div><div class="kpi-label">itens armazenados</div></div><div class="card"><div class="kpi">46 m²</div><div class="kpi-label">área ocupada</div></div><div class="card"><div class="kpi">12</div><div class="kpi-label">anomalias abertas</div></div></div>
+<p>A oficina tinha peças sem identificação, ferramentas duplicadas, itens quebrados misturados aos utilizáveis, consumíveis sem mínimo/máximo e bancadas usadas como estoque temporário. A primeira auditoria com o checklist do capítulo 17 somou 11 de 50 pontos.</p>
 <h3>Aplicação dos cinco sensos</h3>
 <table><thead><tr><th>Senso</th><th>Ação</th><th>Mecanismo esperado</th></tr></thead><tbody>
-<tr><td>Seiri</td><td>Red Tag em 118 itens; descarte/transferência de obsoletos.</td><td>Reduzir excesso e liberar espaço.</td></tr>
-<tr><td>Seiton</td><td>Shadow boards, kits por equipamento, endereçamento e Min/Max.</td><td>Reduzir procura e movimento.</td></tr>
-<tr><td>Seiso</td><td>Limpeza-inspeção de bancada e carrinhos.</td><td>Detectar falhas e fontes de sujeira.</td></tr>
-<tr><td>Seiketsu</td><td>Foto padrão, mapa de localização, rotina de reposição.</td><td>Reduzir interpretação.</td></tr>
-<tr><td>Shitsuke</td><td>Check diário de 5 min + auditoria quinzenal por princípio.</td><td>Sustentar e reagir.</td></tr>
+<tr><td>Seiri</td><td>Red Tag em 118 itens: 58 descartados, 41 transferidos ao almoxarifado central, 16 vendidos como sucata ou devolvidos ao fornecedor e 3 devolvidos à área após avaliação.</td><td>Reduzir excesso e liberar espaço.</td></tr>
+<tr><td>Seiton</td><td>Quadros de ferramentas, kits por equipamento, endereçamento e mínimo/máximo.</td><td>Reduzir procura e movimento.</td></tr>
+<tr><td>Seiso</td><td>Limpeza-inspeção de bancadas e carrinhos; 27 anomalias novas encontradas.</td><td>Detectar falhas e fontes de sujeira.</td></tr>
+<tr><td>Seiketsu</td><td>Foto padrão, mapa de localização, rotina de reposição, demarcação validada com o SESMT.</td><td>Reduzir interpretação.</td></tr>
+<tr><td>Shitsuke</td><td>Verificação diária de 5 min + auditoria quinzenal por senso.</td><td>Sustentar e reagir.</td></tr>
 </tbody></table>
-<h3>Resultado simulado após estabilização</h3>
-<div class="grid4">
-<div class="card"><div class="kpi">4 min</div><div class="kpi-label">procura média</div></div>
-<div class="card"><div class="kpi">205</div><div class="kpi-label">itens armazenados</div></div>
-<div class="card"><div class="kpi">31 m²</div><div class="kpi-label">área ocupada</div></div>
-<div class="card"><div class="kpi">−78%</div><div class="kpi-label">tempo de procura</div></div>
-</div>
+<h3>Resultado simulado após 12 semanas</h3>
+<div class="grid4"><div class="card"><div class="kpi">4 min</div><div class="kpi-label">procura média (−77,8%)</div></div><div class="card"><div class="kpi">205</div><div class="kpi-label">itens (320 − 115 removidos)</div></div><div class="card"><div class="kpi">31 m²</div><div class="kpi-label">área (−32,6%; 15 m² livres)</div></div><div class="card"><div class="kpi">8</div><div class="kpi-label">anomalias abertas (12 + 27 − 31 fechadas)</div></div></div>
+<table class="num"><thead><tr><th>Senso</th><th>Auditoria inicial (0–10)</th><th>Semana 12 (0–10)</th></tr></thead><tbody><tr><td>Seiri</td><td>3</td><td>8</td></tr><tr><td>Seiton</td><td>2</td><td>8</td></tr><tr><td>Seiso</td><td>4</td><td>7</td></tr><tr><td>Seiketsu</td><td>1</td><td>6</td></tr><tr><td>Shitsuke</td><td>1</td><td>5</td></tr><tr><td><strong>Total (0–50)</strong></td><td><strong>11</strong></td><td><strong>34</strong></td></tr></tbody></table>
+<p>O total passou de 11 (nível 1) para 34 (nível 3). Shitsuke (5) e Seiketsu (6) ainda são os sensos mais fracos: a sustentação é o foco dos próximos meses.</p>
 <h3>Quantificação de produtividade</h3>
-<p>Suponha 22 intervenções por mês. A redução de 14 minutos por intervenção libera:</p>
-<div class="formula">14 min × 22 intervenções = 308 min/mês = 5,13 h/mês</div>
-<p>Esse resultado é um <strong>productivity gain</strong>. Para converter em saving financeiro, é preciso comprovar como as horas serão absorvidas: menor hora extra, mais intervenções, menor parada de produção ou redução de custo contratado.</p>
+<div class="formula">(18 − 4) min × 22 intervenções/mês = 308 min/mês = 5,13 h/mês ≈ 61,6 h/ano</div>
+<p>A um custo de referência de R$ 85/h, isso equivale a cerca de R$ 5.236 por ano em horas de técnico. É um <em>productivity gain</em> (soft saving). Para virar saving financeiro, é preciso mostrar como as horas foram usadas: menos hora extra, mais intervenções preventivas, menos tempo de máquina parada esperando o técnico ou menos serviço contratado. Na prática, o maior valor costuma estar no tempo de parada da produção, que não foi contabilizado aqui.</p>
 <h3>Plano de controle</h3>
 <table><thead><tr><th>Item</th><th>Controle</th><th>Frequência</th><th>Reação</th></tr></thead><tbody>
-<tr><td>Ferramentas críticas</td><td>Shadow board / ausência visível</td><td>Por turno</td><td>Localizar e tratar causa.</td></tr>
-<tr><td>Consumíveis</td><td>Min/Max visual</td><td>Diária</td><td>Repor e revisar consumo.</td></tr>
-<tr><td>Red Tag</td><td>Lista de itens e prazo</td><td>Semanal</td><td>Escalonar decisão vencida.</td></tr>
-<tr><td>Condição geral</td><td>Auditoria por princípio</td><td>Quinzenal</td><td>A3 curto para reincidência.</td></tr>
+<tr><td>Ferramentas críticas</td><td>Quadro de ferramentas / ausência visível</td><td>Por turno</td><td>Localizar e tratar a causa.</td></tr>
+<tr><td>Consumíveis</td><td>Mínimo/máximo visual</td><td>Diária</td><td>Repor e revisar consumo.</td></tr>
+<tr><td>Red Tag</td><td>Lista de itens e prazo</td><td>Semanal</td><td>Escalar decisão vencida.</td></tr>
+<tr><td>Condição geral</td><td>Checklist por senso</td><td>Quinzenal</td><td>A3 curto para reincidência.</td></tr>
 </tbody></table>
 </section>
-
 <section class="chapter" id="laboratorio"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 15</div><h2>5S em Laboratórios, Logística e Escritórios</h2>
+<div class="kicker">Capítulo 19</div><h2>5S em Laboratórios, Logística e Escritórios</h2>
 <p class="lead">5S é aplicável a qualquer ambiente em que excesso, procura, informação ausente e falta de padrão gerem desperdício.</p>
 <h3>Laboratórios</h3>
 <ul><li>Endereçamento de reagentes por compatibilidade e frequência.</li><li>Controle visual de validade e abertura.</li><li>Separação de amostras aguardando análise, em análise e liberadas.</li><li>Foto padrão de bancada e equipamentos.</li><li>Rotina de limpeza-inspeção sem substituir requisitos de qualidade.</li></ul>
@@ -489,10 +550,8 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <ul><li>Eliminar controles duplicados e versões antigas.</li><li>Padronizar nomenclatura de arquivos e pastas.</li><li>Organizar fluxos de aprovação e caixas compartilhadas.</li><li>Reduzir “estoque” de e-mails, tarefas e documentos sem owner.</li></ul>
 <div class="callout"><strong>Princípio transferível:</strong> no ambiente físico ou digital, 5S procura reduzir o tempo entre “preciso de algo” e “encontro a coisa certa, na versão certa, no lugar certo”.</div>
 </section>
-
-
 <section class="chapter" id="digital"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 16</div><h2>5S Digital e Indústria 4.0</h2>
+<div class="kicker">Capítulo 20</div><h2>5S Digital e Indústria 4.0</h2>
 <p class="lead">O ambiente digital também acumula Muda: arquivos duplicados, dashboards redundantes, alarmes sem prioridade, tags inconsistentes e dados que ninguém usa.</p>
 <h3>Os cinco sensos no digital</h3>
 <table><thead><tr><th>Senso</th><th>Aplicação digital</th></tr></thead><tbody>
@@ -507,16 +566,36 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <div class="flow"><div class="step">Eliminar dado sem uso</div><div class="arrow">→</div><div class="step">Organizar taxonomia</div><div class="arrow">→</div><div class="step">Limpar inconsistências</div><div class="arrow">→</div><div class="step">Padronizar KPI</div><div class="arrow">→</div><div class="step">Governar</div></div>
 <div class="quote">Digitalizar desorganização apenas torna o desperdício mais rápido e mais difícil de enxergar.</div>
 </section>
-
+<section class="chapter" id="escritorio"><a class="back-toc" href="#sumario">↑ Sumário</a><div class="kicker">Capítulo 21</div><h2>5S no Escritório e 5S Digital na Prática</h2><p class="lead">No escritório, a maior parte do “estoque” é invisível: arquivos, e-mails, versões, pastas compartilhadas e tarefas sem dono. O 5S digital aplica a mesma lógica de procura, excesso e padrão a esse ambiente.</p>
+<h3>Os cinco sensos no escritório</h3>
+<table><thead><tr><th>Senso</th><th>Físico</th><th>Digital</th></tr></thead><tbody>
+<tr><td>Seiri</td><td>Papéis antigos, materiais em excesso, equipamentos sem uso.</td><td>Arquivos duplicados, versões antigas, relatórios que ninguém abre, acessos de ex-colaboradores.</td></tr>
+<tr><td>Seiton</td><td>Materiais compartilhados com local fixo; mesa limpa ao fim do dia.</td><td>Estrutura de pastas por processo (não por pessoa), regra de nomes, um único local para a versão vigente.</td></tr>
+<tr><td>Seiso</td><td>Limpeza de mesas e equipamentos compartilhados.</td><td>Links quebrados, dados inconsistentes, alarmes falsos, caixas de entrada com milhares de itens.</td></tr>
+<tr><td>Seiketsu</td><td>Padrão de estação de trabalho e de salas.</td><td>Modelos de documentos, dicionário de KPIs, padrão de dashboards, política de retenção.</td></tr>
+<tr><td>Shitsuke</td><td>Verificação semanal da área.</td><td>Revisão trimestral de pastas, acessos e relatórios; dono definido para cada repositório.</td></tr>
+</tbody></table>
+<h3>Padrão de nomes de arquivos — exemplo</h3>
+<div class="formula">AAAA-MM-DD_Processo_Documento_vNN (ex.: 2026-11-15_Envase_Procedimento-setup_v03)</div>
+<p>Data no formato ano-mês-dia ordena os arquivos cronologicamente; o processo agrupa; a versão evita “final_final2”. Combine com uma pasta “Arquivo” para versões substituídas e com a regra de que só existe uma versão vigente fora dela.</p>
+<h3>Checklist rápido de 5S digital (0 / 1 / 2)</h3>
+<table class="check"><thead><tr><th>Condição</th><th>0 / 1 / 2</th></tr></thead><tbody>
+<tr><td>Cada pasta compartilhada tem um dono identificado</td><td>☐ ☐ ☐</td></tr>
+<tr><td>A versão vigente de cada procedimento é encontrada em menos de 1 minuto</td><td>☐ ☐ ☐</td></tr>
+<tr><td>Os arquivos seguem a regra de nomes</td><td>☐ ☐ ☐</td></tr>
+<tr><td>Os relatórios e dashboards sem acesso há 90 dias foram revisados</td><td>☐ ☐ ☐</td></tr>
+<tr><td>Os acessos foram revisados no último trimestre</td><td>☐ ☐ ☐</td></tr>
+</tbody></table>
+<div class="callout warn"><strong>Cuidado com o descarte digital:</strong> antes de apagar, verifique prazos legais de guarda, requisitos de qualidade (registros de BPF, rastreabilidade) e a LGPD. Seiri digital começa por uma política de retenção aprovada, não pela tecla Delete.</div></section>
 <section class="chapter" id="casos"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 17</div><h2>Estudos de Caso Documentados</h2>
+<div class="kicker">Capítulo 22</div><h2>Estudos de Caso Documentados</h2>
 <p class="lead">Os casos abaixo são baseados em fontes públicas e ajudam a observar mecanismos transferíveis sem tratar benchmark como receita.</p>
 <h3>Caso 1 — U.S. Naval Ship Repair Facility, Japão</h3>
-<p>Um caso publicado pela ASQ descreve o uso de Lean 5S em uma oficina de reparo naval em Sasebo. Entre os resultados relatados, o tempo gasto procurando peças foi reduzido em <strong>80%</strong>. A reorganização do inventário e dos materiais tornou o trabalho mais eficiente e contribuiu para segurança e controle.</p>
+<p>Um caso publicado pela ASQ descreve o uso de Lean 5S em uma oficina de reparo naval em Sasebo. Entre os resultados relatados (ASQ, 2009), o tempo gasto procurando peças foi reduzido em <strong>80%</strong>, e a equipe foi finalista do International Team Excellence Award da ASQ em 2008. A reorganização do inventário e dos materiais tornou o trabalho mais eficiente e contribuiu para segurança e controle.</p>
 <h4>Lição</h4><p>O ganho não veio de “limpar”. Veio de reduzir a incerteza sobre localização e disponibilidade de materiais — exatamente o mecanismo de Seiri + Seiton + visual management.</p>
 
 <h3>Caso 2 — 5S em hospitais na Tanzânia</h3>
-<p>A JICA relata que iniciativas 5S em hospitais da Tanzânia melhoraram a limpeza percebida, o ambiente de trabalho e a satisfação, além de contribuírem para redução do tempo de espera. Em desdobramentos do programa 5S-KAIZEN-TQM, foram reportadas reduções de 43% em espera de pacientes, 63% em amostras laboratoriais rejeitadas e outros ganhos de qualidade; esses resultados já envolvem Kaizen além do 5S isoladamente.</p>
+<p>A JICA relata que iniciativas 5S em hospitais da Tanzânia melhoraram a limpeza percebida, o ambiente de trabalho e a satisfação, além de contribuírem para redução do tempo de espera. Em desdobramentos do programa 5S-KAIZEN-TQM, foram reportadas, em alguns hospitais, reduções de 43% na espera de pacientes, 52% na flebite associada a cateter intravenoso e 63% nas amostras laboratoriais rejeitadas, entre outros ganhos; os dados vêm do projeto de desenvolvimento de recursos humanos em saúde (2010–2014); esses resultados já envolvem Kaizen além do 5S isoladamente.</p>
 <h4>Lição</h4><p>5S pode ser a primeira camada de mudança: cria ambiente, visualidade e ownership; depois, problemas de fluxo e qualidade podem ser tratados com Kaizen estruturado.</p>
 
 <h3>Caso 3 — Hospital Japonês Santa Cruz, Brasil</h3>
@@ -527,10 +606,16 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <p>A ASQ publicou um caso de uma operação de mineração de potássio em Saskatchewan usando um 5S Blitz e scorecards para organização, segurança, produtividade e eficiência. O caso reforça a necessidade de sustentar o sistema após o evento inicial.</p>
 
 <div class="callout warn"><strong>Uso correto de benchmark:</strong> copie o princípio, não o desenho. Shadow board, cor, layout e frequência de auditoria devem ser definidos pelo risco e pelo fluxo local.</div>
+<h3>Resumo dos casos e fontes</h3><p>Os números abaixo são os <strong>relatados pelas organizações</strong> nas fontes citadas, sem auditoria independente.</p>
+<table><thead><tr><th>Organização / contexto</th><th>Abordagem</th><th>Resultados relatados</th><th>Fonte</th></tr></thead><tbody>
+<tr><td><strong>U.S. Naval Ship Repair Facility</strong> (Sasebo, Japão) — oficina de reparo naval</td><td>Lean 5S e ferramentas da qualidade na gestão do inventário de materiais</td><td>Tempo procurando peças −80%; finalista do International Team Excellence Award da ASQ em 2008</td><td><a href="https://asq.org/quality-resources/articles/case-studies/piecing-things-together-better-materials-organization-improves-ship-repair-service?id=c1ba9b03648b44b1b9663a7571141bdf" target="_blank" rel="noopener">Chircop, ASQ, nov. 2009</a></td></tr>
+<tr><td><strong>Hospitais públicos da Tanzânia</strong></td><td>5S e depois 5S-KAIZEN-TQM, em projeto de cooperação da JICA (2010–2014)</td><td>Com o 5S: limpeza e ambiente melhor avaliados, menor espera e maior satisfação dos pacientes. Com o Kaizen, em alguns hospitais: espera −43%, flebite associada a cateter −52%, amostras laboratoriais rejeitadas −63%</td><td><a href="https://www.jica.go.jp/english/activities/issues/health/case_achievements.html" target="_blank" rel="noopener">JICA, s.d.</a>; Ishijima et al., <em>The TQM Journal</em>, 2016</td></tr>
+<tr><td><strong>Hospital Japonês Santa Cruz</strong> (São Paulo)</td><td>Princípios 5S-Kaizen no controle de infecções durante a COVID-19, após treinamento da JICA (2016)</td><td>Livreto digital visual com ícones para equipe e pacientes; revisão de fluxos; o hospital relatou não ter registrado infecções nosocomiais até a publicação</td><td><a href="https://www.jica.go.jp/portuguese/overseas/brazil/information/press/2022/gh13tc000000y8mb.html" target="_blank" rel="noopener">JICA Brasil, 11 abr. 2022</a></td></tr>
+<tr><td><strong>Mosaic Potash</strong> (Saskatchewan, Canadá) — mineração de potássio</td><td>5S blitz com líderes de área e scorecard de 5 a 25 pontos</td><td>O resumo publicado descreve o método do 5S blitz e traz um modelo de scorecard de área (5 a 25 pontos); não informa resultados numéricos</td><td><a href="https://asq.org/quality-progress/articles/case-studies/dig-deeper?id=4cf7d82ac7cc436883baba760a91c524" target="_blank" rel="noopener">Chadha, <em>Quality Progress</em>, ago. 2013</a></td></tr>
+</tbody></table>
 </section>
-
 <section class="chapter" id="falhas"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 18</div><h2>Por que Programas 5S Fracassam</h2>
+<div class="kicker">Capítulo 23</div><h2>Por que Programas 5S Fracassam</h2>
 <p class="lead">O fracasso raramente ocorre porque as pessoas “não gostam de organização”. Em geral, o sistema foi desenhado como campanha, auditoria estética ou responsabilidade paralela.</p>
 <table><thead><tr><th>Falha</th><th>Consequência</th><th>Contramedida</th></tr></thead><tbody>
 <tr><td>“Dia D” sem rotina</td><td>Retorno ao estado anterior.</td><td>Integrar ao trabalho diário.</td></tr>
@@ -543,10 +628,8 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 </tbody></table>
 <div class="callout danger"><strong>Anti-padrão clássico:</strong> uma fábrica com piso pintado, ferramentas contornadas e score 95%, mas operadores continuam caminhando, procurando material e convivendo com anomalias. Isso é estética operacional, não 5S maduro.</div>
 </section>
-
-
 <section class="chapter" id="lideranca"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 19</div><h2>Liderança, Cultura e Sustentação</h2>
+<div class="kicker">Capítulo 24</div><h2>Liderança, Cultura e Sustentação</h2>
 <p class="lead">5S é uma das ferramentas mais simples de ensinar e uma das mais difíceis de sustentar, porque expõe hábitos de gestão.</p>
 <h3>O papel da liderança</h3>
 <ul><li>Definir propósito e critérios claros.</li><li>Participar do Gemba sem transformar auditoria em fiscalização teatral.</li><li>Remover barreiras para descarte, manutenção, compras e layout.</li><li>Não aceitar “falta de espaço” sem investigar excesso e fluxo.</li><li>Reconhecer melhorias que facilitam o trabalho.</li><li>Exigir reação a desvios reincidentes.</li></ul>
@@ -563,10 +646,20 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <g stroke="#0B7974" stroke-width="4" marker-end="url(#ar5)"><line x1="220" y1="170" x2="250" y2="170"/><line x1="440" y1="170" x2="470" y2="170"/><line x1="660" y1="170" x2="690" y2="170"/></g>
 <text x="470" y="310" fill="#0B7974" font-size="20" font-weight="700">Maturidade = menos dependência de auditoria externa e mais capacidade local de melhorar.</text>
 </g></svg></div>
+<p>As rotinas de sustentação, com quem, quando e quanto tempo, estão no capítulo 25.</p>
 </section>
-
+<section class="chapter" id="sustentacao"><a class="back-toc" href="#sumario">↑ Sumário</a><div class="kicker">Capítulo 25</div><h2>Sustentação: Rotinas que Mantêm o 5S Vivo</h2><p class="lead">A maioria dos programas 5S não falha na implantação, e sim nos meses seguintes. Sustentar exige rotinas pequenas, frequentes e com dono, não campanhas.</p>
+<table><thead><tr><th>Rotina</th><th>Quem</th><th>Frequência e duração</th><th>O que verifica</th></tr></thead><tbody>
+<tr><td>Verificação de início/fim de turno</td><td>Operador ou dono do posto</td><td>Diária, 5 min</td><td>Itens no lugar, mínimo/máximo, limpeza básica, anomalias novas.</td></tr>
+<tr><td>Caminhada do líder</td><td>Supervisor</td><td>Semanal, 15–20 min</td><td>Uma ou duas perguntas do checklist por área; reconhece e corrige na hora.</td></tr>
+<tr><td>Auditoria completa</td><td>Dono da área + auditor de outra área</td><td>Quinzenal ou mensal, 20–30 min</td><td>Checklist por senso; tendência; ações.</td></tr>
+<tr><td>Auditoria em camadas</td><td>Gerente e direção</td><td>Mensal ou trimestral</td><td>Amostra de áreas; se as rotinas de baixo estão acontecendo.</td></tr>
+<tr><td>Revisão de padrões</td><td>Equipe da área</td><td>Após mudança de layout ou processo</td><td>Fotos padrão, identificação, mínimos e máximos atualizados.</td></tr>
+</tbody></table>
+<div class="grid2"><div class="card soft"><h4>Sinais de que o 5S está regredindo</h4><ul><li>Itens “temporários” sem identificação há mais de uma semana.</li><li>Arrumação feita só antes de visitas.</li><li>Ações de auditoria vencidas.</li><li>Etiquetas desbotadas ou que não correspondem ao conteúdo.</li><li>Área de quarentena cheia.</li></ul></div>
+<div class="card soft"><h4>Contramedidas</h4><ul><li>Reduzir a rotina a 5 minutos e torná-la parte do trabalho padronizado.</li><li>Auditar sem aviso e por amostragem.</li><li>Escalar ações vencidas na reunião diária.</li><li>Rever o padrão quando a equipe não consegue cumpri-lo.</li><li>Reconhecer áreas que melhoraram o padrão, não só as que têm nota alta.</li></ul></div></div></section>
 <section class="chapter" id="mapa"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 20 • Síntese Visual</div><h2>Mapa Mental Executivo do 5S</h2>
+<div class="kicker">Capítulo 26 • Síntese Visual</div><h2>Mapa Mental Executivo do 5S</h2>
 <p class="lead">Uma visão única para revisar o sistema: propósito, cinco sensos, conexões e resultados.</p>
 <div class="visual"><div class="visual-title">Figura 6 — Mapa Mental Executivo</div>
 <svg viewBox="0 0 1200 760">
@@ -584,10 +677,8 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 </g></svg></div>
 <div class="callout ok"><strong>Leitura do mapa:</strong> Seiri reduz excesso; Seiton reduz procura; Seiso revela anomalia; Seiketsu torna a condição clara; Shitsuke mantém o sistema vivo. O resultado é um ambiente que facilita o trabalho correto e expõe o desvio rapidamente.</div>
 </section>
-
-
 <section class="chapter" id="mensagens"><a class="back-toc" href="#sumario">↑ Sumário</a>
-<div class="kicker">Capítulo 21</div><h2>Mensagens-chave do Autor</h2>
+<div class="kicker">Capítulo 27</div><h2>Mensagens-chave do Autor</h2>
 <p class="lead">Sínteses editoriais da JB Process &amp; Tech para aplicação prática. Não são citações atribuídas aos autores clássicos.</p>
 <div class="message-grid">
 <div class="message-card"><span>01</span><strong>5S não é limpeza.</strong><p>Limpeza é apenas parte do Seiso; o sistema completo organiza, torna visual, padroniza e sustenta.</p></div>
@@ -605,7 +696,8 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 </div>
 <div class="author-signoff"><span>JB Process &amp; Tech • Knowledge Series</span><strong>Organizar é importante. Tornar o processo autoexplicativo é transformador.</strong></div>
 </section>
-
+<section class="chapter" id="exercicios"><a class="back-toc" href="#sumario">↑ Sumário</a><div class="kicker">Capítulo 28</div><h2>Exercícios de Fixação</h2><p class="lead">Os exercícios cobrem quantificação, mínimo/máximo, auditoria, Red Tag, normas brasileiras, TPM e 5S digital. Resolva antes de consultar o gabarito do capítulo seguinte.</p><div class="exercise"><b class="n">Exercício 1 — Tempo de procura.</b> Um técnico procura ferramentas em média 12 min por intervenção; depois do 5S, 3 min. Ele faz 40 intervenções por mês. Quantas horas são liberadas por mês?</div><div class="exercise"><b class="n">Exercício 2 — Mínimo e máximo.</b> Um consumível é usado 6 unidades/dia, o fornecedor entrega em 3 dias, o estoque de segurança é de 4 unidades e o lote de compra é de 30. Defina mínimo e máximo.</div><div class="exercise"><b class="n">Exercício 3 — Auditoria.</b> Uma área obteve Seiri 6, Seiton 5, Seiso 7, Seiketsu 3 e Shitsuke 2. Qual o total, o nível e a prioridade?</div><div class="exercise"><b class="n">Exercício 4 — Red Tag.</b> Uma campanha etiquetou 150 itens: 64 descartados, 38 transferidos e 21 vendidos. Quantos voltaram para a área? O que verificar sobre eles?</div><div class="exercise"><b class="n">Exercício 5 — Área liberada.</b> Um almoxarifado ocupava 120 m² e passou a ocupar 84 m². Qual a redução? Isso é saving?</div><div class="exercise"><b class="n">Exercício 6 — Cores — NBR 7195.</b> Indique a cor de segurança: (a) extintor; (b) partes móveis perigosas de uma máquina; (c) faixa de circulação de empilhadeiras e pessoas; (d) chuveiro lava-olhos; (e) placa de uso obrigatório de protetor auricular; (f) corredor exclusivo de pedestres.</div><div class="exercise"><b class="n">Exercício 7 — NR-26.</b> Um time quer usar vermelho para marcar “itens perigosos” na bancada e cinco cores diferentes de fita no piso. O que a NR-26 e a NBR 7195 dizem?</div><div class="exercise"><b class="n">Exercício 8 — 5S e TPM.</b> Depois da limpeza inicial de uma máquina, o número de anomalias encontradas por semana caiu de 15 para 0 em duas semanas. Isso é bom?</div><div class="exercise"><b class="n">Exercício 9 — 5S digital.</b> Proponha um nome de arquivo padronizado para a versão 2 do procedimento de limpeza da linha 3, criado em 15/11/2026.</div></section>
+<section class="chapter" id="gabarito"><a class="back-toc" href="#sumario">↑ Sumário</a><div class="kicker">Capítulo 29</div><h2>Gabarito Comentado</h2><p class="lead">Respostas conferidas por script quando há cálculo.</p><div class="answer"><b>1. Tempo de procura.</b> (12 − 3) × 40 = 360 min = 6 h/mês. É um ganho de produtividade; só vira saving com uso comprovado das horas.</div><div class="answer"><b>2. Mínimo e máximo.</b> Mínimo = 6 × 3 + 4 = 22 unidades (ponto de pedido). Máximo = mínimo + lote = 52 unidades.</div><div class="answer"><b>3. Auditoria.</b> Total = 23/50 (46%), nível 2 (organizado). Prioridade: Seiketsu e Shitsuke (abaixo de 4), com padrões visuais e verificação diária, antes de buscar mais pontos em Seiso.</div><div class="answer"><b>4. Red Tag.</b> 150 − 64 − 38 − 21 = 27 itens. Verifique se receberam local, identificação e quantidade definidos; se não, voltarão a ser excesso.</div><div class="answer"><b>5. Área liberada.</b> Redução de 30% (36 m²). Só é saving se o espaço evitar aluguel, construção ou permitir nova atividade com valor comprovado.</div><div class="answer"><b>6. Cores — NBR 7195.</b> (a) vermelha; (b) laranja; (c) amarela; (d) verde; (e) azul; (f) branca. Confirme sempre no texto oficial da norma e com o SESMT.</div><div class="answer"><b>7. NR-26.</b> A NBR 7195 reserva o vermelho para proteção e combate a incêndio, parada e proibição, e diz que ele não pode indicar perigo (a cor de perigo é a laranja). A NR-26 (item 26.3.4) pede que o uso de cores seja o mais reduzido possível. Reduza as cores e documente o código interno.</div><div class="answer"><b>8. 5S e TPM.</b> Provavelmente não. É mais provável que a inspeção tenha parado do que os defeitos terem sumido. Verifique se a limpeza-inspeção continua sendo feita, se o padrão provisório existe e se as etiquetas de anomalia estão disponíveis.</div><div class="answer"><b>9. 5S digital.</b> Exemplo: 2026-11-15_Linha3_Procedimento-limpeza_v02. Data no formato ano-mês-dia, processo, documento e versão.</div></section>
 <section id="glossario">
 <div class="kicker">Glossário</div><h2>Termos Essenciais</h2>
 <div class="glossary">
@@ -621,40 +713,64 @@ p,li{orphans:3;widows:3}.lead{font-size:11.5pt}.grid2,.grid3,.grid4,.grid5,.mess
 <div class="term"><b>FIFO</b><br>First In, First Out; regra de fluxo conforme ordem de entrada.</div>
 <div class="term"><b>FEFO</b><br>First Expire, First Out; prioriza menor validade.</div>
 <div class="term"><b>Gemba</b><br>Lugar real onde o trabalho acontece.</div>
+<div class="term"><b>Sensos</b><br>Tradução brasileira usual dos 5 S: utilização, ordenação (organização), limpeza, saúde/normatização (padronização) e autodisciplina.</div><div class="term"><b>Etiqueta de anomalia</b><br>Identificação de um defeito no equipamento que gera ordem de serviço (TPM); diferente da Red Tag.</div><div class="term"><b>Manutenção autônoma</b><br>Pilar do TPM em que o operador cuida da condição básica do equipamento, a partir do 5S.</div><div class="term"><b>NR-26</b><br>Norma Regulamentadora de sinalização e identificação de segurança (Portaria MTP nº 2.770/2022).</div><div class="term"><b>NBR 7195</b><br>Norma ABNT de cores para segurança (edição 2018).</div><div class="term"><b>NBR 6493</b><br>Norma ABNT de cores para identificação de tubulações industriais (edição 2019).</div><div class="term"><b>GHS</b><br>Sistema Globalmente Harmonizado de classificação e rotulagem de produtos químicos, exigido pela NR-26.</div><div class="term"><b>Auditoria em camadas</b><br>Verificações feitas por diferentes níveis hierárquicos, com frequências diferentes.</div><div class="term"><b>Ponto de pedido</b><br>Quantidade mínima que dispara a reposição: consumo × prazo de entrega + segurança.</div><div class="term"><b>Política de retenção</b><br>Regra de quanto tempo cada tipo de documento ou dado deve ser guardado.</div></div>
+</section>
+<section id="referencias">
+<div class="kicker">Referências</div><h2>Bibliografia e Fontes de Aprofundamento</h2>
+<p class="lead">Páginas on-line sem data de publicação aparecem como “s.d.”; todas foram acessadas em 15 nov. 2026.</p>
+<h3>Obras fundamentais</h3><ol class="refs">
+<li><b>OSADA, Takashi.</b> <em>The 5S's: Five Keys to a Total Quality Environment.</em> Tokyo: Asian Productivity Organization, 1991.</li>
+<li><b>HIRANO, Hiroyuki.</b> <em>5 Pillars of the Visual Workplace: The Sourcebook for 5S Implementation.</em> Portland: Productivity Press, 1995.</li>
+<li><b>IMAI, Masaaki.</b> <em>Gemba Kaizen.</em> New York: McGraw-Hill, 1997 (2. ed., 2012).</li>
+<li><b>GALSWORTH, Gwendolyn D.</b> <em>Visual Workplace, Visual Thinking.</em> Portland: Visual-Lean Enterprise Press, 2005.</li>
+<li><b>NAKAJIMA, Seiichi.</b> <em>Introduction to TPM: Total Productive Maintenance.</em> Cambridge: Productivity Press, 1988.</li>
+<li><b>OHNO, Taiichi.</b> <em>Toyota Production System: Beyond Large-Scale Production.</em> Cambridge: Productivity Press, 1988.</li>
+</ol>
+<h3>Normas e legislação brasileiras</h3><ol class="refs">
+<li><b>BRASIL. Ministério do Trabalho e Previdência.</b> Portaria MTP nº 2.770, de 5 de setembro de 2022. Aprova a nova redação da Norma Regulamentadora nº 26 — Sinalização e Identificação de Segurança. <em>Diário Oficial da União</em>, 6 set. 2022. <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/sst-portarias/2022/portaria-mtp-n-o-2-770-nova-nr-26.pdf" target="_blank" rel="noopener">Fonte</a>.</li>
+<li><b>ABNT.</b> <em>NBR 7195: Cores para segurança.</em> Rio de Janeiro: ABNT, 2018 (confirmada em 2023).</li>
+<li><b>ABNT.</b> <em>NBR 6493: Emprego de cores para identificação de tubulações industriais.</em> Rio de Janeiro: ABNT, 2019 (confirmada em 2024).</li>
+</ol>
+<h3>Fontes institucionais</h3><ol class="refs">
+<li><b>ASQ.</b> What are the Five S's (5S) of Lean. s.d. <a href="https://asq.org/quality-resources/five-s-tutorial" target="_blank" rel="noopener">Fonte</a>.</li>
+<li><b>LEAN ENTERPRISE INSTITUTE.</b> Lean Lexicon: 5S. s.d. <a href="https://www.lean.org/lexicon-terms/five-s/" target="_blank" rel="noopener">Fonte</a>.</li>
+<li><b>LEAN ENTERPRISE INSTITUTE.</b> Lean Lexicon: Standardized Work. s.d. <a href="https://www.lean.org/lexicon-terms/standardized-work/" target="_blank" rel="noopener">Fonte</a>.</li>
+<li><b>JICA.</b> 5S-KAIZEN-TQM — Case Study. s.d. <a href="https://www.jica.go.jp/english/activities/issues/health/case.html" target="_blank" rel="noopener">Fonte</a>.</li>
+<li><b>VISUAL THINKING INC. / GALSWORTH, Gwendolyn.</b> Visual Workplace. s.d. <a href="https://visualworkplace.com/" target="_blank" rel="noopener">Fonte</a>.</li>
+</ol>
+<h3>Estudos de caso documentados</h3><ol class="refs">
+<li><b>CHIRCOP, Jeanne.</b> Piecing Things Together: Better Materials Organization Improves Ship Repair Service. ASQ, nov. 2009. <a href="https://asq.org/quality-resources/articles/case-studies/piecing-things-together-better-materials-organization-improves-ship-repair-service?id=c1ba9b03648b44b1b9663a7571141bdf" target="_blank" rel="noopener">Fonte</a>.</li>
+<li><b>CHADHA, Rajeev.</b> Dig Deeper. <em>Quality Progress</em>, v. 46, n. 8, p. 42–49, ago. 2013. <a href="https://asq.org/quality-progress/articles/case-studies/dig-deeper?id=4cf7d82ac7cc436883baba760a91c524" target="_blank" rel="noopener">Fonte</a>.</li>
+<li><b>JICA.</b> Achievements — 5S-KAIZEN-TQM em hospitais da Tanzânia. s.d. <a href="https://www.jica.go.jp/english/activities/issues/health/case_achievements.html" target="_blank" rel="noopener">Fonte</a>.</li>
+<li><b>ISHIJIMA, H.; ELIAKIMU, E.; MSHANA, J.</b> The “5S” approach to improve a working environment can reduce waiting time: findings from hospitals in Northern Tanzania. <em>The TQM Journal</em>, v. 28, n. 4, p. 664–680, 2016.</li>
+<li><b>JICA BRASIL.</b> Aplicação dos princípios de Kaizen à gestão hospitalar: o Hospital Japonês Santa Cruz. 11 abr. 2022. <a href="https://www.jica.go.jp/portuguese/overseas/brazil/information/press/2022/gh13tc000000y8mb.html" target="_blank" rel="noopener">Fonte</a>.</li>
+</ol>
+<div class="callout"><strong>Nota de integridade:</strong> este e-book usa síntese e interpretação próprias. Os estudos documentados são apresentados com a fonte correspondente; os dados do caso integrado e dos exercícios são identificados como simulados. As normas foram resumidas a partir das fontes oficiais; consulte sempre o texto integral.</div>
+</section>
+<section class="chapter" id="autor"><a class="back-toc" href="#sumario">↑ Sumário</a>
+<div class="kicker">Sobre o autor</div><h2>Quem escreveu este e-book</h2>
+<div class="grid2">
+<div class="card soft"><p style="font-size:22px;font-weight:900;color:var(--navy);margin-bottom:4px">Bruno Hipólito</p><p class="small" style="margin-top:0">Fundador da JB Process &amp; Tech • Master Black Belt em Lean Seis Sigma</p><p><strong>Bruno Hipólito</strong> é fundador da JB Process &amp; Tech, consultoria em Lean Six Sigma, melhoria contínua, treinamentos, engenharia de processos e soluções digitais com dados e inteligência artificial.</p><p>Atua como Coordenador de Engenharia de Processo na indústria e soma mais de 20 anos de trajetória industrial, da operação de produção ao controle de qualidade, P&amp;D e engenharia de processos.</p><p>É Master Black Belt em Lean Seis Sigma e concluiu a Formação de Líderes Kaizen (Grupo Voitto, 2021). É bacharel em Química (FAI) e em Engenharia de Produção (UniCesumar), especialista em Biotecnologia (UEM) e pós-graduado em Ciência de Dados e Big Data Analytics (FAMEESP).</p><p>É autor do livro <em>Gestão de Indicadores — Da teoria à prática: KPIs, metas e desempenho</em>.</p></div>
+<div class="card"><h4>JB Process &amp; Tech</h4><p>Engenharia de Processos • Excelência Operacional • Lean Six Sigma • Dados &amp; BI • Tecnologia &amp; IA.</p><p>Outros e-books da coleção Knowledge Series: <a href="https://jbprocesstech.com.br/ebooks/lean-manufacturing/" target="_blank" rel="noopener">Lean Manufacturing</a>, <a href="https://jbprocesstech.com.br/ebooks/six-sigma/" target="_blank" rel="noopener">Six Sigma</a>, <a href="https://jbprocesstech.com.br/ebooks/kaizen/" target="_blank" rel="noopener">Kaizen</a> e <a href="https://jbprocesstech.com.br/ebooks/excelencia-operacional-integrada/" target="_blank" rel="noopener">Excelência Operacional Integrada</a>.</p><p><a href="https://jbprocesstech.com.br/" target="_blank" rel="noopener">jbprocesstech.com.br</a></p></div>
 </div>
 </section>
 
-<section id="referencias">
-<div class="kicker">Referências</div><h2>Bibliografia e Fontes de Aprofundamento</h2>
-<h3>Obras fundamentais</h3>
-<ol class="refs">
-<li><b>OSADA, Takashi.</b> <em>The 5S's: Five Keys to a Total Quality Environment.</em> Asian Productivity Organization, 1991.</li>
-<li><b>HIRANO, Hiroyuki.</b> <em>5 Pillars of the Visual Workplace: The Sourcebook for 5S Implementation.</em> Productivity Press.</li>
-<li><b>IMAI, Masaaki.</b> <em>Gemba Kaizen.</em> McGraw-Hill.</li>
-<li><b>GALSWORTH, Gwendolyn.</b> <em>Visual Workplace, Visual Thinking.</em> Productivity Press.</li>
-</ol>
-<h3>Fontes institucionais</h3>
-<ol class="refs">
-<li><b>American Society for Quality (ASQ).</b> Five S Tutorial — definição, objetivos e aplicações. <a href="https://asq.org/quality-resources/five-s-tutorial" target="_blank">ASQ — Five S</a>.</li>
-<li><b>Lean Enterprise Institute.</b> 5S — definição, propósito e nuance 4S/5S/6S. <a href="https://www.lean.org/lexicon-terms/five-s/" target="_blank">LEI — 5S</a>.</li>
-<li><b>Lean Enterprise Institute.</b> Standardized Work — relação entre padrão, visual management e Kaizen. <a href="https://www.lean.org/lexicon-terms/standardized-work/" target="_blank">LEI — Standardized Work</a>.</li>
-<li><b>JICA.</b> 5S-KAIZEN-TQM — materiais e aplicações em saúde. <a href="https://www.jica.go.jp/english/activities/issues/health/case.html" target="_blank">JICA — Case Studies</a>.</li>
-<li><b>Visual Thinking / Gwendolyn Galsworth.</b> Visual Workplace — conceitos de visualidade e informação no ponto de uso. <a href="https://visualworkplace.com/" target="_blank">Visual Workplace</a>.</li>
-</ol>
-<h3>Estudos de caso documentados</h3>
-<ol class="refs">
-<li><b>ASQ.</b> <em>Piecing Things Together: Better Materials Organization Improves Ship Repair Service.</em> Caso de U.S. Naval Ship Repair Facility, com redução de 80% no tempo de procura por peças. <a href="https://asq.org/quality-resources/articles/case-studies/piecing-things-together-better-materials-organization-improves-ship-repair-service?id=c1ba9b03648b44b1b9663a7571141bdf" target="_blank">Fonte</a>.</li>
-<li><b>ASQ.</b> <em>Dig Deeper.</em> Caso de 5S Blitz em mineração no Canadá. <a href="https://asq.org/quality-progress/articles/case-studies/dig-deeper?id=4cf7d82ac7cc436883baba760a91c524" target="_blank">Fonte</a>.</li>
-<li><b>JICA.</b> Achievements — 5S-KAIZEN-TQM em hospitais da Tanzânia. <a href="https://www.jica.go.jp/english/activities/issues/health/case_achievements.html" target="_blank">Fonte</a>.</li>
-<li><b>JICA Brasil.</b> Aplicação de 5S-Kaizen no Hospital Japonês Santa Cruz. <a href="https://www.jica.go.jp/portuguese/overseas/brazil/information/press/2022/gh13tc000000y8mb.html" target="_blank">Fonte</a>.</li>
-</ol>
-<div class="reference-note"><strong>Nota de integridade:</strong> este e-book utiliza síntese e interpretação próprias. Os estudos documentados são apresentados com a fonte correspondente; os dados do caso industrial integrado são explicitamente identificados como simulados.</div>
+<section id="contato">
+<div class="cta">
+<div class="kicker" style="color:#9FE3DE">Próximo passo</div>
+<h2>Implante um 5S que se sustenta na sua operação</h2>
+<p>A JB Process &amp; Tech apoia indústrias com <strong>diagnóstico e consultoria</strong>: auditoria 5S por senso, campanha de Red Tag, gestão visual alinhada à NR-26 e à NBR 7195, 5S como base da manutenção autônoma e rotinas de sustentação. Também oferece <strong>treinamentos</strong> in company em 5S, gestão visual, Kaizen, TPM e Lean, aplicados às áreas da sua empresa.</p>
+<a class="btn" href="https://wa.me/5518996328579?text=Ol%C3%A1%21%20Li%20o%20e-book%205S%20da%20JB%20Process%20%26%20Tech%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico." target="_blank" rel="noopener">Solicitar diagnóstico pelo WhatsApp</a>
+<a class="btn" href="https://wa.me/5518996328579?text=Ol%C3%A1%21%20Li%20o%20e-book%205S%20da%20JB%20Process%20%26%20Tech%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20treinamentos." target="_blank" rel="noopener">Treinamentos para minha equipe</a>
+<a class="btn" href="https://jbprocesstech.com.br/#contato" target="_blank" rel="noopener">Contato pelo site</a>
+<p class="small" style="color:#D6E6EE;margin-top:14px">WhatsApp e telefone: (18) 99632-8579 • jbprocesstech.com.br</p>
+</div>
 </section>
-
 </main>
 <footer class="footer">
 <strong>JB Process &amp; Tech</strong><br>
 Excelência Operacional • Lean Six Sigma • Engenharia • Data Analytics • Transformação Digital<br><br>
-E-book técnico • Knowledge Series • Edição 2026
+E-book técnico • Knowledge Series • 1ª edição • 15/11/2026 • Autor: Bruno Hipólito<br>© 2026 JB Process &amp; Tech. Todos os direitos reservados. Uso pessoal; proibida a reprodução, total ou parcial, sem autorização.
 </footer>
-</body></html>
+</body>
+</html>
