@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página não encontrada | JB Process &amp; Tech</title>
+<meta name="description" content="Esta página não existe no site da JB Process &amp; Tech. Volte para o início, os e-books, o blog ou o contato.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://jbprocesstech.com.br/404.html">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="JB Process &amp; Tech">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Página não encontrada | JB Process &amp; Tech">
+<meta property="og:description" content="O endereço não corresponde a uma página publicada.">
+<meta property="og:url" content="https://jbprocesstech.com.br/404.html">
+<meta property="og:image" content="https://jbprocesstech.com.br/og-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Página não encontrada | JB Process &amp; Tech">
+<meta name="twitter:image" content="https://jbprocesstech.com.br/og-home.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site-pages.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">
+      <picture><source srcset="/logo.webp" type="image/webp"><img src="/logo.png" alt="Logotipo da JB Process &amp; Tech" width="128" height="115"></picture>
+      <span><span class="jb">JB</span> Process <span class="amp">&amp;</span> Tech</span>
+    </a>
+    <a class="nav-cta" href="/#contato">Solicitar diagnóstico</a>
+  </div>
+</nav>
+<main id="conteudo">
+  <p class="kicker">Erro 404</p>
+  <h1>Esta página não está no ar.</h1>
+  <p class="lead">O endereço pode ter mudado ou ter sido digitado com um trecho a mais. O conteúdo publicado continua na página inicial, na biblioteca de e-books e no blog.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="/">Ir para o início</a>
+    <a class="btn" href="/ebooks/">Ver os e-books</a>
+    <a class="btn" href="https://blog.jbprocesstech.com.br">Ler o blog</a>
+    <a class="btn" href="/#contato">Falar com um especialista</a>
+  </div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 JB Process &amp; Tech</span>
+    <a href="/politica-de-privacidade/">Política de Privacidade</a>
+  </div>
+</footer>
+<a class="whatsapp-float" href="https://wa.me/5518996328579?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20JB%20Process%20%26%20Tech." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">💬</a>
+<script>
+(function(){
+  const wa=document.querySelector('.whatsapp-float');
+  if(!wa) return;
+  const targets=[...document.querySelectorAll('.btn, .nav-cta')];
+  const update=()=>{
+    const a=wa.getBoundingClientRect();
+    wa.classList.toggle('is-hidden', targets.some(el=>{
+      const b=el.getBoundingClientRect();
+      if(b.bottom<0||b.top>innerHeight) return false;
+      return !(a.right<b.left-8||a.left>b.right+8||a.bottom<b.top-8||a.top>b.bottom+8);
+    }));
+  };
+  addEventListener('scroll', update, {passive:true});
+  addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>

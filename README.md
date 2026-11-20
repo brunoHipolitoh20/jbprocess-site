@@ -2,7 +2,7 @@
 
 > Site institucional da **JB Process & Tech Consultoria** — consultoria e treinamentos em Lean, 5S, Kaizen e Lean Six Sigma, aliados a tecnologia própria para transformar processos industriais.
 
-🌐 **Site ao vivo:** [jbprocesstech.com.br](https://www.jbprocesstech.com.br)
+🌐 **Site ao vivo:** [jbprocesstech.com.br](https://jbprocesstech.com.br)
 
 ---
 
