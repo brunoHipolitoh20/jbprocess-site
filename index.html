@@ -262,7 +262,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,15,.8
 .value span{font-size:.76rem;color:var(--muted);line-height:1.5;display:block}
 
 /* CONTENT */
-.content{background:var(--surface);border-top:1px solid var(--border)}
 .content-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .ebook-grid{grid-template-columns:repeat(3,1fr)}
 .book-feature{display:grid;grid-template-columns:minmax(280px,.82fr) 1.18fr;gap:2.2rem;align-items:center;background:linear-gradient(135deg,rgba(0,229,160,.07),rgba(0,196,255,.035) 48%,rgba(91,110,245,.06));border:1px solid rgba(0,229,160,.22);border-radius:22px;padding:clamp(1.2rem,3vw,2.2rem);margin-bottom:2.4rem;overflow:hidden;position:relative}
@@ -354,6 +353,8 @@ footer{background:#08080d;border-top:1px solid var(--border)}
 .footer-col a{color:var(--muted);text-decoration:none;font-size:.8rem}
 .footer-col a:hover{color:var(--text)}
 .footer-bottom{border-top:1px solid var(--border);padding:1rem 5%;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:#b7b7d0;font-size:.78rem}
+#ebooks{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#sobre{background:var(--bg)}
 .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:900;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;text-decoration:none;font-size:1.4rem;box-shadow:0 10px 32px rgba(37,211,102,.25);transition:opacity .2s,transform .2s,visibility .2s}
 .whatsapp-float:hover{transform:translateY(-3px) scale(1.03)}
 .whatsapp-float.is-hidden{opacity:0;visibility:hidden;pointer-events:none;transform:none}
@@ -437,8 +438,7 @@ footer{background:#08080d;border-top:1px solid var(--border)}
       <li><a href="#apps">Aplicativos</a></li>
       <li><a href="#treinamentos">Treinamentos</a></li>
       <li><a href="#ebooks">Livros e E-books</a></li>
-      <li><a href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener">Conteúdo</a></li>
-      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#sobre">Sobre nós</a></li>
       <li><a href="#contato" class="nav-cta">Solicitar diagnóstico</a></li>
     </ul>
   </div>
@@ -540,7 +540,7 @@ footer{background:#08080d;border-top:1px solid var(--border)}
   </div>
 </section>
 
-<section class="detail-section alt" id="engenharia">
+<section class="detail-section" id="engenharia">
   <div class="container detail-grid">
     <div class="sticky-copy">
       <div class="eyebrow">Engenharia de Processos</div>
@@ -561,7 +561,7 @@ footer{background:#08080d;border-top:1px solid var(--border)}
   </div>
 </section>
 
-<section class="detail-section" id="excelencia">
+<section class="detail-section alt" id="excelencia">
   <div class="container detail-grid">
     <div class="sticky-copy">
       <div class="eyebrow">Excelência Operacional</div>
@@ -579,7 +579,7 @@ footer{background:#08080d;border-top:1px solid var(--border)}
   </div>
 </section>
 
-<section class="detail-section alt" id="dados">
+<section class="detail-section" id="dados">
   <div class="container detail-grid">
     <div class="sticky-copy">
       <div class="eyebrow">Dados &amp; Business Intelligence</div>
@@ -598,7 +598,7 @@ footer{background:#08080d;border-top:1px solid var(--border)}
   </div>
 </section>
 
-<section class="detail-section" id="tecnologia">
+<section class="detail-section alt" id="tecnologia">
   <div class="container detail-grid">
     <div class="sticky-copy">
       <div class="eyebrow">Tecnologia &amp; IA</div>
@@ -717,62 +717,6 @@ footer{background:#08080d;border-top:1px solid var(--border)}
   </div>
 </section>
 
-<section id="sobre">
-  <div class="container">
-    <div class="about-grid">
-      <div>
-        <div class="eyebrow">Sobre nós</div>
-        <h2 class="section-title">Engenharia, dados e tecnologia conectados à realidade industrial.</h2>
-        <div class="about-copy" style="margin-top:1.5rem">
-          <p>A JB Process &amp; Tech nasce da integração entre <strong>experiência industrial prática, engenharia, melhoria contínua, dados e tecnologia</strong>. Essa combinação permite olhar o problema de forma transversal — do chão de fábrica à gestão executiva.</p>
-          <p>Nossa atuação conecta Engenharia de Processos, Excelência Operacional, Lean Six Sigma, Data Analytics, Business Intelligence, desenvolvimento de software, automação e Inteligência Artificial em uma mesma lógica de geração de valor.</p>
-          <p>Não desenvolvemos tecnologia pela tecnologia. Primeiro entendemos o processo, os usuários, os riscos, os indicadores e a decisão que precisa ser melhorada. Depois definimos a solução técnica mais adequada.</p>
-          <p>O objetivo é construir soluções <strong>aplicáveis, mensuráveis e sustentáveis</strong>, capazes de aumentar produtividade, reduzir perdas, melhorar qualidade e acelerar decisões com dados confiáveis.</p>
-        </div>
-      </div>
-      <div>
-        <div class="mv-grid">
-          <div class="mv-card"><h3>Missão</h3><p>Transformar processos e organizações por meio da integração entre engenharia, excelência operacional, dados e tecnologia, gerando resultados mensuráveis e sustentáveis.</p></div>
-          <div class="mv-card"><h3>Visão</h3><p>Ser referência em soluções integradas para transformação e performance industrial, conectando processos, dados, pessoas e tecnologia.</p></div>
-        </div>
-        <div class="values">
-          <div class="value"><strong>Resultados</strong><span>Impacto mensurável orienta cada solução.</span></div>
-          <div class="value"><strong>Excelência</strong><span>Busca contínua por eficiência e confiabilidade.</span></div>
-          <div class="value"><strong>Conhecimento</strong><span>Decisões fundamentadas em método e dados.</span></div>
-          <div class="value"><strong>Inovação</strong><span>Tecnologia aplicada a problemas reais.</span></div>
-          <div class="value"><strong>Simplicidade</strong><span>Complexidade técnica convertida em ação.</span></div>
-          <div class="value"><strong>Ética</strong><span>Responsabilidade, transparência e confiança.</span></div>
-        </div>
-        <!-- TODO: substituir por foto do fundador -->
-        <article class="founder-card" id="fundador" aria-labelledby="fundador-titulo">
-          <div class="founder-avatar" aria-hidden="true">BH</div>
-          <div>
-            <div class="eyebrow">Liderança técnica</div>
-            <h2 id="fundador-titulo">Bruno Hipólito</h2>
-            <p class="founder-role">Master Black Belt em Lean Six Sigma · Fundador e consultor líder</p>
-            <p>Formado em Engenharia de Produção pela UniCesumar, Bruno Hipólito é o fundador e consultor líder da JB Process &amp; Tech. Atua em engenharia de processos na indústria e conduz tecnicamente a consultoria, no encontro entre método Lean Six Sigma, dados e inteligência artificial aplicada.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="executive-cta">
-  <div class="container">
-    <div class="executive-cta-box">
-      <div class="eyebrow">Próximo passo</div>
-      <h2>Transforme um problema operacional em uma solução estruturada de engenharia, dados e tecnologia.</h2>
-      <p>A JB Process &amp; Tech pode começar por um diagnóstico do processo, dos dados disponíveis, das perdas e do potencial de melhoria — definindo o caminho antes do investimento.</p>
-      <div class="executive-cta-actions">
-        <a href="#contato" class="btn btn-primary">Solicitar diagnóstico inicial →</a>
-        <a href="https://wa.me/5518996328579?text=Olá%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto%20com%20a%20JB%20Process%20%26%20Tech." target="_blank" rel="noopener" class="btn btn-secondary">Conversar pelo WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <section id="ebooks">
   <div class="container">
     <div class="section-head center">
@@ -842,21 +786,61 @@ footer{background:#08080d;border-top:1px solid var(--border)}
   </div>
 </section>
 
-<section class="content" id="conteudo">
+<section id="sobre">
   <div class="container">
-    <div class="section-head center">
-      <div class="eyebrow">Conteúdo</div>
-      <h2 class="section-title">Conhecimento que conecta engenharia, gestão, dados e tecnologia.</h2>
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow">Sobre nós</div>
+        <h2 class="section-title">Engenharia, dados e tecnologia conectados à realidade industrial.</h2>
+        <div class="about-copy" style="margin-top:1.5rem">
+          <p>A JB Process &amp; Tech nasce da integração entre <strong>experiência industrial prática, engenharia, melhoria contínua, dados e tecnologia</strong>. Essa combinação permite olhar o problema de forma transversal — do chão de fábrica à gestão executiva.</p>
+          <p>Nossa atuação conecta Engenharia de Processos, Excelência Operacional, Lean Six Sigma, Data Analytics, Business Intelligence, desenvolvimento de software, automação e Inteligência Artificial em uma mesma lógica de geração de valor.</p>
+          <p>Não desenvolvemos tecnologia pela tecnologia. Primeiro entendemos o processo, os usuários, os riscos, os indicadores e a decisão que precisa ser melhorada. Depois definimos a solução técnica mais adequada.</p>
+          <p>O objetivo é construir soluções <strong>aplicáveis, mensuráveis e sustentáveis</strong>, capazes de aumentar produtividade, reduzir perdas, melhorar qualidade e acelerar decisões com dados confiáveis.</p>
+        </div>
+      </div>
+      <div>
+        <div class="mv-grid">
+          <div class="mv-card"><h3>Missão</h3><p>Transformar processos e organizações por meio da integração entre engenharia, excelência operacional, dados e tecnologia, gerando resultados mensuráveis e sustentáveis.</p></div>
+          <div class="mv-card"><h3>Visão</h3><p>Ser referência em soluções integradas para transformação e performance industrial, conectando processos, dados, pessoas e tecnologia.</p></div>
+        </div>
+        <div class="values">
+          <div class="value"><strong>Resultados</strong><span>Impacto mensurável orienta cada solução.</span></div>
+          <div class="value"><strong>Excelência</strong><span>Busca contínua por eficiência e confiabilidade.</span></div>
+          <div class="value"><strong>Conhecimento</strong><span>Decisões fundamentadas em método e dados.</span></div>
+          <div class="value"><strong>Inovação</strong><span>Tecnologia aplicada a problemas reais.</span></div>
+          <div class="value"><strong>Simplicidade</strong><span>Complexidade técnica convertida em ação.</span></div>
+          <div class="value"><strong>Ética</strong><span>Responsabilidade, transparência e confiança.</span></div>
+        </div>
+        <!-- TODO: substituir por foto do fundador -->
+        <article class="founder-card" id="fundador" aria-labelledby="fundador-titulo">
+          <div class="founder-avatar" aria-hidden="true">BH</div>
+          <div>
+            <div class="eyebrow">Liderança técnica</div>
+            <h2 id="fundador-titulo">Bruno Hipólito</h2>
+            <p class="founder-role">Master Black Belt em Lean Six Sigma · Fundador e consultor líder</p>
+            <p>Formado em Engenharia de Produção pela UniCesumar, Bruno Hipólito é o fundador e consultor líder da JB Process &amp; Tech. Atua em engenharia de processos na indústria e conduz tecnicamente a consultoria, no encontro entre método Lean Six Sigma, dados e inteligência artificial aplicada.</p>
           </div>
-    <div class="content-strip">
-      <a class="content-card" href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener"><div class="cat">Engenharia</div><h3>Otimização e estabilidade de processos</h3><p>Capacidade, perdas, variabilidade, CEP, DOE e desempenho industrial.</p></a>
-      <a class="content-card" href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener"><div class="cat">Dados &amp; BI</div><h3>Power BI e Data Analytics industrial</h3><p>KPIs, dashboards e análises voltadas à decisão.</p></a>
-      <a class="content-card" href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener"><div class="cat">Excelência Operacional</div><h3>Lean, Six Sigma, Kaizen e 5S</h3><p>Metodologias aplicadas a problemas reais de operação.</p></a>
-      <a class="content-card" href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener"><div class="cat">Tecnologia &amp; IA</div><h3>Automação, software e Machine Learning</h3><p>Transformação digital com foco em performance.</p></a>
+        </article>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:2rem"><a href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener" class="btn btn-secondary">Acessar o blog →</a></div>
   </div>
 </section>
+
+<section class="executive-cta">
+  <div class="container">
+    <div class="executive-cta-box">
+      <div class="eyebrow">Próximo passo</div>
+      <h2>Transforme um problema operacional em uma solução estruturada de engenharia, dados e tecnologia.</h2>
+      <p>A JB Process &amp; Tech pode começar por um diagnóstico do processo, dos dados disponíveis, das perdas e do potencial de melhoria — definindo o caminho antes do investimento.</p>
+      <div class="executive-cta-actions">
+        <a href="#contato" class="btn btn-primary">Solicitar diagnóstico inicial →</a>
+        <a href="https://wa.me/5518996328579?text=Olá%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto%20com%20a%20JB%20Process%20%26%20Tech." target="_blank" rel="noopener" class="btn btn-secondary">Conversar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="contact" id="contato">
   <div class="container contact-grid">
@@ -910,8 +894,8 @@ footer{background:#08080d;border-top:1px solid var(--border)}
       <p>Transformamos processos, dados e tecnologia em performance industrial.</p>
       <p style="margin-top:.8rem">Processos melhores. Dados confiáveis. Decisões inteligentes. Resultados mensuráveis.</p>
     </div>
-    <div class="footer-col"><h4>Soluções</h4><ul><li><a href="#engenharia">Engenharia de Processos</a></li><li><a href="#excelencia">Excelência Operacional</a></li><li><a href="#dados">Dados &amp; BI</a></li><li><a href="#tecnologia">Tecnologia &amp; IA</a></li></ul></div>
-    <div class="footer-col"><h4>Produtos &amp; Conteúdo</h4><ul><li><a href="https://planner.ind.br" target="_blank" rel="noopener">Planner</a></li><li><a href="https://lean.ind.br" target="_blank" rel="noopener">Lean Analysis Platform</a></li><li><a href="#treinamentos">Treinamentos</a></li><li><a href="#ebooks">Livros e E-books</a></li><li><a href="https://blog.jbprocesstech.com.br" target="_blank" rel="noopener">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Soluções</h4><ul><li><a href="#solucoes">Soluções</a></li><li><a href="#engenharia">Engenharia de Processos</a></li><li><a href="#excelencia">Excelência Operacional</a></li><li><a href="#dados">Dados &amp; BI</a></li><li><a href="#tecnologia">Tecnologia &amp; IA</a></li></ul></div>
+    <div class="footer-col"><h4>Produtos &amp; Conteúdo</h4><ul><li><a href="#apps">Aplicativos</a></li><li><a href="https://planner.ind.br" target="_blank" rel="noopener">Planner</a></li><li><a href="https://lean.ind.br" target="_blank" rel="noopener">Lean Analysis Platform</a></li><li><a href="#treinamentos">Treinamentos</a></li><li><a href="#ebooks">Livros e E-books</a></li><li><a href="#sobre">Sobre nós</a></li></ul></div>
     <div class="footer-col"><h4>Contato</h4><ul><li><a id="fe-lnk" href="#"><span id="fe-val">E-mail</span></a></li><li><a href="tel:+5518996328579">(18) 99632-8579</a></li><li><a href="tel:+5518998189206">(18) 99818-9206</a></li><li><a href="https://wa.me/5518996328579" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="/politica-de-privacidade/">Política de Privacidade</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span>© 2026 JB Process &amp; Tech. Todos os direitos reservados.</span><a href="/politica-de-privacidade/">Política de Privacidade</a><span>Engenharia · Excelência Operacional · Dados · Tecnologia · IA</span></div>
